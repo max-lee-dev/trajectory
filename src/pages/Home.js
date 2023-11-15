@@ -7,13 +7,14 @@ import Screen1 from './Dashboard.js';
 
 function Home() {
     return (
-        <Box bg={'red'} fontSize={'40px'}>
+        <Box bg={'transparent'} fontSize={'40px'}>
             {auth?.currentUser ? (
                 <Center>
                     <Heading>Home</Heading>
                 </Center>
             ) : (
                 <Onboard/>
+
 
             )}
 
