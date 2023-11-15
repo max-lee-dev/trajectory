@@ -6,13 +6,14 @@ import {Box, Button, Center, Flex, Heading, Image, Link, Spacer, Text, VStack} f
 
 function Home() {
     return (
-        <Box bg={'red'} fontSize={'40px'}>
+        <Box bg={'transparent'} fontSize={'40px'}>
             {auth?.currentUser ? (
                 <Center>
                     <Heading>Home</Heading>
                 </Center>
             ) : (
                 <Onboard/>
+
 
             )}
 
