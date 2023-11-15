@@ -1,12 +1,18 @@
 import React from 'react';
 
 
+import {Box, Button, Center, Flex, Heading, Image, Link, Spacer, Text, VStack} from "@chakra-ui/react"
+
 function Home() {
     return (
-        <div class="">
-            <h1 class={"text-3xl"}>Home</h1>
-            <p>This is the home page.</p>
-        </div>
+        <Box bg={'red'} fontSize={'40px'}>
+            <Center>
+                <Text>text</Text>
+
+            </Center>
+
+
+        </Box>
     );
 
 }
