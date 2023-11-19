@@ -1,6 +1,7 @@
 import React from 'react';
 import {auth} from '../components/Firebase';
 import Onboard from '../pages/Onboard.js';
+import box1 from '../pages.Main.js';
 
 import {Box, Button, Center, Flex, Heading, Image, Link, Spacer, Text, VStack} from "@chakra-ui/react"
 import Screen1 from './Dashboard.js';
