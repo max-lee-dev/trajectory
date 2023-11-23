@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 import OnboardFounder from "./OnboardFounder";
-
+import OnboardMember from "./OnboardMember";
 
 import {Box, Button, Center, Flex, Heading, Image, Link, Spacer, Text, VStack} from "@chakra-ui/react"
 
@@ -21,8 +21,8 @@ function Onboard() {
                             Founder
                         </Button>
 
-                        <Button onClick={() => setRole("team member")}>
-                            Team Member
+                        <Button onClick={() => setRole("member")}>
+                            Member
                         </Button>
 
 
@@ -32,6 +32,10 @@ function Onboard() {
 
             {role === "founder" && (
                 <OnboardFounder setRole={setRole}/>
+            )}
+
+            {role === "member" && (
+                <OnboardMember setRole={setRole}/>
             )}
 
 
