@@ -1,10 +1,28 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {auth, provider} from '../components/Firebase';
+import {db} from '../components/Firebase';
+import {setDoc, doc, updateDoc} from "firebase/firestore";
+import {updateProfile} from "firebase/auth";
+import {collection, getDocs} from "firebase/firestore";
+
 
 import {Box, Button, Center, Flex, Heading, Image, Link, Spacer, Text, VStack} from "@chakra-ui/react"
-import {signInWithGoogle} from "../components/Firebase";
+import {GoogleSignIn} from "../components/GoogleSignin";
 
 function OnboardFounder({setRole}) {
+
+    const [userList, setUserList] = useState([])
+    useEffect(() => {
+        const getCollection = async () => {
+            const querySnapshot = await getDocs(collection(db, "users"));
+            querySnapshot.forEach((doc) => {
+
+                setUserList((userList) => [...userList, doc.data()])
+            });
+        }
+        getCollection();
+
+    }, [])
 
 
     return (
@@ -18,7 +36,7 @@ function OnboardFounder({setRole}) {
             </Button>
 
             <Box paddingTop={'500px'} display={'flex'} justifyContent={'space-evenly'}>
-                <Button onClick={signInWithGoogle}>
+                <Button onClick={() => GoogleSignIn(userList)}>
                     signup {auth?.currentUser?.displayName}
                 </Button>
             </Box>
