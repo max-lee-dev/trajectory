@@ -18,6 +18,8 @@ function Home() {
                     <Heading>Home</Heading>
                 </Center>
             ) : (
+                <Box>
+                    <Onboard/>
 
                 
                 <Card img={org.img}  name={org.name} />
