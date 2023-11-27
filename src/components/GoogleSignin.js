@@ -10,12 +10,13 @@ import {useState} from "react";
 import {db} from "./Firebase";
 
 
-export function GoogleSignIn(users) {
+export function GoogleSignIn(users, userInfo) {
     console.log('hi')
 
+    console.log(userInfo);
     console.log("users hi", users)
 
-    const userInfo = signInWithGoogle().then((result) => {
+    const login = signInWithGoogle().then((result) => {
 
             const name = result.user.displayName;
             const email = result.user.email;
@@ -24,6 +25,7 @@ export function GoogleSignIn(users) {
             const userExists = users.some((user) => user.uid === uid);
 
             console.log("aAA: " + userExists)
+
 
             if (!userExists) {
                 console.log("user does not exist")

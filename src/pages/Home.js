@@ -25,14 +25,13 @@ function Home() {
                 <Box>
                     <Onboard/>
 
-                
-                <Card img={org.img}  name={org.name} />
-
+                </Box>
             )}
-
-
         </Box>
+
+
     );
 }
+
 
 export default Home;
