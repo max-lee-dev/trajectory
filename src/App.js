@@ -3,13 +3,14 @@ import React from 'react';
 
 import Home from './pages/Home';
 import About from './pages/About';
+import LoginPage from './pages/LoginPage';
 import {Routes, Route, BrowserRouter as Router} from 'react-router-dom';
 import {ChakraProvider} from "@chakra-ui/react"
 import {extendTheme} from "@chakra-ui/react";
 
 function App() {
 
-    
+
     const theme = extendTheme({
         lightBlue: {
             100: "#ABD3FF",
@@ -34,6 +35,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/abouta" element={<About/>}/>
+                    <Route path="/login" element={<LoginPage/>}/>
                 </Routes>
             </Router>
         </ChakraProvider>

@@ -40,6 +40,11 @@ function NewAccountForm() {
             state: state,
         })
 
+        // user done with form, redirect to profile page
+
+        getCollection();
+        window.location.replace(`/profile/${auth.currentUser.displayName}`);
+
 
     }
 

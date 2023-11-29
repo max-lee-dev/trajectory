@@ -36,6 +36,8 @@ export function GoogleSignIn(users, userInfo) {
                     uid: uid,
                 });
                 if (auth) updateProfile(auth.currentUser, {displayName: name}).catch((err) => console.log(err));
+            } else {
+
             }
 
 
