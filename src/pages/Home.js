@@ -79,16 +79,21 @@ function Home() {
                         </Button> */}
                     <VStack>
                         <Box width={'100%'} display={'flex'}>
-                            <Box width={'90%'}>
+                            <Box width={'100%'}>
                                 <Center>
                                     <Heading padding={10}>Home</Heading>
                                 </Center>
+                                <Button onClick={() => window.location.href = '/login'}>
+                                    Sign In
+                                </Button>
+                                <Button onClick={() => window.location.href = '/onboard'}>
+                                    Sign Up
+                                </Button>
+
 
                             </Box>
 
-                            <Button onClick={() => window.location.href = '/login'}>
-                                Sign In
-                            </Button>
+
                         </Box>
 
                         <Box>

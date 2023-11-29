@@ -26,6 +26,7 @@ export default function LoginPage() {
         <Box bg={'transparent'} fontSize={'40px'}>
             <Center>
                 <Heading>Login</Heading>
+                <Button onClick={() => window.location.href = "/"}>Back</Button>
             </Center>
 
             <Box paddingTop={'500px'} display={'flex'} justifyContent={'space-evenly'}>

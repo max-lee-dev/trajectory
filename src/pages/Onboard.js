@@ -14,6 +14,11 @@ function Onboard() {
                     <Center>
                         <Heading>Onboard</Heading>
                     </Center>
+                    <Box>
+                        <Button onClick={() => window.location.href = "/"}>
+                            Back
+                        </Button>
+                    </Box>
 
 
                     <Box paddingTop={'500px'} display={'flex'} justifyContent={'space-evenly'}>
