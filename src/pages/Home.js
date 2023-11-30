@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {auth} from '../components/Firebase';
 import Onboard from '../pages/Onboard.js';
-import Card from './Card.js';
+import {Card, CardRow} from './Card.js';
 import {
     Box,
     Button,
@@ -33,28 +33,7 @@ function Home() {
     })
 
 
-    const orgs = [
-        {
-            name: 'Omega Robotics',
-            img: 'img\omega.png',
-        },
-        {
-            name: 'cool org 2',
-            img: 'img\omega.png',
-        },
-        {
-            name: 'cool org 3',
-            img: 'img\omega.png',
-        },
-        {
-            name: 'cool org 4',
-            img: 'img\omega.png',
-        },
-        {
-            name: 'cool org 5',
-            img: 'img\omega.png',
-        }
-    ]
+
     return (
         <Box bg={'transparent'} fontSize={'40px'}>
             {auth.currentUser?.displayName && (
@@ -96,11 +75,7 @@ function Home() {
 
                         </Box>
 
-                        <Box>
-                            <SimpleGrid columns={5} spacing={'2em'}>
-                                {orgs.map(org => <Card key={org.name} orgObj={org}/>)}
-                            </SimpleGrid>
-                        </Box>
+                        <CardRow/>
                     </VStack>
 
                 </Center>
