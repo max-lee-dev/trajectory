@@ -33,17 +33,9 @@ function Home() {
     })
 
 
-
     return (
         <Box bg={'transparent'} fontSize={'40px'}>
-            {auth.currentUser?.displayName && (
-                <Center>
-                    <Heading>Signed in as: {auth.currentUser.displayName} {user?.lastName}</Heading>
-                    <Button onClick={() => auth.signOut()}>
-                        Sign Out
-                    </Button>
-                </Center>
-            )}
+
 
             {auth?.currentUser && !auth.currentUser.displayName && (
                 <Box paddingTop={'100px'} display={'flex'} justifyContent={'space-evenly'}>
@@ -58,16 +50,32 @@ function Home() {
                         </Button> */}
                     <VStack>
                         <Box width={'100%'} display={'flex'}>
-                            <Box width={'100%'}>
+                            <Box paddingTop={10} width={'100%'} display={'flex'} justifyContent={'space-between'}>
                                 <Center>
-                                    <Heading padding={10}>Home</Heading>
+                                    <Heading> Trajectory</Heading>
                                 </Center>
-                                <Button onClick={() => window.location.href = '/login'}>
-                                    Sign In
-                                </Button>
-                                <Button onClick={() => window.location.href = '/onboard'}>
-                                    Sign Up
-                                </Button>
+                                {!auth?.currentUser.displayName ? (
+                                        <Box>
+                                            <Button onClick={() => window.location.href = '/login'}>
+                                                Sign In
+                                            </Button>
+                                            <Button onClick={() => window.location.href = '/onboard'}>
+                                                Sign Up
+                                            </Button>
+                                        </Box>
+                                    )
+                                    : (
+                                        <Box>
+                                            <Center>
+                                                <Heading
+                                                    fontSize={'24px'}>{auth.currentUser.displayName} {user?.lastName}</Heading>
+                                                <Button onClick={() => auth.signOut()}>
+                                                    Dashboard
+                                                </Button>
+                                            </Center>
+                                        </Box>
+                                    )
+                                }
 
 
                             </Box>

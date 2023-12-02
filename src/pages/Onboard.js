@@ -17,7 +17,7 @@ function Onboard() {
                     <Box>
                         <Button onClick={() => window.location.href = "/"}>
                             Back
-                        </Button>
+                        </Button>y
                     </Box>
 
 
