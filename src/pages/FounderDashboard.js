@@ -1,11 +1,16 @@
 import React, {useEffect, useState} from 'react';
 
+import {createNewOrganization} from "../components/createNewOrganization";
+import OrganizationModal from "../components/OrganizationModal";
 
-import {Box, Button, Center, Flex, Heading, Image, Link, Spacer, Text, VStack} from "@chakra-ui/react"
+
+import {useDisclosure, Box, Button, Center, Flex, Heading, Image, Link, Spacer, Text, VStack} from "@chakra-ui/react"
 
 function FounderDashboard({user}) {
 
     const role = user?.role;
+
+    const {isOpen, onOpen, onClose} = useDisclosure();
 
 
     return (
@@ -15,7 +20,7 @@ function FounderDashboard({user}) {
                     <VStack>
                         <Heading>Founder Dashboard {role}</Heading>
                         <Box>
-                            <Button>
+                            <Button onClick={onOpen}>
                                 new organization
                             </Button>
                         </Box>
@@ -23,12 +28,13 @@ function FounderDashboard({user}) {
                     <Box>
                         <Text>
                             your organizations
+
                         </Text>
                     </Box>
                 </VStack>
             </Center>
 
-
+            <OrganizationModal user={user} isOpen={isOpen} onOpen={onOpen} onClose={onClose}/>
         </Box>
     );
 }
