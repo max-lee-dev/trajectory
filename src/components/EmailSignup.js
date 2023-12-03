@@ -9,21 +9,26 @@ export async function EmailSignup(users, userInfo) {
 
     const email = userInfo.email;
     const password = userInfo.password;
-    await createUserWithEmailAndPassword(auth, email, password);
-
-    const name = auth.currentUser.displayName;
-    const uid = auth.currentUser.uid;
-
-    console.log("name", name)
-    console.log("email", email)
-    console.log("uid", uid)
+    await createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
+        // Signed in
+        const uid = userCredential.user.uid;
 
 
-    await setDoc(doc(db, "users", uid), {
-        displayName: name,
-        email: email,
-        account_created: new Date().toUTCString(),
-        uid: uid,
+        setDoc(doc(db, "users", uid), {
+            displayName: null,
+            email: email,
+            account_created: new Date().toUTCString(),
+            role: "founder",
+            uid: uid,
+        }).then(() => {
+            console.log("Document successfully written!");
+            window.location.href = "/ ";// change to transition to new modal later
+        });
+        // ...
+
+    }).catch((error) => {
+        console.log(error.message)
+
     });
 
 

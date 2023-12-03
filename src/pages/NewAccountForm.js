@@ -43,7 +43,8 @@ function NewAccountForm() {
         // user done with form, redirect to profile page
 
         getCollection();
-        window.location.replace(`/profile/${auth.currentUser.displayName}`);
+
+        window.location.reload();
 
 
     }

@@ -54,7 +54,7 @@ function Home() {
                                 <Center>
                                     <Heading> Trajectory</Heading>
                                 </Center>
-                                {!auth?.currentUser.displayName ? (
+                                {!auth?.currentUser?.displayName ? (
                                         <Box>
                                             <Button onClick={() => window.location.href = '/login'}>
                                                 Sign In
@@ -68,8 +68,8 @@ function Home() {
                                         <Box>
                                             <Center>
                                                 <Heading
-                                                    fontSize={'24px'}>{auth.currentUser.displayName} {user?.lastName}</Heading>
-                                                <Button onClick={() => auth.signOut()}>
+                                                    fontSize={'24px'}>{auth?.currentUser?.displayName} {user?.lastName}</Heading>
+                                                <Button onClick={() => window.location.href = '/dashboard'}>
                                                     Dashboard
                                                 </Button>
                                             </Center>
