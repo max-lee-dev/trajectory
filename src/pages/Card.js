@@ -5,7 +5,7 @@ import {TriangleUpIcon, HamburgerIcon} from '@chakra-ui/icons'
 
 function Card({orgObj}){
     return (
-        <Box 
+        <LinkBox 
             bg={''}  borderRadius={'lg'} borderWidth={'1px'}  boxShadow={'md'} h={'8.3em'}  overflow={'hidden'} maxW={'7em'} minW={'6em'} 
         >            
             {/* <Menu>
@@ -24,61 +24,39 @@ function Card({orgObj}){
                 <Image objectFit={'cover'} height={'6em'} width={'100%'} backdropBlur={'12px'}
                 _hover={{ backdropFilter:'auto', backdropBlur: '8px'}}
                     // src={orgObj.img}
-                    src='img\omega.png'
+                    src={orgObj.image}
                     alt='test org image'
                 />
             </Box>
             <Box m={'6px'} > 
                 <Flex direction = {"row"}>
                     <Text fontSize={'md'} fontWeight={'bold'} lineHeight={'160%'} as={'h5'}>
-                        {/* <LinkOverlay href='#'> */}
+                        <LinkOverlay href={orgObj.website}>
                             {orgObj.name} {/* THIS IS THE NAME OF THE ORG */ }
-                        {/* </LinkOverlay> */}
+                        </LinkOverlay>
                     </Text>
                     <Spacer/>
                     <TriangleUpIcon boxSize={'22px'} />
                     <Text fontSize={'md'} as={'span'}> 4.3</Text>
                 </Flex>
-                <Box><Text fontSize={'md'}>In pursuit of impact.</Text></Box>  {/* The desc of org ( 1 line) */}
+                <Box><Text fontSize={'md'}>{orgObj.description}</Text></Box>  {/* The desc of org ( 1 line) */}
                 <Flex direction={"row"} alignItems={'baseline'}>
                     <Text fontSize={'md'} fontWeight={'semi-bold'} color={'gray'}>Looking for </Text> 
                     <Badge ml={"6px"} as={'span'} colorScheme={"blue"}>Developers</Badge>  {/* badges will be added from db */}
-                </Flex>
+                </Flex> 
             </Box>
-        </Box>
+        </LinkBox>
     );
 
 }
 
 
-export function CardRow(){
-    const orgs = [
-        {
-            name: 'Trajectory Education',
-            img: 'img\omega.png',
-        },
-        {
-            name: 'Omega Robotics',
-            img: 'img\omega.png',
-        },
-        {
-            name: 'org 3',
-            img: 'img\omega.png',
-        },
-        {
-            name: 'org 4',
-            img: 'img\omega.png',
-        },
-        {
-            name: 'org 5',
-            img: 'img\omega.png',
-        }
-    ]
+export function CardGrid({orgObj}){
 
     return(
         <Box>
             <SimpleGrid columns={4} spacing={'1em'}>
-                {orgs.map(org => <Card key={org.name} orgObj={org}/>)}
+                {orgObj.map(orgObj => <Card key={orgObj.name} orgObj={orgObj}/>)}
             </SimpleGrid>
         </Box>
     );

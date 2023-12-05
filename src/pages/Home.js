@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {auth} from '../components/Firebase';
+import {auth, db} from '../components/Firebase';
+import {collection, getDocs} from "firebase/firestore";
 import Onboard from '../pages/Onboard.js';
-import {Card, CardRow} from './Card.js';
+import {Card, CardGrid} from './Card.js';
 import {
+    useDisclosure,
     Box,
     Button,
     Center,
@@ -32,6 +34,17 @@ function Home() {
         setUser(userAuth);
     })
 
+    const [myOrganizations, setMyOrganizations] = useState([])
+    useEffect(() => {
+        const temp = [];
+
+        const getMyOrganizations = async () => {
+            const querySnapshot = await getDocs(collection(db, "organizations"));
+            querySnapshot.forEach((doc) => {temp.push(doc.data())});
+            setMyOrganizations(temp)
+        }
+        getMyOrganizations();
+    })
 
     return (
         <Box bg={'transparent'} fontSize={'40px'}>
@@ -52,7 +65,7 @@ function Home() {
                         <Box width={'100%'} display={'flex'}>
                             <Box paddingTop={10} width={'100%'} display={'flex'} justifyContent={'space-between'}>
                                 <Center>
-                                    <Heading> Trajectory</Heading>
+                                    <Heading> Trajectory </Heading>
                                 </Center>
                                 {!auth?.currentUser?.displayName ? (
                                         <Box>
@@ -72,20 +85,17 @@ function Home() {
                                                 <Button onClick={() => window.location.href = '/dashboard'}>
                                                     Dashboard
                                                 </Button>
+                                                <Button onClick={() => auth.signOut()}>
+                                                    Sign Out
+                                                </Button>
                                             </Center>
                                         </Box>
                                     )
                                 }
-
-
                             </Box>
-
-
                         </Box>
-
-                        <CardRow/>
+                        <CardGrid orgObj={myOrganizations}/>
                     </VStack>
-
                 </Center>
 
 
