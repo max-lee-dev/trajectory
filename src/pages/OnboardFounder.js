@@ -49,13 +49,13 @@ function OnboardFounder({setRole}) {
                         <Input placeholder={'password'}
                                onChange={(e) => setUserInfo({...userInfo, password: e.target.value})}/>
 
-                        <Button onClick={() => EmailSignup(userList, userInfo)}>
+                        <Button onClick={() => EmailSignup(userList, userInfo, "founder")}>
                             Sign Up
                         </Button>
 
                     </Box>
 
-                    <Button onClick={() => GoogleSignIn(userList)}>
+                    <Button onClick={() => GoogleSignIn(userList, userInfo, "founder")}>
                         Sign Up with Google {auth?.currentUser?.displayName}
                     </Button>
                 </VStack>

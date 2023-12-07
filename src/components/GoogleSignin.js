@@ -10,11 +10,14 @@ import {useState} from "react";
 import {db} from "./Firebase";
 
 
-export function GoogleSignIn(users, userInfo) {
+export function GoogleSignIn(users, userInfo, role) {
     console.log('hi')
 
     console.log(userInfo);
     console.log("users hi", users)
+
+    // CHECK IF USER EXISTS AS A MEMBER/FOUNDER, CANT OVERWRITE !!!
+
 
     const login = signInWithGoogle().then((result) => {
 
@@ -33,11 +36,12 @@ export function GoogleSignIn(users, userInfo) {
                     displayName: name,
                     email: email,
                     account_created: new Date().toUTCString(),
+                    role: role,
                     uid: uid,
                 });
                 if (auth) updateProfile(auth.currentUser, {displayName: name}).catch((err) => console.log(err));
             } else {
-
+                // prob need to update profile here if user already exists
             }
 
 
