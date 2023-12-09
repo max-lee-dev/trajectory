@@ -4,7 +4,7 @@ import {setDoc, doc, updateDoc} from 'firebase/firestore';
 import {createUserWithEmailAndPassword} from 'firebase/auth';
 import {updateProfile} from 'firebase/auth';
 
-export async function EmailSignup(users, userInfo) {
+export async function EmailSignup(users, userInfo, role) {
 
 
     const email = userInfo.email;
@@ -18,7 +18,7 @@ export async function EmailSignup(users, userInfo) {
             displayName: null,
             email: email,
             account_created: new Date().toUTCString(),
-            role: "founder",
+            role: role,
             uid: uid,
         }).then(() => {
             console.log("Document successfully written!");
