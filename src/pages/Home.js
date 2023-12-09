@@ -16,11 +16,22 @@ import {
     Spacer,
     Text,
     VStack,
-    SimpleGrid
+    SimpleGrid,
+    Tab,
+    TabList,
+    TabPanel,
+    TabPanels,
+    Tabs
 } from "@chakra-ui/react";
 import NewAccountForm from "./NewAccountForm.js";
 
 function Home() {
+
+    const hiring=[
+        "Developer",
+        "Media",
+        "Designer"
+    ]
 
     const [user, setUser,] = useState(null);
     const [showGrid] = useState(false);
@@ -45,6 +56,10 @@ function Home() {
         }
         getMyOrganizations();
     })
+
+
+    const [tabIndex, setTabIndex] = useState(0);
+
 
     return (
         <Box bg={'transparent'} fontSize={'40px'}>
@@ -94,8 +109,19 @@ function Home() {
                                 }
                             </Box>
                         </Box>
-                        <CardGrid orgObj={myOrganizations}/>
+
+                        
                     </VStack>
+                        <CardGrid orgObj={myOrganizations} columns={4}/>
+                        <VStack>
+                            {hiring.map((item, index) => (
+                                <Button key={index}>
+                                    {item}
+                                </Button>
+                            ))}
+                        </VStack>
+
+
                 </Center>
 
 

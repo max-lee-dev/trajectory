@@ -4,7 +4,7 @@ import {db} from "../components/Firebase";
 
 import {collection, getDocs} from "firebase/firestore";
 
-
+import {Card, CardGrid} from './Card.js';
 import {createNewOrganization} from "../components/createNewOrganization";
 import OrganizationModal from "../components/OrganizationModal";
 
@@ -50,25 +50,7 @@ function FounderDashboard({user}) {
                         <Text>
                             your organizations:
 
-                            {myOrganizations.map((organization) => (
-                                <Box bg={'brown'} marginTop={'20px'}>
-                                    <Text>
-                                        {organization.name}
-                                    </Text>
-                                    <Text>
-                                        {organization.description}
-                                    </Text>
-                                    <Text>
-                                        {organization.website}
-                                    </Text>
-                                    <Text>
-                                        {organization.image}
-                                    </Text>
-
-
-                                </Box>
-                            ))}
-
+                        <CardGrid orgObj={myOrganizations} columns={1}/>
                         </Text>
                     </Box>
                 </VStack>

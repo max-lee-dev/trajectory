@@ -11,10 +11,9 @@ function DashboardHub({user}) {
     return (
         <Box bg={'transparent'} fontSize={'40px'}>
 
-            {/* {role === 'founder' && ( */}
-
+            {role === 'founder' && (
                 <FounderDashboard user={user}/>
-            {/* )} */}
+            )} 
 
         </Box>
     );

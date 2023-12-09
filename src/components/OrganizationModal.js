@@ -20,10 +20,15 @@ export default function OrganizationModal({user, organization, isOpen, onOpen, o
     const [organizationDetails, setOrganizationDetails] = useState({})
 
     function createNew() {
-        createNewOrganization(organizationDetails, user).then(() => {
-            onClose()
-        });
+        // var linkRegex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w.-]*)*\/?$/i;
 
+        // if(linkRegex.test(organizationDetails.name)){
+            createNewOrganization(organizationDetails, user).then(() => {
+                onClose()
+            });
+        // } else {
+        //     alert("invalid link!"); //change later
+        // }
     }
 
 
@@ -40,7 +45,6 @@ export default function OrganizationModal({user, organization, isOpen, onOpen, o
                             name: e.target.value
                         })}/>
 
-                        }
                         <Box>
                             <Input placeholder="organization description" onChange={(e) => setOrganizationDetails({
                                 ...organizationDetails,

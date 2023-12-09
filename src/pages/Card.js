@@ -4,6 +4,10 @@ import {Box, Button, Center, Flex, Heading, Image, Link, Spacer, Text, SimpleGri
 import {TriangleUpIcon, HamburgerIcon} from '@chakra-ui/icons'
 
 function Card({orgObj}){
+    if (!/^https?:\/\//i.test(orgObj.website)) {
+        orgObj.website = 'https://' + orgObj.website;
+    } 
+
     return (
         <LinkBox 
             bg={''}  borderRadius={'lg'} borderWidth={'1px'}  boxShadow={'md'} h={'8.3em'}  overflow={'hidden'} maxW={'7em'} minW={'6em'} 
@@ -23,7 +27,6 @@ function Card({orgObj}){
             <Box className='imageWrapper'> 
                 <Image objectFit={'cover'} height={'6em'} width={'100%'} backdropBlur={'12px'}
                 _hover={{ backdropFilter:'auto', backdropBlur: '8px'}}
-                    // src={orgObj.img}
                     src={orgObj.image}
                     alt='test org image'
                 />
@@ -51,11 +54,11 @@ function Card({orgObj}){
 }
 
 
-export function CardGrid({orgObj}){
+export function CardGrid({orgObj, columns}){
 
     return(
         <Box>
-            <SimpleGrid columns={4} spacing={'1em'}>
+            <SimpleGrid columns={columns} spacing={'1em'}>
                 {orgObj.map(orgObj => <Card key={orgObj.name} orgObj={orgObj}/>)}
             </SimpleGrid>
         </Box>
