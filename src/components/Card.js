@@ -2,8 +2,9 @@ import React from 'react';
 
 import {Box, Button, Center, Flex, Heading, Image, Link, Spacer, Text, SimpleGrid, Stack, HStack, VStack, Badge, LinkBox, LinkOverlay,Menu,MenuButton,MenuList,MenuItem,MenuItemOption,MenuGroup,MenuOptionGroup,MenuDivider,IconButton} from "@chakra-ui/react"
 import {TriangleUpIcon, HamburgerIcon} from '@chakra-ui/icons'
+import orgImg from '../assets/img/omega.png'
 
-function Card({orgObj}){
+export function Card({orgObj}){
     if (!/^https?:\/\//i.test(orgObj.website)) {
         orgObj.website = 'https://' + orgObj.website;
     } 
@@ -27,7 +28,8 @@ function Card({orgObj}){
             <Box className='imageWrapper'> 
                 <Image objectFit={'cover'} height={'6em'} width={'100%'} backdropBlur={'12px'}
                 _hover={{ backdropFilter:'auto', backdropBlur: '8px'}}
-                    src={orgObj.image}
+                    // src={orgObj.image}
+                    src={orgImg}
                     alt='test org image'
                 />
             </Box>

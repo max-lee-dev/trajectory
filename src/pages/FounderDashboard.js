@@ -4,7 +4,7 @@ import {db} from "../components/Firebase";
 
 import {collection, getDocs} from "firebase/firestore";
 
-import {Card, CardGrid} from './Card.js';
+import {Card, CardGrid} from '../components/Card.js';
 import {createNewOrganization} from "../components/createNewOrganization";
 import OrganizationModal from "../components/OrganizationModal";
 

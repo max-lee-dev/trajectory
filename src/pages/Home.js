@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import {auth, db} from '../components/Firebase';
 import {collection, getDocs} from "firebase/firestore";
 import Onboard from '../pages/Onboard.js';
-import {Card, CardGrid} from './Card.js';
 import {
     useDisclosure,
     Box,
@@ -25,13 +24,12 @@ import {
 } from "@chakra-ui/react";
 import NewAccountForm from "./NewAccountForm.js";
 
+import {Card, CardGrid} from '../components/Card.js';
+import { Renderer, RenderGridStep } from '../components/Renderer.js';
+import banner from '../assets/img/trajectoryBanner.png'
+
 function Home() {
 
-    const hiring=[
-        "Developer",
-        "Media",
-        "Designer"
-    ]
 
     const [user, setUser,] = useState(null);
     const [showGrid] = useState(false);
@@ -44,22 +42,6 @@ function Home() {
     auth.onAuthStateChanged(userAuth => {
         setUser(userAuth);
     })
-
-    const [myOrganizations, setMyOrganizations] = useState([])
-    useEffect(() => {
-        const temp = [];
-
-        const getMyOrganizations = async () => {
-            const querySnapshot = await getDocs(collection(db, "organizations"));
-            querySnapshot.forEach((doc) => {temp.push(doc.data())});
-            setMyOrganizations(temp)
-        }
-        getMyOrganizations();
-    })
-
-
-    const [tabIndex, setTabIndex] = useState(0);
-
 
     return (
         <Box bg={'transparent'} fontSize={'40px'}>
@@ -111,28 +93,21 @@ function Home() {
                         </Box>
 
                         
-                    </VStack>
-                        <CardGrid orgObj={myOrganizations} columns={4}/>
-                        <VStack>
-                            {hiring.map((item, index) => (
-                                <Button key={index}>
-                                    {item}
-                                </Button>
-                            ))}
-                        </VStack>
+                        <Box height={'30vh'} w={'30vw'}> {/*header*/}
+                           <Image src={banner} boxSize={'auto'}/>
+                        </Box>
 
+                        <Renderer/>
+                    </VStack>
 
                 </Center>
-
-
             </Box>
-
-
         </Box>
 
 
     );
 }
+
 
 
 export default Home;
