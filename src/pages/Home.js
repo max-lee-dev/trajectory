@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {auth, db} from '../components/Firebase';
 import {collection, getDocs} from "firebase/firestore";
 import Onboard from '../pages/Onboard.js';
+import NewOnboard from '../pages/NewOnboard.js';
 import {Card, CardGrid} from './Card.js';
 import {
     useDisclosure,
@@ -27,7 +28,7 @@ import NewAccountForm from "./NewAccountForm.js";
 
 function Home() {
 
-    const hiring=[
+    const hiring = [
         "Developer",
         "Media",
         "Designer"
@@ -51,7 +52,9 @@ function Home() {
 
         const getMyOrganizations = async () => {
             const querySnapshot = await getDocs(collection(db, "organizations"));
-            querySnapshot.forEach((doc) => {temp.push(doc.data())});
+            querySnapshot.forEach((doc) => {
+                temp.push(doc.data())
+            });
             setMyOrganizations(temp)
         }
         getMyOrganizations();
@@ -71,47 +74,50 @@ function Home() {
                 </Box>
             )}
 
-            <Box>
-                <Center>
-                    {/* <Button onClick={() => console.log(showGrid)}>
+            <NewOnboard/>
+
+            {false && (
+                <Box>
+                    <Center>
+                        {/* <Button onClick={() => console.log(showGrid)}>
                             testing home page
                         </Button> */}
-                    <VStack>
-                        <Box width={'100%'} display={'flex'}>
-                            <Box paddingTop={10} width={'100%'} display={'flex'} justifyContent={'space-between'}>
-                                <Center>
-                                    <Heading> Trajectory </Heading>
-                                </Center>
-                                {!auth?.currentUser?.displayName ? (
-                                        <Box>
-                                            <Button onClick={() => window.location.href = '/login'}>
-                                                Sign In
-                                            </Button>
-                                            <Button onClick={() => window.location.href = '/onboard'}>
-                                                Sign Up
-                                            </Button>
-                                        </Box>
-                                    )
-                                    : (
-                                        <Box>
-                                            <Center>
-                                                <Heading
-                                                    fontSize={'24px'}>{auth?.currentUser?.displayName} {user?.lastName}</Heading>
-                                                <Button onClick={() => window.location.href = '/dashboard'}>
-                                                    Dashboard
+                        <VStack>
+                            <Box width={'100%'} display={'flex'}>
+                                <Box paddingTop={10} width={'100%'} display={'flex'} justifyContent={'space-between'}>
+                                    <Center>
+                                        <Heading> Trajectory </Heading>
+                                    </Center>
+                                    {!auth?.currentUser?.displayName ? (
+                                            <Box>
+                                                <Button onClick={() => window.location.href = '/login'}>
+                                                    Sign In
                                                 </Button>
-                                                <Button onClick={() => auth.signOut()}>
-                                                    Sign Out
+                                                <Button onClick={() => window.location.href = '/onboard'}>
+                                                    Sign Up
                                                 </Button>
-                                            </Center>
-                                        </Box>
-                                    )
-                                }
+                                            </Box>
+                                        )
+                                        : (
+                                            <Box>
+                                                <Center>
+                                                    <Heading
+                                                        fontSize={'24px'}>{auth?.currentUser?.displayName} {user?.lastName}</Heading>
+                                                    <Button onClick={() => window.location.href = '/dashboard'}>
+                                                        Dashboard
+                                                    </Button>
+                                                    <Button onClick={() => auth.signOut()}>
+                                                        Sign Out
+                                                    </Button>
+                                                </Center>
+                                            </Box>
+                                        )
+                                    }
+                                </Box>
                             </Box>
-                        </Box>
 
-                        
-                    </VStack>
+
+                        </VStack>
                         <CardGrid orgObj={myOrganizations} columns={4}/>
                         <VStack>
                             {hiring.map((item, index) => (
@@ -122,10 +128,11 @@ function Home() {
                         </VStack>
 
 
-                </Center>
+                    </Center>
 
 
-            </Box>
+                </Box>
+            )}
 
 
         </Box>
