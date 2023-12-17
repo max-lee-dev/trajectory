@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {auth, db} from '../components/Firebase';
 import {collection, getDocs} from "firebase/firestore";
+import MailchimpSubscribe from "react-mailchimp-subscribe";
 import Onboard from '../pages/Onboard.js';
 import NewOnboard from '../pages/NewOnboard.js';
 import {Card, CardGrid} from './Card.js';

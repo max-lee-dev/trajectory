@@ -7,6 +7,8 @@ import {TriangleUpIcon, HamburgerIcon} from '@chakra-ui/icons'
 
 import {Card, CardGrid} from './Card.js';
 
+import CSV from '../assets/data/TrajectoryOrgTestCSV.csv'
+
 export function Renderer(){
 
     const hiring=[
@@ -55,6 +57,8 @@ function RenderGridStep(){
         getMyOrganizations();
     })
 
+     
+
     return (
         <CardGrid orgObj={myOrganizations} columns={4}/>
     );
@@ -70,7 +74,7 @@ function grabOrgsFromCSV(){
        .split('\n')
        .map(v => v.split(delimiter));
 
-        fetch('') // update with csv 
+        fetch(CSV) // update with csv 
      .then(response => response.text())
      .then(csvData => {
         const parsedData = CSVToArray(csvData, ",");
