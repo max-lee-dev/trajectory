@@ -4,7 +4,7 @@ import {collection, getDocs} from "firebase/firestore";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import Onboard from '../pages/Onboard.js';
 import NewOnboard from '../pages/NewOnboard.js';
-import {Card, CardGrid} from './Card.js';
+import OrgListWrapper from '../components/OrgListWrapper.js';
 import {
     useDisclosure,
     Box,
@@ -71,6 +71,7 @@ function Home() {
 
     return (
         <Box bg={'transparent'} fontSize={'40px'}>
+            {/* <OrgListWrapper/> */}
 
 
             {auth?.currentUser && !auth.currentUser.displayName && (
@@ -79,6 +80,7 @@ function Home() {
                 </Box>
             )}
 
+            
 
             <NewOnboard/>
 

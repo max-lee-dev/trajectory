@@ -53,7 +53,7 @@ export default function LoginPage() {
 
 
                     </Box>
-                    <Button onClick={() => google()}>
+                    <Button onClick={() => google()}> 
                         log in with google
                     </Button>
                     <Text>logged in: {user?.displayName}</Text>
