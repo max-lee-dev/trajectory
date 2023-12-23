@@ -71,7 +71,7 @@ function Home() {
 
     return (
         <Box fontSize={'40px'}>
-            {/* <OrgListWrapper/> */}
+            <OrgListWrapper/>
 
             {auth?.currentUser && !auth.currentUser.displayName && (
                 <Box paddingTop={'100px'} display={'flex'} justifyContent={'space-evenly'}>
@@ -79,9 +79,7 @@ function Home() {
                 </Box>
             )}
 
-            
-
-            <NewOnboard/>
+            {/* <NewOnboard/> */}
 
             {false && (
                 <Box>

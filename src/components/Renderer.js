@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {auth, db} from './Firebase.js';
 import {collection, getDocs} from "firebase/firestore";
 
-import {Box, Button, Center, Flex, Heading, Image, Link, Spacer, Text, SimpleGrid, Stack, HStack, VStack, Badge, LinkBox, LinkOverlay,Menu,MenuButton,MenuList,MenuItem,MenuItemOption,MenuGroup,MenuOptionGroup,MenuDivider,IconButton,Spinner} from "@chakra-ui/react"
+import {Box, Button, Center, Flex, Heading, Image, Link, Spacer, Text, SimpleGrid, Stack, HStack, VStack, Badge, LinkBox, LinkOverlay,Menu,MenuButton,MenuList,MenuItem,MenuItemOption,MenuGroup,MenuOptionGroup,MenuDivider,IconButton,Spinner, Select} from "@chakra-ui/react"
 import {TriangleUpIcon, HamburgerIcon} from '@chakra-ui/icons'
 
 import { CardGrid, Card} from './findECs/findECsCard.js';
@@ -46,6 +46,9 @@ export function Renderer({columns}){
 function RenderGridStep({columns}){
 
     const [myOrganizations, setMyOrganizations] = useState([])
+    const [majorArr, setMajorArr] = useState([])
+    const [selectedMajor, setSelectedMajor] = useState("")
+    const [sortBy, setSortBy] = useState("")
 
     // firestore db
     // useEffect(() => {
@@ -60,28 +63,42 @@ function RenderGridStep({columns}){
     //     getMyOrganizations();
     // })
 
-    useEffect(() => {    
-        const CSVToArray = (data, delimiter = ',', omitFirstRow = false) => data
-       .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
-       .split('\n')
+    useEffect(() => {
+        const CSVToArray = (data, delimiter = '|', omitFirstRow = false) => data
+       .replace(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/g, '|')
+       .replace(/"/g, '')
+       .slice(omitFirstRow ? data.indexOf('\r\n') + 1 : 0)
+       .split('\r\n')
        .map(v => v.split(delimiter));
 
         const grabOrgsFromCSV = async () => {
             try {
                 const response = await fetch(CSV); // update with csv 
                 const csvData = await response.text();
-                let arr = CSVToArray(csvData, ",");
-                console.log(arr);
+                let arr = CSVToArray(csvData, "|");
+                // console.log(arr);
+
+                let majorColumn = 2;
+                //find which column is major
+                for (let i=0; i<arr.length; i++){
+                    if (arr[0][i] == "major"){majorColumn = i; break;}
+                }
+
                 let retArr = [];
-                for (let i=1; i<arr.length; i++){
+                let retMajorArr = [];
+
+                for (let i=1; i<arr.length; i++){ // i is for each org/ec
                     let obj = {};
-                    for(let j=0; j<arr[0].length; j++){
+                    for(let j=0; j<arr[0].length; j++){ // j is index of param
                         obj[arr[0][j]] = arr[i][j];
+                        if(j == majorColumn && !retMajorArr.includes(arr[i][j])){
+                           retMajorArr.push(arr[i][j]);
+                        }
                     }
                     retArr.push(obj);            
                 }
                 setMyOrganizations(retArr);
-                console.log(myOrganizations);
+                setMajorArr(retMajorArr)
             } catch (error) {
                 console.error('Error:', error);
                 setMyOrganizations("An error occurred while fetching your data.");
@@ -91,8 +108,26 @@ function RenderGridStep({columns}){
         grabOrgsFromCSV();
     }, []);
 
+    function handleMajorChange(e){
+        console.log("major is now " + e.target.value);
+        setSelectedMajor(e.target.value);
+    }
+
+    function handleSortChange(e){
+        setSortBy(e.target.value);
+        console.log("sorting by " + sortBy);
+    }   
     return (
-        <CardGrid orgObj={myOrganizations} columns={1}/>
+        <Box>
+            <Select placeholder={'All Majors'} size={'lg'} color={'black'} bg={'white'} align={'center'} onChange={handleMajorChange}>
+                {majorArr.map(major => <option key={major} value={major}> {major} </option>)}
+            </Select>
+            <Button colorScheme='gray' color={'black'} m={'5px'} size={'sm'} onClick={handleSortChange} value='overall'> Overall </Button>
+            <Button bg={'white'} color={'blue'} m={'5px'} size={'sm'} onClick={handleSortChange} value='size'> Size </Button>
+            <Button  bg={'white'} color={'orange'} m={'5px'} size={'sm'} onClick={handleSortChange} value='impact'> Impact </Button>
+            <Button  bg={'white'} color={'green'} m={'5px'} size={'sm'} onClick={handleSortChange} value='momentum'> Momentum </Button>
+            <CardGrid orgArr={myOrganizations} columns={1} selectedMajor={selectedMajor} sortBy={sortBy} mt={'5px'}/>
+        </Box>
     );
 
 }

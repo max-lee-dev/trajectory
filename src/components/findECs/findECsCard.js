@@ -10,7 +10,7 @@ export function Card({orgObj}){
 
     return (
         <LinkBox 
-            bg={'white'}  color={'black'} borderRadius={'lg'} borderWidth={'1px'}  boxShadow={'md'} h={''}  overflow={'hidden'} maxW={'10em'} minW={'8em'} p={'0px'}>           
+            bg={'white'}  color={'black'} borderRadius={'lg'} borderWidth={'1px'}  boxShadow={'md'} h={'3em'}  overflow={'hidden'} maxW={'10em'} minW={'8em'} p={'0px'}>           
 
             {/* <Menu>
                 <MenuButton position={'absolute'}
@@ -29,26 +29,41 @@ export function Card({orgObj}){
                 <Flex direction = {"row"}>
                     <Text fontSize={'md'} fontWeight={'bold'} lineHeight={'160%'} as={'h5'}>
                         <LinkOverlay href={orgObj.website}>
-                        <Badge ml={"6px"} as={'span'} colorScheme={"blue"}> Major </Badge>  {/* badges will be added from db */}
+                        <Badge ml={"6px"} mr={'3px'} as={'span'} colorScheme={"blue"}> {orgObj.major} </Badge>  {/* badges will be added from db */}
                             {orgObj.name} {/* THIS IS THE NAME OF THE ORG */ }
                         </LinkOverlay>
                     </Text>
                     <Spacer/>
-                    <TriangleUpIcon boxSize={'22px'} />
-                    <Text fontSize={'md'} as={'span'}> 4.3</Text>
                 </Flex>
-                <Box><Text fontSize={'md'}>{orgObj.description}</Text></Box>  {/* The desc of org ( 1 line) */}
+                <Box><Text fontSize={'md'}>{orgObj.blurb}</Text></Box>  {/* The desc of org ( 1 line) */}
             </Box>
         </LinkBox>
     );
 }
 
 
-export function CardGrid({orgObj, columns}){
+export function CardGrid({orgArr, columns, selectedMajor, sortBy}){
+    if (selectedMajor != ''){
+        orgArr= orgArr.filter(org => org.major == selectedMajor);
+    }
+    console.log(sortBy);
+    switch(sortBy) {
+        case 'size':
+            orgArr.sort((a, b) => a.size - b.size);
+            break;
+        case 'impact':
+            orgArr.sort((a, b) => a.impact - b.impact);
+            break;
+        case 'momentum':
+            orgArr.sort((a, b) => a.momentum - b.momentum);
+            break;
+        default:
+            orgArr.sort((a, b) => a.name.length - b.name.length)
+    }
     return(
         <Box>
             <SimpleGrid columns={columns} spacing={'1em'}>
-                {orgObj.map(orgObj => <Card key={orgObj.name} orgObj={orgObj}/>)}
+                {orgArr.map(orgObj => <Card key={orgObj.name} orgObj={orgObj}/>)}
             </SimpleGrid>
         </Box>
     );
