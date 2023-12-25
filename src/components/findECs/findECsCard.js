@@ -1,16 +1,20 @@
 import React from 'react';
 
-import {Box, Button, Center, Flex, Heading, Image, Link, Spacer, Text, SimpleGrid, Stack, HStack, VStack, Badge, LinkBox, LinkOverlay,Menu,MenuButton,MenuList,MenuItem,MenuItemOption,MenuGroup,MenuOptionGroup,MenuDivider,IconButton} from "@chakra-ui/react"
+import {Container, Grid, Box, Button, Center, Flex, Heading, Image, Link, Spacer, Text, SimpleGrid, Stack, HStack, VStack, Badge, LinkBox, LinkOverlay,Menu,MenuButton,MenuList,MenuItem,MenuItemOption,MenuGroup,MenuOptionGroup,MenuDivider,IconButton, Divider} from "@chakra-ui/react"
 import {TriangleUpIcon, HamburgerIcon} from '@chakra-ui/icons'
 
 export function Card({orgObj}){
     if (!/^https?:\/\//i.test(orgObj.website)) {
         orgObj.website = 'https://' + orgObj.website;
     } 
+    let screenWidth = 100.0/9*(parseInt(orgObj.size) + parseInt(orgObj.impact) + parseInt(orgObj.momentum)) + "%";
+     
 
     return (
         <LinkBox 
-            bg={'white'}  color={'black'} borderRadius={'lg'} borderWidth={'1px'}  boxShadow={'md'} h={'3em'}  overflow={'hidden'} maxW={'10em'} minW={'8em'} p={'0px'}>           
+            bg={'white'}  color={'black'} borderRadius={'lg'} borderWidth={'1px'}  boxShadow={'md'} overflow={'hidden'} maxW={'10em'}  p={'0px'}
+            _hover={{bg:'lightgray'}}
+        >           
 
             {/* <Menu>
                 <MenuButton position={'absolute'}
@@ -25,7 +29,7 @@ export function Card({orgObj}){
                 </MenuList>
             </Menu> */}
 
-            <Box m={'6px'} > 
+            <Flex m={'6px'} direction={'column'}> 
                 <Flex direction = {"row"}>
                     <Text fontSize={'md'} fontWeight={'bold'} lineHeight={'160%'} as={'h5'}>
                         <LinkOverlay href={orgObj.website}>
@@ -33,10 +37,12 @@ export function Card({orgObj}){
                             {orgObj.name} {/* THIS IS THE NAME OF THE ORG */ }
                         </LinkOverlay>
                     </Text>
-                    <Spacer/>
                 </Flex>
+                <Spacer/>
                 <Box><Text fontSize={'md'}>{orgObj.blurb}</Text></Box>  {/* The desc of org ( 1 line) */}
-            </Box>
+                <Spacer/>
+                <Container w={screenWidth} h={'12px'} bg={'#badbffff'} m={'4px'} borderRadius={'10px'}/> 
+            </Flex>
         </LinkBox>
     );
 }
@@ -58,8 +64,7 @@ export function CardGrid({orgArr, columns, selectedMajor, sortBy}){
             orgArr.sort((a, b) => a.momentum - b.momentum);
             break;
         default:
-            orgArr.sort((a, b) => a.name.length - b.name.length)
-    }
+            orgArr.sort((a, b) => (parseInt(a.size) + parseInt(a.impact) + parseInt(a.momentum)) - (parseInt(b.size) + parseInt(b.impact) + parseInt(b.momentum)))}
     return(
         <Box>
             <SimpleGrid columns={columns} spacing={'1em'}>

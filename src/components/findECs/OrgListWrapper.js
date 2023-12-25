@@ -7,14 +7,14 @@ function OrgListWrapper() {
 
     return (
 
-        <Box width='100%' bg={'black'} h={'100%'} fontFamily={"Poppins"}>
+        <Box width='100%' bgGradient='linear(to-b, #d6edffff, #ffdcd1ff)' h={'100%'} fontFamily={"Poppins"}>
             <Center>
                 <Box width={['101%', '70%', '70%']} paddingTop={'5%'}>
                     <Center>
                         <VStack>
                             <Box>
-                                <Box textAlign={'left'} fontSize='24px' fontWeight={500} color={'white'} mb={'8px'} p={'8px'}>
-                                    <Text>Extracurricular Platforms</Text>
+                                <Box textAlign={'left'} fontSize='24px' fontWeight={500} color={'#000000ff'} mb={'8px'} p={'8px'}>
+                                    <Text fontSize={'1.5em'}>FindECs</Text>
                                     <Divider/>
                                 </Box>
                                 <Renderer columns={1}/>
