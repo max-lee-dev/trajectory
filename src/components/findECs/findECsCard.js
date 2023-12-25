@@ -33,7 +33,7 @@ export function Card({orgObj}){
                 <Flex direction = {"row"}>
                     <Text fontSize={'md'} fontWeight={'bold'} lineHeight={'160%'} as={'h5'}>
                         <LinkOverlay href={orgObj.website}>
-                        <Badge ml={"6px"} mr={'3px'} as={'span'} colorScheme={"blue"}> {orgObj.major} </Badge>  {/* badges will be added from db */}
+                        <Badge ml={"6px"} mr={'3px'} as={'span'} bg={'#f5f4f0ff'}> {orgObj.major} </Badge>  {/* badges will be added from db */}
                             {orgObj.name} {/* THIS IS THE NAME OF THE ORG */ }
                         </LinkOverlay>
                     </Text>
@@ -50,9 +50,9 @@ export function Card({orgObj}){
 
 export function CardGrid({orgArr, columns, selectedMajor, sortBy}){
     if (selectedMajor != ''){
-        orgArr= orgArr.filter(org => org.major == selectedMajor);
+        orgArr = orgArr.filter(org => org.major == selectedMajor);
     }
-    console.log(sortBy);
+    // console.log(orgArr);
     switch(sortBy) {
         case 'size':
             orgArr.sort((a, b) => a.size - b.size);

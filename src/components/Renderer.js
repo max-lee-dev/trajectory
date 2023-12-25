@@ -97,6 +97,7 @@ function RenderGridStep({columns}){
                     }
                     retArr.push(obj);            
                 }
+                console.log(retArr);
                 setMyOrganizations(retArr);
                 setMajorArr(retMajorArr)
             } catch (error) {
