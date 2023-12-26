@@ -29,7 +29,7 @@ function ECModal({orgObj, isOpen, onClose}) {
                     <Text fontSize={'16px'} color={'gray'}>
                         {orgObj.major}
                     </Text>
-                    <HStack paddingTop={3} fontFamily={"Poppins"} fontWeight={400} fontSize={'10px'} color='white'
+                    <HStack paddingTop={3} fontFamily={"Poppins"} fontWeight={600} fontSize={'10px'} color='white'
                             display={'flex'}
                             justifyContent={'space-between'}>
                         <Box display={'flex'} justifyContent={'center'} bg={orgObj.size === "3" ? "black" : "#D9D9D9"}
