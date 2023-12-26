@@ -31,7 +31,6 @@ export function Renderer({columns}){
     }, []);
 
 
-
     return(
         <>
         <RenderGridStep columns={columns}/>

@@ -4,7 +4,7 @@ import {collection, getDocs} from "firebase/firestore";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import Onboard from '../pages/Onboard.js';
 import NewOnboard from '../pages/NewOnboard.js';
-import OrgListWrapper from '../components/findECs/OrgListWrapper.js';
+import OrgListWrapper from '../components/OrgListWrapper.js';
 import {
     useDisclosure,
     Box,
