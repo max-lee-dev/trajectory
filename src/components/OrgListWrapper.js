@@ -11,7 +11,7 @@ function OrgListWrapper() {
         <Box width='100%' h={'100%'} bg={'transparent'} fontFamily={"Poppins"}>
             <Box w={'100vw'} h={'100vh'} bgGradient={'linear(to-b, #d6edffff, #ffdcd1ff)'} pos={'fixed'} zIndex={'-1'}></Box>
             <Center>
-                <Box width={['101%', '70%', '70%']} paddingTop={'5%'}>
+                <Box width={'70%'} paddingTop={'5%'}>
                     <Center>
                         <VStack>
                             {/* <Box> */}
