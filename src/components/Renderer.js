@@ -63,11 +63,12 @@ function RenderGridStep({columns}){
     // })
 
     useEffect(() => {
+        const lineEndingRegex = /\r\n|[\n\r\u2028\u2029]/g;
         const CSVToArray = (data, delimiter = '|', omitFirstRow = false) => data
        .replace(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/g, '|')
        .replace(/"/g, '')
-       .slice(omitFirstRow ? data.indexOf('\r\n') + 1 : 0)
-       .split('\r\n')
+       .slice(omitFirstRow ? data.indexOf(lineEndingRegex) + 1 : 0)
+       .split(lineEndingRegex)
        .map(v => v.split(delimiter));
 
         const grabOrgsFromCSV = async () => {
@@ -77,7 +78,7 @@ function RenderGridStep({columns}){
                 const csvData = await response.text();
                 console.log(csvData);
                 let arr = CSVToArray(csvData, "|");
-                console.log(arr);
+                // console.log(arr);
 
                 let majorColumn = 2;
                 //find which column is major
@@ -98,7 +99,7 @@ function RenderGridStep({columns}){
                     }
                     retArr.push(obj);            
                 }
-                // console.log(retArr);
+                console.log(retArr);
                 setMyOrganizations(retArr);
                 setMajorArr(retMajorArr)
             } catch (error) {
