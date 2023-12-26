@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {auth, db} from './Firebase.js';
 import {collection, getDocs} from "firebase/firestore";
 
-import {Box, Button, Center, Flex, Heading, Image, Link, Spacer, Text, SimpleGrid, Stack, HStack, VStack, Badge, LinkBox, LinkOverlay,Menu,MenuButton,MenuList,MenuItem,MenuItemOption,MenuGroup,MenuOptionGroup,MenuDivider,IconButton,Spinner, Select} from "@chakra-ui/react"
+import {Divider, Box, Button, Center, Flex, Heading, Image, Link, Spacer, Text, SimpleGrid, Stack, HStack, VStack, Badge, LinkBox, LinkOverlay,Menu,MenuButton,MenuList,MenuItem,MenuItemOption,MenuGroup,MenuOptionGroup,MenuDivider,IconButton,Spinner, Select} from "@chakra-ui/react"
 import {TriangleUpIcon, HamburgerIcon} from '@chakra-ui/icons'
 
 import { CardGrid, Card} from './findECs/findECsCard.js';
@@ -122,13 +122,13 @@ function RenderGridStep({columns}){
     }   
     return (
         <Box>
-            <Select placeholder={'All Majors'} size={'lg'} color={'black'} bg={'white'} align={'center'} onChange={handleMajorChange}>
+            <Select placeholder={'Filter'} size={'lg'} color={'white'} bg={'black'} align={'center'} onChange={handleMajorChange} mb={'16px'}>
                 {majorArr.map(major => <option key={major} value={major}> {major} </option>)}
             </Select>
-            <Button colorScheme='gray' color={'black'} m={'5px'} size={'sm'} onClick={handleSortChange} value='overall'> Overall </Button>
+            {/* <Button colorScheme='gray' color={'black'} m={'5px'} size={'sm'} onClick={handleSortChange} value='overall'> Overall </Button>
             <Button bg={'white'} color={'blue'} m={'5px'} size={'sm'} onClick={handleSortChange} value='size'> Size </Button>
             <Button  bg={'white'} color={'orange'} m={'5px'} size={'sm'} onClick={handleSortChange} value='impact'> Impact </Button>
-            <Button  bg={'white'} color={'green'} m={'5px'} size={'sm'} onClick={handleSortChange} value='momentum'> Momentum </Button>
+            <Button  bg={'white'} color={'green'} m={'5px'} size={'sm'} onClick={handleSortChange} value='momentum'> Momentum </Button> */}
             <CardGrid orgArr={myOrganizations} columns={1} selectedMajor={selectedMajor} sortBy={sortBy} mt={'5px'}/>
         </Box>
     );

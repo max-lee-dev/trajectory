@@ -8,19 +8,20 @@ function OrgListWrapper() {
 
     return (
 
-        <Box width='100%' bgGradient='linear(to-b, #d6edffff, #ffdcd1ff)' h={'100%'} fontFamily={"Poppins"}>
+        <Box width='100%' h={'100%'} bg={'transparent'} fontFamily={"Poppins"}>
+            <Box w={'100vw'} h={'100vh'} bgGradient={'linear(to-b, #d6edffff, #ffdcd1ff)'} pos={'fixed'} zIndex={'-1'}></Box>
             <Center>
                 <Box width={['101%', '70%', '70%']} paddingTop={'5%'}>
                     <Center>
                         <VStack>
-                            <Box>
-                                <Box textAlign={'left'} fontSize='24px' fontWeight={500} color={'#000000ff'} mb={'8px'} p={'8px'}>
-                                    <Text fontSize={'1.5em'}>FindECs v1.0</Text>
+                            {/* <Box> */}
+                                <Box textAlign={'left'} fontSize='24px' fontWeight={500} color={'#000000ff'} mb={'8px'} p={'8px'} bg={'transparent'}>
+                                    <Text fontSize={'3em'} zIndex={'2'} >FindECs</Text>
                                     {/* <Image src={banner} boxSize={'auto'}/> */}
-                                    <Divider/>
+                                    {/* <Divider bg={'black'}/> */}
                                 </Box>
                                 <Renderer columns={1}/>
-                            </Box>
+                            {/* </Box> */}
                         </VStack>
                     </Center>
 

@@ -55,16 +55,16 @@ export function CardGrid({orgArr, columns, selectedMajor, sortBy}){
     // console.log(orgArr);
     switch(sortBy) {
         case 'size':
-            orgArr.sort((a, b) => a.size - b.size);
+            orgArr.sort((a, b) => b.size - a.size);
             break;
         case 'impact':
-            orgArr.sort((a, b) => a.impact - b.impact);
+            orgArr.sort((a, b) => b.impact - a.impact);
             break;
         case 'momentum':
-            orgArr.sort((a, b) => a.momentum - b.momentum);
+            orgArr.sort((a, b) => b.momentum - a.momentum);
             break;
         default:
-            orgArr.sort((a, b) => (parseInt(a.size) + parseInt(a.impact) + parseInt(a.momentum)) - (parseInt(b.size) + parseInt(b.impact) + parseInt(b.momentum)))}
+            orgArr.sort((a, b) => (parseInt(b.size) + parseInt(b.impact) + parseInt(b.momentum)) - (parseInt(a.size) + parseInt(a.impact) + parseInt(a.momentum)))}
     return(
         <Box>
             <SimpleGrid columns={columns} spacing={'1em'}>
