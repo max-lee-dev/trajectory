@@ -15,7 +15,7 @@ function OrgListWrapper() {
                         <VStack>
                             <Box>
                                 <Box textAlign={'left'} fontSize='24px' fontWeight={500} color={'#000000ff'} mb={'8px'} p={'8px'}>
-                                    <Text fontSize={'1.5em'}>FindECs</Text>
+                                    <Text fontSize={'1.5em'}>FindECs v1.0</Text>
                                     {/* <Image src={banner} boxSize={'auto'}/> */}
                                     <Divider/>
                                 </Box>

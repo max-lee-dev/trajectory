@@ -73,6 +73,7 @@ function RenderGridStep({columns}){
         const grabOrgsFromCSV = async () => {
             try {
                 const response = await fetch(CSV); // update with csv 
+                console.log(CSV);
                 const csvData = await response.text();
                 let arr = CSVToArray(csvData, "|");
                 // console.log(arr);
