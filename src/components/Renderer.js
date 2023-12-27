@@ -75,8 +75,10 @@ function RenderGridStep({columns}) {
 
     const [myOrganizations, setMyOrganizations] = useState([])
     const [majorArr, setMajorArr] = useState([])
+    const [majorMap, setMajorMap] = useState(new Map())
     const [selectedMajor, setSelectedMajor] = useState("")
     const [sortBy, setSortBy] = useState("")
+
 
     // firestore db
     // useEffect(() => {
@@ -142,6 +144,7 @@ function RenderGridStep({columns}) {
 
     function handleMajorChange(e) {
         // console.log("major is now " + e.target.value);
+        window.scrollTo(0, 0);
         setSelectedMajor(e.target.value);
     }
 
@@ -158,7 +161,7 @@ function RenderGridStep({columns}) {
                     align={'center'}
                     onChange={handleMajorChange} mb={'30px'}
                     w={'8em'}
-                    borderWidth={'3px'} borderColor={'gray'} borderRadius={'4px'}
+                    borderWidth={'3px'} borderColor={'badbffff'} borderRadius={'4px'}
                     >
                 {majorArr.map(major =>
                     <option key={major} value={major}>

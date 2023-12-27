@@ -73,7 +73,7 @@ function ECModal({orgObj, isOpen, onClose}) {
                 <ModalBody>
 
 
-                    <Text overflowY={'auto'} h={'200px'} fontSize={'12px'}>{orgObj.description}</Text>
+                    <Text overflowY={'scroll'} h={'200px'} fontSize={'12px'}>{orgObj.description}</Text>
 
                     <Center fontFamily={"Poppins"} padding={5}>
                         <Box display={'flex'} justifyContent={'center'} borderRadius='5px' minWidth="100%" h='40px'
