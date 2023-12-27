@@ -40,7 +40,7 @@ export function Card({orgObj}) {
     if (!/^https?:\/\//i.test(orgObj.website)) {
         orgObj.website = 'https://' + orgObj.website;
     }
-    let screenWidth = 100.0 / 9 * (parseInt(orgObj.size) + parseInt(orgObj.impact) + parseInt(orgObj.momentum)) + "%";
+    let screenWidth = 100.0 / 5 * (parseInt(orgObj.size) + parseInt(orgObj.impact) + parseInt(orgObj.momentum) - 4) + "%";
 
 
     return (
