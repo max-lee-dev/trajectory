@@ -121,8 +121,8 @@ function RenderGridStep({columns}){
         console.log("sorting by " + sortBy);
     }   
     return (
-        <Box>
-            <Select icon={''} placeholder={'Filter'} size={'md'} color={'white'} bg={'black'} align={'center'} onChange={handleMajorChange} mb={'16px'}>
+        <Box mt={'-0.6em'}>
+            <Select icon={''} placeholder={'Filter'} size={'md'} color={'white'} bg={'black'} align={'center'} onChange={handleMajorChange} mb={'30px'}>
                 {majorArr.map(major => <option key={major} value={major}> {major} </option>)}
             </Select>
             {/* <Button colorScheme='gray' color={'black'} m={'5px'} size={'sm'} onClick={handleSortChange} value='overall'> Overall </Button>

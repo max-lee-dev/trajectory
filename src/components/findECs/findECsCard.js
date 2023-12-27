@@ -68,18 +68,18 @@ export function Card({orgObj}) {
             </Menu> */}
 
 
-            <Flex m={'2px'} direction={'column'} p={'8px'}>
-                <Flex direction={"row"}>
-                    <Text fontSize={'md'} fontWeight={'bold'} lineHeight={'160%'} as={'h5'}>
+            <Flex m={'2px'} direction={'column'} pt={'8px'} pb={'8px'} pl={'12px'} pr={'12px'} >
+                <Flex direction={"row"} pb={'2px'}>
+                    <Text fontSize={'14px'} fontWeight={'bold'} lineHeight={'160%'} as={'h5'}>
                         {orgObj.name} {/* THIS IS THE NAME OF THE ORG */}
                     </Text> 
                     <Spacer/>
-                    <Badge mr={'3px'} bg={'#f5f4f0ff'} h={'1.6em'} color={'#7c8994ff'}> {orgObj.major} </Badge> {/* badges will be added from db */}
+                    <Badge mr={'3px'} bg={'#f5f4f0ff'} mt={'1.2px'} h={'1.6em'} color={'#7c8994ff'} fontSize={'9px'} > {orgObj.major} </Badge> {/* badges will be added from db */}
                 </Flex>
 
-                <Box><Text fontSize={'md'}>{orgObj.blurb}</Text></Box> {/* The desc of org ( 1 line) */}
+                <Box><Text fontSize={'10px'}>{orgObj.blurb}</Text></Box> {/* The desc of org ( 1 line) */}
                 <Spacer/>
-                <Container w={screenWidth} h={'12px'} bg={'#badbffff'} m={'4px'} borderRadius={'10px'}/>
+                <Container w={screenWidth} h={'8px'} bg={'#badbffff'} m={'0px'} mt={'4px'} borderRadius={'10px'}/>
             </Flex>
 
         </LinkBox>
