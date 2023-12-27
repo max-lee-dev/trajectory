@@ -37,7 +37,7 @@ import {TriangleUpIcon, HamburgerIcon} from '@chakra-ui/icons'
 
 import {CardGrid, Card} from './findECs/findECsCard.js';
 
-import CSV from '../assets/data/v1.1.csv'
+import CSV from '../assets/data/v1.2.csv'
 
 export function Renderer({columns}) {
 
@@ -104,9 +104,7 @@ function RenderGridStep({columns}) {
         const grabOrgsFromCSV = async () => {
             try {
                 const response = await fetch(CSV); // update with csv 
-                console.log(CSV);
                 const csvData = await response.text();
-                console.log(csvData);
                 let arr = CSVToArray(csvData, "|");
                 // console.log(arr);
 
@@ -132,7 +130,6 @@ function RenderGridStep({columns}) {
                     }
                     retArr.push(obj);
                 }
-                console.log(retArr);
                 setMyOrganizations(retArr);
                 setMajorArr(retMajorArr)
             } catch (error) {
@@ -145,12 +142,12 @@ function RenderGridStep({columns}) {
     }, []);
 
     function handleMajorChange(e) {
-        console.log("major is now " + e.target.value);
+        // console.log("major is now " + e.target.value);
         setSelectedMajor(e.target.value);
     }
 
     function handleSortChange(e) {
-        setSortBy(e.target.value);
+        // setSortBy(e.target.value);
         console.log("sorting by " + sortBy);
     }
 
