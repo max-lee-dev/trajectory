@@ -1,17 +1,47 @@
 import React, {useEffect, useState} from 'react';
 import {auth, db} from './Firebase.js';
 import {collection, getDocs} from "firebase/firestore";
+import {MdArrowDropDown} from "react-icons/md";
 
-import {Divider, Box, Button, Center, Flex, Heading, Image, Link, Spacer, Text, SimpleGrid, Stack, HStack, VStack, Badge, LinkBox, LinkOverlay,Menu,MenuButton,MenuList,MenuItem,MenuItemOption,MenuGroup,MenuOptionGroup,MenuDivider,IconButton,Spinner, Select} from "@chakra-ui/react"
+import {
+    Divider,
+    Box,
+    Button,
+    Center,
+    Flex,
+    Heading,
+    Image,
+    Link,
+    Spacer,
+    Text,
+    SimpleGrid,
+    Stack,
+    HStack,
+    VStack,
+    Badge,
+    LinkBox,
+    LinkOverlay,
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
+    MenuItemOption,
+    MenuGroup,
+    MenuOptionGroup,
+    MenuDivider,
+    IconButton,
+    Spinner,
+    Select
+} from "@chakra-ui/react"
 import {TriangleUpIcon, HamburgerIcon} from '@chakra-ui/icons'
 
-import { CardGrid, Card} from './findECs/findECsCard.js';
+import {CardGrid, Card} from './findECs/findECsCard.js';
 
-import CSV from '../assets/data/v1.1.csv'
+import CSV from '../assets/data/v1.0.csv'
 
-export function Renderer({columns}){
+export function Renderer({columns}) {
 
-    const hiring=[
+    const hiring = [
         "Developer",
         "Media",
         "Designer"
@@ -31,18 +61,18 @@ export function Renderer({columns}){
     }, []);
 
 
-    return(
+    return (
         <>
-        <RenderGridStep columns={columns}/>
-        <Center>
-            <Spinner m={'40px'}/>
-        </Center>
+            <RenderGridStep columns={columns}/>
+            <Center>
+                <Spinner m={'40px'}/>
+            </Center>
         </>
     )
 }
 
 
-function RenderGridStep({columns}){
+function RenderGridStep({columns}) {
 
     const [myOrganizations, setMyOrganizations] = useState([])
     const [majorArr, setMajorArr] = useState([])
@@ -65,11 +95,11 @@ function RenderGridStep({columns}){
     useEffect(() => {
         const lineEndingRegex = /\r\n|[\n\r\u2028\u2029]/g;
         const CSVToArray = (data, delimiter = '|', omitFirstRow = false) => data
-       .replace(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/g, '|')
-       .replace(/"/g, '')
-       .slice(omitFirstRow ? data.indexOf(lineEndingRegex) + 1 : 0)
-       .split(lineEndingRegex)
-       .map(v => v.split(delimiter));
+            .replace(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/g, '|')
+            .replace(/"/g, '')
+            .slice(omitFirstRow ? data.indexOf(lineEndingRegex) + 1 : 0)
+            .split(lineEndingRegex)
+            .map(v => v.split(delimiter));
 
         const grabOrgsFromCSV = async () => {
             try {
@@ -82,22 +112,25 @@ function RenderGridStep({columns}){
 
                 let majorColumn = 2;
                 //find which column is major
-                for (let i=0; i<arr.length; i++){
-                    if (arr[0][i] == "major"){majorColumn = i; break;}
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[0][i] == "major") {
+                        majorColumn = i;
+                        break;
+                    }
                 }
 
                 let retArr = [];
                 let retMajorArr = [];
 
-                for (let i=1; i<arr.length; i++){ // i is for each org/ec
+                for (let i = 1; i < arr.length; i++) { // i is for each org/ec
                     let obj = {};
-                    for(let j=0; j<arr[0].length; j++){ // j is index of param
+                    for (let j = 0; j < arr[0].length; j++) { // j is index of param
                         obj[arr[0][j]] = arr[i][j];
-                        if(j == majorColumn && !retMajorArr.includes(arr[i][j])){
-                           retMajorArr.push(arr[i][j]);
+                        if (j == majorColumn && !retMajorArr.includes(arr[i][j])) {
+                            retMajorArr.push(arr[i][j]);
                         }
                     }
-                    retArr.push(obj);            
+                    retArr.push(obj);
                 }
                 console.log(retArr);
                 setMyOrganizations(retArr);
@@ -111,19 +144,26 @@ function RenderGridStep({columns}){
         grabOrgsFromCSV();
     }, []);
 
-    function handleMajorChange(e){
+    function handleMajorChange(e) {
         console.log("major is now " + e.target.value);
         setSelectedMajor(e.target.value);
     }
 
-    function handleSortChange(e){
+    function handleSortChange(e) {
         setSortBy(e.target.value);
         console.log("sorting by " + sortBy);
-    }   
+    }
+
     return (
         <Box mt={'-0.6em'}>
-            <Select icon={''} placeholder={'Filter'} size={'md'} color={'white'} bg={'black'} align={'center'} onChange={handleMajorChange} mb={'30px'}>
-                {majorArr.map(major => <option key={major} value={major}> {major} </option>)}
+            <Select icon={<MdArrowDropDown/>} placeholder={'Filter'} size={'md'} bg={'white'}
+                    align={'center'}
+                    onChange={handleMajorChange} mb={'30px'}>
+                {majorArr.map(major =>
+                    <option key={major} value={major}>
+                        {major}
+                    </option>
+                )}
             </Select>
             {/* <Button colorScheme='gray' color={'black'} m={'5px'} size={'sm'} onClick={handleSortChange} value='overall'> Overall </Button>
             <Button bg={'white'} color={'blue'} m={'5px'} size={'sm'} onClick={handleSortChange} value='size'> Size </Button>
