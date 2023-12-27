@@ -28,7 +28,7 @@ export function Footer(){
             <Center m={'40px'} fontSize={'16px'}>
                 <VStack>
                 <Box> 
-                    <Button as='a' href='https://discord.gg/trajectory' isExternal target='_blank' bg='#778cd9ff'>
+                    <Button as='a' href='https://discord.gg/trajectory' isExternal target='_blank' bg='#778cd9ff' mr={'8px'}>
                         more resources
                     </Button>                        
                     <Button as='a' href='https://docs.google.com/forms/d/e/1FAIpQLSeOt16-fpwrz3BQPHqEzP0sgxNzwSuH2n9AMZOdmYHhLu6xwg/viewform?usp=sf_link' isExternal target='_blank' bg='#7249baff'>

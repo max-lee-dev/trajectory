@@ -152,21 +152,27 @@ function RenderGridStep({columns}) {
 
     return (
         <Box mt={'-0.6em'}>
-            <Select icon={''} placeholder={'Filter'} size={'md'} bg={'white'} sx={{ position: '-webkit-sticky', /* Safari */ position: 'sticky'}}  zIndex={1}
+
+            <Box  zIndex={1} top={'0px'} sx={{ position: '-webkit-sticky', /* Safari */ position: 'sticky'}}>
+            <Select icon={''} placeholder={'Filter'} size={'md'} bg={'white'}   zIndex={1}
                     align={'center'}
                     onChange={handleMajorChange} mb={'30px'}
-                    w={'8em'}>
+                    w={'8em'}
+                    borderWidth={'3px'} borderColor={'gray'} borderRadius={'4px'}
+                    >
                 {majorArr.map(major =>
                     <option key={major} value={major}>
                         {major}
                     </option>
                 )}
             </Select>
+            </Box>
              
             {/* <Button colorScheme='gray' color={'black'} m={'5px'} size={'sm'} onClick={handleSortChange} value='overall'> Overall </Button>
             <Button bg={'white'} color={'blue'} m={'5px'} size={'sm'} onClick={handleSortChange} value='size'> Size </Button>
             <Button  bg={'white'} color={'orange'} m={'5px'} size={'sm'} onClick={handleSortChange} value='impact'> Impact </Button>
             <Button  bg={'white'} color={'green'} m={'5px'} size={'sm'} onClick={handleSortChange} value='momentum'> Momentum </Button> */}
+            <Box w={'14vh'}></Box>
             <CardGrid orgArr={myOrganizations} columns={1} selectedMajor={selectedMajor} sortBy={sortBy} mt={'1px'}/>
         </Box>
     );
