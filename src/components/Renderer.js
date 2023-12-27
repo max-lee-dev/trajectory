@@ -37,7 +37,7 @@ import {TriangleUpIcon, HamburgerIcon} from '@chakra-ui/icons'
 
 import {CardGrid, Card} from './findECs/findECsCard.js';
 
-import CSV from '../assets/data/v1.2.csv'
+import CSV from '../assets/data/v1.4.csv'
 
 export function Renderer({columns}) {
 
@@ -153,10 +153,10 @@ function RenderGridStep({columns}) {
 
     return (
         <Box mt={'-0.6em'}>
-            <Select icon={<MdArrowDropDown/>} placeholder={'Filter'} size={'md'} bg={'white'}
+            <Select icon={''} placeholder={'Filter'} size={'md'} bg={'white'}
                     align={'center'}
                     onChange={handleMajorChange} mb={'30px'}
-                    w={'10em'}>
+                    w={'8em'}>
                 {majorArr.map(major =>
                     <option key={major} value={major}>
                         {major}

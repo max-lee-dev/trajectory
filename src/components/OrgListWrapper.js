@@ -15,8 +15,8 @@ function OrgListWrapper() {
                     <Center>
                         <VStack>
                             {/* <Box> */}
-                                <Box textAlign={'left'} fontSize='24px' fontWeight={500} color={'#000000ff'} pr={'8px'} pl={'8px'} bg={'transparent'}>
-                                    <Text  fontFamily={"Poppins"} fontSize={'4em'} zIndex={'2'} >FindECs</Text>
+                                <Box textAlign={'left'} fontSize='24px' fontWeight={500} color={'#000000ff'} pr={'8px'} pl={'8px'} bg={'transparent'} mt={'10px'}>
+                                    <Text  fontFamily={"Poppins"} fontSize={'3.5em'} zIndex={'2'} >FindECs</Text>
                                     {/* <Image src={banner} boxSize={'auto'}/> */}
                                     {/* <Divider bg={'black'}/> */}
                                 </Box>

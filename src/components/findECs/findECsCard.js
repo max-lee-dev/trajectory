@@ -47,7 +47,7 @@ export function Card({orgObj}) {
 
         <LinkBox
             bg={'white'} color={'black'} borderRadius={'lg'} borderWidth={'1px'} boxShadow={'md'} overflow={'hidden'}
-            maxW={'10em'} p={'0px'}
+            maxW={'8em'} p={'0px'}
             _hover={{bg: 'lightgray'}}
             onClick={onOpen}
             mt={'-14px'}
