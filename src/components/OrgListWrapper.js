@@ -8,7 +8,12 @@ function OrgListWrapper() {
 
     return (
 
-        <Box width='100%' h={'100%'} bg={'transparent'} fontFamily={"Poppins"}>
+        <Box width='100%' h={'100%'} bg={'transparent'} fontFamily={"Poppins"} css={{
+                    "-webkit-touch-callout": "none",
+                    "-webkit-user-select": "none",
+                    "-moz-user-select": "none",
+                    "-ms-user-select": "none"
+                }}>
             <Box w={'100vw'} h={'100vh'} bgGradient={'linear(to-b, #d6edffff, #ffdcd1ff)'} pos={'fixed'} zIndex={'-1'}></Box>
             <Center>
                 <Box width={'70%'} paddingTop={'5%'}>

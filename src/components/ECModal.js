@@ -20,7 +20,12 @@ function ECModal({orgObj, isOpen, onClose}) {
     return (
         <Modal isCentered size={["xs", "md", "md"]} isOpen={isOpen} onClose={onClose}>
             <ModalOverlay/>
-            <ModalContent>
+            <ModalContent css={{
+                    "-webkit-touch-callout": "none",
+                    "-webkit-user-select": "none",
+                    "-moz-user-select": "none",
+                    "-ms-user-select": "none"
+                }}>
                 <ModalHeader fontFamily={"Poppins"}>
 
                     <Text fontSize={'28px'} w={'95%'}>
@@ -75,6 +80,7 @@ function ECModal({orgObj, isOpen, onClose}) {
                              bg={'black'} color={'white'}
                              mr={3} as='a'
                              href={orgObj.website}
+                             target='_blank'
                              fontSize={'16px'}>
 
                             <Center fontWeight={500} textAlign={'center'}>

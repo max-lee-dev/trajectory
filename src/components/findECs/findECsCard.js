@@ -69,7 +69,13 @@ export function Card({orgObj}) {
             </Menu> */}
 
 
-            <Flex m={'2px'} direction={'column'} pt={'8px'} pb={'8px'} pl={'12px'} pr={'12px'}>
+            <Flex m={'2px'} direction={'column'} pt={'8px'} pb={'8px'} pl={'12px'} pr={'12px'} css={{
+                    "-webkit-touch-callout": "none",
+                    "-webkit-user-select": "none",
+                    "-moz-user-select": "none",
+                    "-ms-user-select": "none"
+                }} >
+
                 <Flex direction={"row"} pb={'2px'}>
                     <Text fontSize={'16px'} fontWeight={'bold'} lineHeight={'160%'} as={'h5'}>
                         {orgObj.name} {/* THIS IS THE NAME OF THE ORG */}
