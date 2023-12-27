@@ -50,7 +50,8 @@ export function Card({orgObj}) {
             maxW={'10em'} p={'0px'}
             _hover={{bg: 'lightgray'}}
             onClick={onOpen}
-            m={'-14px'}
+            mt={'-14px'}
+            mb={'-14px'}
         >
             <ECModal orgObj={orgObj} isOpen={isOpen} onClose={onClose}/>
 

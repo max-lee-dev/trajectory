@@ -54,7 +54,7 @@ export function Renderer({columns}) {
                 console.log("User has scrolled to the bottom of the page");
             }
         };
-        window.addEventListener('scroll', handleScroll);
+        // window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
@@ -155,7 +155,8 @@ function RenderGridStep({columns}) {
         <Box mt={'-0.6em'}>
             <Select icon={<MdArrowDropDown/>} placeholder={'Filter'} size={'md'} bg={'white'}
                     align={'center'}
-                    onChange={handleMajorChange} mb={'30px'}>
+                    onChange={handleMajorChange} mb={'30px'}
+                    w={'10em'}>
                 {majorArr.map(major =>
                     <option key={major} value={major}>
                         {major}
