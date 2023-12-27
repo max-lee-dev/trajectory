@@ -37,7 +37,7 @@ import {TriangleUpIcon, HamburgerIcon} from '@chakra-ui/icons'
 
 import {CardGrid, Card} from './findECs/findECsCard.js';
 
-import CSV from '../assets/data/v1.4.csv'
+import CSV from '../assets/data/v1.5.csv'
 
 export function Renderer({columns}) {
 
