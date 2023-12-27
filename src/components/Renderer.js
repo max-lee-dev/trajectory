@@ -11,6 +11,13 @@ import CSV from '../assets/data/v1.1.csv'
 
 export function Renderer({columns}){
 
+    const hiring=[
+        "Developer",
+        "Media",
+        "Designer"
+    ];
+
+
     useEffect(() => {
         const handleScroll = () => {
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
@@ -41,7 +48,6 @@ function RenderGridStep({columns}){
     const [majorArr, setMajorArr] = useState([])
     const [selectedMajor, setSelectedMajor] = useState("")
     const [sortBy, setSortBy] = useState("")
-    
 
     // firestore db
     // useEffect(() => {
@@ -106,9 +112,8 @@ function RenderGridStep({columns}){
     }, []);
 
     function handleMajorChange(e){
-
-        // console.log("major is now " + e.target.value);
-        // setSelectedMajor(e.target.value);
+        console.log("major is now " + e.target.value);
+        setSelectedMajor(e.target.value);
     }
 
     function handleSortChange(e){
@@ -117,10 +122,9 @@ function RenderGridStep({columns}){
     }   
     return (
         <Box mt={'-0.6em'}>
-            <Button placeholder={'Filter'} size={'md'} color={'white'} bg={'black'} align={'center'} onClick={handleMajorChange} mb={'30px'} w={'20em'} h={'26px'}>
-               Filter 
-                {/* {majorArr.map(major => <option key={major} value={major}> {major} </option>)} */}
-            </Button>
+            <Select icon={''} placeholder={'Filter'} size={'md'} color={'white'} bg={'black'} align={'center'} onChange={handleMajorChange} mb={'30px'}>
+                {majorArr.map(major => <option key={major} value={major}> {major} </option>)}
+            </Select>
             {/* <Button colorScheme='gray' color={'black'} m={'5px'} size={'sm'} onClick={handleSortChange} value='overall'> Overall </Button>
             <Button bg={'white'} color={'blue'} m={'5px'} size={'sm'} onClick={handleSortChange} value='size'> Size </Button>
             <Button  bg={'white'} color={'orange'} m={'5px'} size={'sm'} onClick={handleSortChange} value='impact'> Impact </Button>
