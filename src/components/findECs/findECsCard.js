@@ -70,7 +70,7 @@ export function Card({orgObj}) {
 
             <Flex m={'2px'} direction={'column'} pt={'8px'} pb={'8px'} pl={'12px'} pr={'12px'} >
                 <Flex direction={"row"} pb={'2px'}>
-                    <Text fontSize={'14px'} fontWeight={'bold'} lineHeight={'160%'} as={'h5'}>
+                    <Text fontSize={'16px'} fontWeight={'bold'} lineHeight={'160%'} as={'h5'}>
                         {orgObj.name} {/* THIS IS THE NAME OF THE ORG */}
                     </Text> 
                     <Spacer/>
@@ -79,7 +79,7 @@ export function Card({orgObj}) {
 
                 <Box><Text fontSize={'10px'}>{orgObj.blurb}</Text></Box> {/* The desc of org ( 1 line) */}
                 <Spacer/>
-                <Container w={screenWidth} h={'8px'} bg={'#badbffff'} m={'0px'} mt={'4px'} borderRadius={'10px'}/>
+                <Container w={screenWidth} h={'8px'} bg={'#badbffff'} m={'0px'} mt={'4px'} borderRadius={'12px'}/>
             </Flex>
 
         </LinkBox>
