@@ -5,6 +5,7 @@ import MailchimpSubscribe from "react-mailchimp-subscribe";
 import Onboard from '../pages/Onboard.js';
 import NewOnboard from '../pages/NewOnboard.js';
 import OrgListWrapper from '../components/OrgListWrapper.js';
+import Footer from '../components/footer.js';
 import {
     useDisclosure,
     Box,
@@ -135,9 +136,8 @@ function Home() {
                 </Box>
             )}
 
-
+            <Footer/>
         </Box>
-
 
     );
 }

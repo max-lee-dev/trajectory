@@ -14,7 +14,7 @@ function OrgListWrapper() {
                     "-moz-user-select": "none",
                     "-ms-user-select": "none"
                 }}>
-            <Box w={'100vw'} h={'100vh'} bgGradient={'linear(to-b, #d6edffff, #ffdcd1ff)'} pos={'fixed'} zIndex={'-1'}></Box>
+            <Box w={'120vw'} h={'120vh'} bgGradient={'linear(to-b, #d6edffff, #ffdcd1ff)'} pos={'fixed'} zIndex={'-1'}></Box>
             <Center>
                 <Box width={'70%'} paddingTop={'5%'}>
                     <Center>
@@ -29,9 +29,10 @@ function OrgListWrapper() {
                             {/* </Box> */}
                         </VStack>
                     </Center>
-
                 </Box>
             </Center>
+            
+
         </Box>
 
     )

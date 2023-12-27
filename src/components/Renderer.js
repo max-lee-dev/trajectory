@@ -65,7 +65,6 @@ export function Renderer({columns}) {
         <>
             <RenderGridStep columns={columns}/>
             <Center>
-                <Spinner m={'40px'}/>
             </Center>
         </>
     )
