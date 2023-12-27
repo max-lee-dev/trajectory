@@ -7,7 +7,7 @@ import {TriangleUpIcon, HamburgerIcon} from '@chakra-ui/icons'
 
 import { CardGrid, Card} from './findECs/findECsCard.js';
 
-import CSV from '../assets/data/TESTtalem.csv'
+import CSV from '../assets/data/v1.1.csv'
 
 export function Renderer({columns}){
 
@@ -122,14 +122,14 @@ function RenderGridStep({columns}){
     }   
     return (
         <Box>
-            <Select placeholder={'Filter'} size={'lg'} color={'white'} bg={'black'} align={'center'} onChange={handleMajorChange} mb={'16px'}>
+            <Select icon={''} placeholder={'Filter'} size={'md'} color={'white'} bg={'black'} align={'center'} onChange={handleMajorChange} mb={'16px'}>
                 {majorArr.map(major => <option key={major} value={major}> {major} </option>)}
             </Select>
             {/* <Button colorScheme='gray' color={'black'} m={'5px'} size={'sm'} onClick={handleSortChange} value='overall'> Overall </Button>
             <Button bg={'white'} color={'blue'} m={'5px'} size={'sm'} onClick={handleSortChange} value='size'> Size </Button>
             <Button  bg={'white'} color={'orange'} m={'5px'} size={'sm'} onClick={handleSortChange} value='impact'> Impact </Button>
             <Button  bg={'white'} color={'green'} m={'5px'} size={'sm'} onClick={handleSortChange} value='momentum'> Momentum </Button> */}
-            <CardGrid orgArr={myOrganizations} columns={1} selectedMajor={selectedMajor} sortBy={sortBy} mt={'5px'}/>
+            <CardGrid orgArr={myOrganizations} columns={1} selectedMajor={selectedMajor} sortBy={sortBy} mt={'1px'}/>
         </Box>
     );
 

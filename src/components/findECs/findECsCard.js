@@ -50,6 +50,7 @@ export function Card({orgObj}) {
             maxW={'10em'} p={'0px'}
             _hover={{bg: 'lightgray'}}
             onClick={onOpen}
+            m={'-14px'}
         >
             <ECModal orgObj={orgObj} isOpen={isOpen} onClose={onClose}/>
 
@@ -67,15 +68,14 @@ export function Card({orgObj}) {
             </Menu> */}
 
 
-            <Flex m={'6px'} direction={'column'}>
+            <Flex m={'2px'} direction={'column'} p={'8px'}>
                 <Flex direction={"row"}>
                     <Text fontSize={'md'} fontWeight={'bold'} lineHeight={'160%'} as={'h5'}>
-                        <Badge ml={"6px"} mr={'3px'} as={'span'}
-                               bg={'#f5f4f0ff'}> {orgObj.major} </Badge> {/* badges will be added from db */}
                         {orgObj.name} {/* THIS IS THE NAME OF THE ORG */}
-                    </Text>
+                    </Text> 
+                    <Spacer/>
+                    <Badge mr={'3px'} bg={'#f5f4f0ff'} h={'1.6em'} color={'#7c8994ff'}> {orgObj.major} </Badge> {/* badges will be added from db */}
                 </Flex>
-                <Spacer/>
 
                 <Box><Text fontSize={'md'}>{orgObj.blurb}</Text></Box> {/* The desc of org ( 1 line) */}
                 <Spacer/>

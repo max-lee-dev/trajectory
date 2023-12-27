@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#file ignores
+/src/assets/data/v0.1.csv
+/src/assets/data/v1.1.csv
