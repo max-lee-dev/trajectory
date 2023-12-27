@@ -152,7 +152,7 @@ function RenderGridStep({columns}) {
 
     return (
         <Box mt={'-0.6em'}>
-            <Select icon={''} placeholder={'Filter'} size={'md'} bg={'white'}
+            <Select icon={''} placeholder={'Filter'} size={'md'} bg={'white'} sx={{ position: '-webkit-sticky', /* Safari */ position: 'sticky'}}  zIndex={1}
                     align={'center'}
                     onChange={handleMajorChange} mb={'30px'}
                     w={'8em'}>
@@ -162,6 +162,7 @@ function RenderGridStep({columns}) {
                     </option>
                 )}
             </Select>
+             
             {/* <Button colorScheme='gray' color={'black'} m={'5px'} size={'sm'} onClick={handleSortChange} value='overall'> Overall </Button>
             <Button bg={'white'} color={'blue'} m={'5px'} size={'sm'} onClick={handleSortChange} value='size'> Size </Button>
             <Button  bg={'white'} color={'orange'} m={'5px'} size={'sm'} onClick={handleSortChange} value='impact'> Impact </Button>

@@ -31,7 +31,6 @@ export function Footer(){
                     <Button as='a' href='https://discord.gg/trajectory' isExternal target='_blank' bg='#778cd9ff'>
                         more resources
                     </Button>                        
-                    <Box as='span' m='4px'> -  </Box>
                     <Button as='a' href='https://docs.google.com/forms/d/e/1FAIpQLSeOt16-fpwrz3BQPHqEzP0sgxNzwSuH2n9AMZOdmYHhLu6xwg/viewform?usp=sf_link' isExternal target='_blank' bg='#7249baff'>
                         feedback
                     </Button>
