@@ -14,6 +14,7 @@ function FindECsLanding({setShowIntro}) {
         <Box width='100%' bg={'transparent'} maxH={'100vh'}>
             <Center>
                 <Box bg={'transparent'} width={['70%']} paddingTop={['100px', '200px', '200px', '200px']}
+                     paddingBottom={'50px'}
                      fontFamily={'coiny'} color={'white'}
                      style={{WebkitTextStroke: '2px #360503ff'}}
                 >
@@ -42,6 +43,7 @@ function FindECsLanding({setShowIntro}) {
                             </Box>
 
                             <img src={bottomsquigly} width={'150px'}/>
+
                             <img src={madebytrajectory} width={'125px'}/>
                         </VStack>
                     </Center>
