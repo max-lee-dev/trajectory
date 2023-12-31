@@ -41,7 +41,7 @@ function FindECsLanding({setShowIntro}) {
                             </Box>
 
                             <img src={bottomsquigly} width={'150px'}/>
-                            <img src={madebytrajectory} width={'150px'}/>
+                            <img src={madebytrajectory} width={'125px'}/>
                         </VStack>
                     </Center>
 
