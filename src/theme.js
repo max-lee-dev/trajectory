@@ -9,6 +9,17 @@ const config = {
 
 // 3. extend the theme
 const theme = extendTheme({ 
+  fonts: {
+    heading: `'Open Sans', sans-serif`,
+    body: `'Raleway', sans-serif`,
+    global: `'Coiny', sans-serif`,
+  },
+  // colors: {
+  //   custom: {
+  //     2: "#360503ff",
+  //   },
+  // },
+
   config,
   styles: {
     global: {

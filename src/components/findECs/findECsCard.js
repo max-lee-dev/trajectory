@@ -42,7 +42,6 @@ export function Card({orgObj}) {
     }
     let screenWidth = 100.0 / 5 * (parseInt(orgObj.size) + parseInt(orgObj.impact) + parseInt(orgObj.momentum) - 4) + "%";
 
-
     return (
 
         <LinkBox
@@ -98,9 +97,9 @@ export function Card({orgObj}) {
 }
 
 
-export function CardGrid({orgArr, columns, selectedMajor, sortBy}) {
-    if (selectedMajor != '') {
-        orgArr = orgArr.filter(org => org.major == selectedMajor);
+export function CardGrid({orgArr, columns, selectedMajorArr, sortBy, onFilterClick}) {
+    if (selectedMajorArr.size != 0) {
+        orgArr = orgArr.filter(org => selectedMajorArr.has(org.major));
     }
     // console.log(orgArr);
     switch (sortBy) {
@@ -116,8 +115,22 @@ export function CardGrid({orgArr, columns, selectedMajor, sortBy}) {
         default:
             orgArr.sort((a, b) => (parseInt(b.size) + parseInt(b.impact) + parseInt(b.momentum)) - (parseInt(a.size) + parseInt(a.impact) + parseInt(a.momentum)))
     }
+
     return (
         <Box>
+            <Box  zIndex={1} top={'0px'} sx={{ position: '-webkit-sticky', /* Safari */ position: 'sticky'}}>
+                <Button size={'lg'} zIndex={1} bg={'#360503ff'}
+                        align={'center'}
+                        onClick={onFilterClick} mb={'30px'}
+                        width={'16em'}
+                        // borderWidth={'3px'} borderColor={'badbffff'} borderRadius={'4px'}
+                        >
+                    <Text fontSize='1em' fontWeight={500} top={''} color={'white'} > 
+                            Edit your interests!
+                    </Text>
+                </Button>
+                
+            </Box>
             <SimpleGrid columns={columns} spacing={'1em'}>
                 {orgArr.map(orgObj => <Card key={orgObj.name} orgObj={orgObj}/>)}
             </SimpleGrid>

@@ -4,8 +4,10 @@ import {collection, getDocs} from "firebase/firestore";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import Onboard from '../pages/Onboard.js';
 import NewOnboard from '../pages/NewOnboard.js';
-import OrgListWrapper from '../components/OrgListWrapper.js';
+import FindECsLanding from '../components/findECs/findECsLanding.js';
 import Footer from '../components/footer.js';
+import AppWrapper from '../components/AppWrapper.js';
+
 import {
     useDisclosure,
     Box,
@@ -33,13 +35,6 @@ import { Renderer, RenderGridStep } from '../components/Renderer.js';
 import banner from '../assets/img/trajectoryBanner.png'
 
 function Home() {
-
-    const hiring = [
-        "Developer",
-        "Media",
-        "Designer"
-    ]
-
     const [user, setUser,] = useState(null);
     const [showGrid] = useState(false);
     useEffect(() => {
@@ -68,11 +63,18 @@ function Home() {
 
 
     const [tabIndex, setTabIndex] = useState(0);
-
+    const [introOpen, setIntroOpen] = useState(true);
+    const toggleIntro = (e) => {
+        e.preventDefault();
+        setIntroOpen(!introOpen)
+    }
 
     return (
         <Box fontSize={'40px'}>
-            <OrgListWrapper/>
+
+            <Box w={'120vw'} h={'120vh'} bgGradient={'linear(to-b, #94c8ffff, #FFFFFFFF ,#fabaa5ff)'} pos={'fixed'} zIndex={'-1'}></Box> 
+
+            {introOpen ? <FindECsLanding toggleIntro={toggleIntro}/> : <AppWrapper/>} 
 
             {auth?.currentUser && !auth.currentUser.displayName && (
                 <Box paddingTop={'100px'} display={'flex'} justifyContent={'space-evenly'}>
@@ -136,7 +138,7 @@ function Home() {
                 </Box>
             )}
 
-            <Footer/>
+            {/* <Footer/> */}
         </Box>
 
     );

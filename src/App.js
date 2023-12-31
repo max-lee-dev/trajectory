@@ -53,7 +53,7 @@ function App() {
             <Router>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
-                    <Route path="/abouta" element={<About/>}/>
+                    <Route path="/about" element={<About/>}/>
                     <Route path={"/dashboard"} element={<DashboardHub user={user}/>}/>
                     <Route path="/login" element={<LoginPage/>}/>
                     <Route path="/onboard" element={<Onboard/>}/>

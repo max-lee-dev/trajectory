@@ -2612,6 +2612,11 @@
   resolved "https://registry.npmjs.org/@firebase/webchannel-wrapper/-/webchannel-wrapper-0.10.5.tgz"
   integrity sha512-eSkJsnhBWv5kCTSU1tSUVl9mpFu+5NXXunZc83le8GMjMlsWwQArSc7cJJ4yl+aDFY0NGLi0AjZWMn1axOrkRg==
 
+"@fontsource/coiny@^5.0.8":
+  version "5.0.8"
+  resolved "https://registry.npmjs.org/@fontsource/coiny/-/coiny-5.0.8.tgz"
+  integrity sha512-S5NbiGb2ZNg/kMjyrk8VDSzIPp+8HHtN4yRHpkzjPJP0+aozKYtjdNVyZdhGcnLNq3FOM7cdfGBHgszr/9+d9g==
+
 "@grpc/grpc-js@~1.9.0":
   version "1.9.12"
   resolved "https://registry.npmjs.org/@grpc/grpc-js/-/grpc-js-1.9.12.tgz"

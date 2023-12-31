@@ -36,6 +36,7 @@ import {
 import {TriangleUpIcon, HamburgerIcon} from '@chakra-ui/icons'
 
 import {CardGrid, Card} from './findECs/findECsCard.js';
+import FilterPage from './findECs/filterPage.js'; 
 
 import CSV from '../assets/data/v1.5.csv'
 
@@ -75,10 +76,10 @@ function RenderGridStep({columns}) {
 
     const [myOrganizations, setMyOrganizations] = useState([])
     const [majorArr, setMajorArr] = useState([])
-    const [majorMap, setMajorMap] = useState(new Map())
     const [selectedMajor, setSelectedMajor] = useState("")
+    const [selectedMajorArr, setSelectedMajorArr] = useState(new Set([]))
     const [sortBy, setSortBy] = useState("")
-
+    
 
     // firestore db
     // useEffect(() => {
@@ -132,7 +133,8 @@ function RenderGridStep({columns}) {
                     retArr.push(obj);
                 }
                 setMyOrganizations(retArr);
-                setMajorArr(retMajorArr)
+                setMajorArr(retMajorArr);
+                console.log(retMajorArr)
             } catch (error) {
                 console.error('Error:', error);
                 setMyOrganizations("An error occurred while fetching your data.");
@@ -153,31 +155,26 @@ function RenderGridStep({columns}) {
         console.log("sorting by " + sortBy);
     }
 
+    const [showFilterPage, setShowFilterPage] = useState(true)
+
+    const onFilterClick = (e) => {
+        console.log("clicked filter")
+        e.preventDefault();
+        setShowFilterPage(!showFilterPage)
+    }
+
     return (
         <Box mt={'-0.6em'}>
-
-            <Box  zIndex={1} top={'0px'} sx={{ position: '-webkit-sticky', /* Safari */ position: 'sticky'}}>
-            <Select icon={''} placeholder={'Filter'} size={'md'} bg={'white'}   zIndex={1}
-                    align={'center'}
-                    onChange={handleMajorChange} mb={'30px'}
-                    w={'8em'}
-                    borderWidth={'3px'} borderColor={'badbffff'} borderRadius={'4px'}
-                    >
-                {majorArr.map(major =>
-                    <option key={major} value={major}>
-                        {major}
-                    </option>
-                )}
-            </Select>
-            </Box>
-             
             {/* <Button colorScheme='gray' color={'black'} m={'5px'} size={'sm'} onClick={handleSortChange} value='overall'> Overall </Button>
             <Button bg={'white'} color={'blue'} m={'5px'} size={'sm'} onClick={handleSortChange} value='size'> Size </Button>
             <Button  bg={'white'} color={'orange'} m={'5px'} size={'sm'} onClick={handleSortChange} value='impact'> Impact </Button>
             <Button  bg={'white'} color={'green'} m={'5px'} size={'sm'} onClick={handleSortChange} value='momentum'> Momentum </Button> */}
-            <Box w={'14vh'}></Box>
-            <CardGrid orgArr={myOrganizations} columns={1} selectedMajor={selectedMajor} sortBy={sortBy} mt={'1px'}/>
-        </Box>
+                {showFilterPage ? 
+                <FilterPage selectedMajorArr={selectedMajorArr} majorArr={majorArr} onFilterClick={onFilterClick}/>
+                : 
+                <CardGrid orgArr={myOrganizations} columns={1} selectedMajorArr={selectedMajorArr} sortBy={sortBy} mt={'1px'} onFilterClick={onFilterClick} />
+                }
+            </Box>
     );
 
 }

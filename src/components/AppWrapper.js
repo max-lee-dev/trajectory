@@ -4,7 +4,7 @@ import {Box, Button, Center, Flex, Heading, Image, Link, Spacer, Text, VStack, D
 import { Renderer } from './Renderer';
 import banner from '../assets/img/trajectoryBanner.png';
 
-function OrgListWrapper() {
+function AppWrapper() {
 
     return (
 
@@ -14,14 +14,14 @@ function OrgListWrapper() {
                     "-moz-user-select": "none",
                     "-ms-user-select": "none"
                 }}>
-            <Box w={'120vw'} h={'120vh'} bgGradient={'linear(to-b, #d6edffff, #ffdcd1ff)'} pos={'fixed'} zIndex={'-1'}></Box>
+
             <Center>
                 <Box width={'70%'} paddingTop={'5%'}>
                     <Center>
                         <VStack>
                             {/* <Box> */}
                                 <Box textAlign={'left'} fontSize='24px' fontWeight={500} color={'#000000ff'} pr={'8px'} pl={'8px'} bg={'transparent'} mt={'10px'}>
-                                    <Text  fontFamily={"Poppins"} fontSize={'3.5em'} zIndex={'2'} >FindECs</Text>
+                                    <Text  fontFamily={"Poppins"} fontSize={'3.5em'} zIndex={'2'} > FindECs </Text>
                                     {/* <Image src={banner} boxSize={'auto'}/> */}
                                     {/* <Divider bg={'black'}/> */}
                                 </Box>
@@ -38,4 +38,4 @@ function OrgListWrapper() {
     )
 }
 
-export default OrgListWrapper
+export default AppWrapper
