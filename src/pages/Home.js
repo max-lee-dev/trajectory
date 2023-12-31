@@ -31,50 +31,48 @@ import {
 import NewAccountForm from "./NewAccountForm.js";
 
 import {Card, CardGrid} from '../components/Card.js';
-import { Renderer, RenderGridStep } from '../components/Renderer.js';
+import {Renderer, RenderGridStep} from '../components/Renderer.js';
 import banner from '../assets/img/trajectoryBanner.png'
 
 function Home() {
     const [user, setUser,] = useState(null);
     const [showGrid] = useState(false);
-    useEffect(() => {
-        auth.onAuthStateChanged(userAuth => {
-            setUser(userAuth);
-        })
-    }, [auth])
+    // useEffect(() => {
+    //     auth.onAuthStateChanged(userAuth => {
+    //         setUser(userAuth);
+    //     })
+    // }, [auth])
+    //
+    // auth.onAuthStateChanged(userAuth => {
+    //     setUser(userAuth);
+    // })
+    //
+    // const [myOrganizations, setMyOrganizations] = useState([])
+    // useEffect(() => {
+    //     const temp = [];
+    //
+    //     const getMyOrganizations = async () => {
+    //         const querySnapshot = await getDocs(collection(db, "organizations"));
+    //         querySnapshot.forEach((doc) => {
+    //             temp.push(doc.data())
+    //         });
+    //         setMyOrganizations(temp)
+    //     }
+    //     getMyOrganizations();
+    // })
+    //
 
-    auth.onAuthStateChanged(userAuth => {
-        setUser(userAuth);
-    })
+    const [showIntro, setShowIntro] = useState(true);
 
-    const [myOrganizations, setMyOrganizations] = useState([])
-    useEffect(() => {
-        const temp = [];
-
-        const getMyOrganizations = async () => {
-            const querySnapshot = await getDocs(collection(db, "organizations"));
-            querySnapshot.forEach((doc) => {
-                temp.push(doc.data())
-            });
-            setMyOrganizations(temp)
-        }
-        getMyOrganizations();
-    })
-
-
-    const [tabIndex, setTabIndex] = useState(0);
-    const [introOpen, setIntroOpen] = useState(true);
-    const toggleIntro = (e) => {
-        e.preventDefault();
-        setIntroOpen(!introOpen)
-    }
 
     return (
         <Box fontSize={'40px'}>
 
-            <Box w={'120vw'} h={'120vh'} bgGradient={'linear(to-b, #94c8ffff, #FFFFFFFF ,#fabaa5ff)'} pos={'fixed'} zIndex={'-1'}></Box> 
+            <Box w={'120vw'} h={'120vh'} bgGradient={'linear(to-b, #94c8ffff, #FFFFFFFF ,#fabaa5ff)'} pos={'fixed'}
+                 zIndex={'-1'}></Box>
 
-            {introOpen ? <FindECsLanding toggleIntro={toggleIntro}/> : <AppWrapper/>} 
+
+            {showIntro ? <FindECsLanding setShowIntro={setShowIntro}/> : <AppWrapper/>}
 
             {auth?.currentUser && !auth.currentUser.displayName && (
                 <Box paddingTop={'100px'} display={'flex'} justifyContent={'space-evenly'}>
@@ -124,13 +122,13 @@ function Home() {
                                 </Box>
                             </Box>
 
-                        
-                        <Box height={'30vh'} w={'30vw'}> {/*header*/}
-                           <Image src={banner} boxSize={'auto'}/>
-                        </Box>
 
-                        <Renderer/>
-                    </VStack>
+                            <Box height={'30vh'} w={'30vw'}> {/*header*/}
+                                <Image src={banner} boxSize={'auto'}/>
+                            </Box>
+
+                            <Renderer/>
+                        </VStack>
 
                     </Center>
 
@@ -143,7 +141,6 @@ function Home() {
 
     );
 }
-
 
 
 export default Home;
