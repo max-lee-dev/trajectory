@@ -1,5 +1,6 @@
 import React from 'react';
 import ECModal from '../ECModal.js';
+import majorColors from './majorColors.json';
 
 import {
     Container,
@@ -161,7 +162,7 @@ function BadgeDisplay({selectedMajorArr}) {
 
     selectedMajorArr.forEach(value => {
         rendered.push(
-            <Badge marginRight={2} marginBottom={1}>
+            <Badge bg={majorColors[value]} marginRight={2} marginBottom={1}>
                 {value}
             </Badge>
         )
