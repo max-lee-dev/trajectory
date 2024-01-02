@@ -1,4 +1,6 @@
 import './input.css';
+import {Analytics} from '@vercel/analytics/react';
+
 import React, {useEffect, useState} from 'react';
 
 import Home from './pages/Home';
@@ -50,6 +52,7 @@ function App() {
     return (
 
         <ChakraProvider theme={theme}>
+
             <Router>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
@@ -59,7 +62,9 @@ function App() {
                     <Route path="/onboard" element={<Onboard/>}/>
                 </Routes>
             </Router>
+            <Analytics/>
         </ChakraProvider>
+
 
     );
 }
