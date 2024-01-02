@@ -41,7 +41,7 @@ function FilterButton({selectedMajorArr, name}) {
 
     // console.log(name)
 
-    function toggle(e) {
+    function toggle(e) { // need to reload the bg colors so if edit interets, it stays
         console.log("click!")
         setOn(!on);
         if (on) {
