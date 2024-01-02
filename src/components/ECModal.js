@@ -21,11 +21,11 @@ function ECModal({orgObj, isOpen, onClose}) {
         <Modal isCentered size={["xs", "md", "md"]} isOpen={isOpen} onClose={onClose}>
             <ModalOverlay/>
             <ModalContent css={{
-                    "-webkit-touch-callout": "none",
-                    "-webkit-user-select": "none",
-                    "-moz-user-select": "none",
-                    "-ms-user-select": "none"
-                }}>
+                "-webkit-touch-callout": "none",
+                "-webkit-user-select": "none",
+                "-moz-user-select": "none",
+                "-ms-user-select": "none"
+            }}>
                 <ModalHeader fontFamily={"Poppins"}>
 
                     <Text fontSize={'28px'} w={'95%'}>
@@ -37,19 +37,21 @@ function ECModal({orgObj, isOpen, onClose}) {
                     <HStack paddingTop={3} fontFamily={"Poppins"} fontWeight={600} fontSize={'10px'} color='white'
                             display={'flex'}
                             justifyContent={'space-between'}>
-                        <Box display={'flex'} justifyContent={'center'} bg={orgObj.size === "3" ? "black" : "#D9D9D9"}
+                        <Box display={'flex'} justifyContent={'center'}
+                             bg={orgObj.size === "3" ? "#360503ff" : "#D9D9D9"}
                              borderRadius={4}
                              h={'30px'}
-                             color={orgObj.size === "3" ? "white" : "black"}
+                             color={orgObj.size === "3" ? "white" : "#360503ff"}
                              width={'100%'}>
                             <Center>
                                 <Text>  {orgObj.size === '1' ? 'Low ' : orgObj.size === '2' ? 'Medium ' : 'Large '} Size</Text>
                             </Center>
                         </Box>
-                        <Box display={'flex'} justifyContent={'center'} bg={orgObj.impact === "3" ? "black" : "#D9D9D9"}
+                        <Box display={'flex'} justifyContent={'center'}
+                             bg={orgObj.impact === "3" ? "#360503ff" : "#D9D9D9"}
                              borderRadius={4}
                              h={'30px'}
-                             color={orgObj.impact === "3" ? "white" : "black"}
+                             color={orgObj.impact === "3" ? "white" : "#360503ff"}
                              width={'100%'}>
                             <Center>
                                 <Text>
@@ -59,8 +61,8 @@ function ECModal({orgObj, isOpen, onClose}) {
                             </Center>
                         </Box>
                         <Box display={'flex'} justifyContent={'center'}
-                             color={orgObj.momentum === "3" ? "white" : "black"}
-                             bg={orgObj.momentum === "3" ? "black" : "#D9D9D9"} borderRadius={4}
+                             color={orgObj.momentum === "3" ? "white" : "#360503ff"}
+                             bg={orgObj.momentum === "3" ? "#360503ff" : "#D9D9D9"} borderRadius={4}
                              h={'30px'}
                              width={'100%'}>
                             <Center>

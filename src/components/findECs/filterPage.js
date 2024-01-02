@@ -46,7 +46,7 @@ function FilterButton({selectedMajorArr, name}) {
     function toggle(e) { // need to reload the bg colors so if edit interets, it stays
         console.log("click!")
         setOn(!on);
-        if (on) {
+        if (!on) {
             selectedMajorArr.add(name);
             setBgColor(majorColors[name])
         } else {
@@ -56,6 +56,16 @@ function FilterButton({selectedMajorArr, name}) {
         console.log(selectedMajorArr);
 
     }
+
+    useEffect(() => {
+        if (selectedMajorArr.has(name)) {
+            setOn(true);
+            setBgColor(majorColors[name])
+        } else {
+            setOn(false);
+            setBgColor('#360503ff')
+        }
+    }, [])
 
 
     return (
