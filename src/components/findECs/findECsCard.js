@@ -86,7 +86,7 @@ export function Card({orgObj}) {
                             {orgObj.name} {/* THIS IS THE NAME OF THE ORG */}
                         </Text>
                         <Spacer/>
-                        <Badge mr={'3px'} bg={majorColors[orgObj.major]} mt={'1.2px'} h={'1.6em'} color={'#7c8994ff'}
+                        <Badge mr={'3px'} bg={majorColors[orgObj.major]} mt={'1.2px'} h={'1.6em'} 
                                fontSize={'9px'}
                                color={'#360503ff'}> {orgObj.major} </Badge> {/* badges will be added from db */}
                     </Flex>
@@ -154,7 +154,6 @@ export function CardGrid({orgArr, columns, selectedMajorArr, sortBy, onFilterCli
                 <BadgeDisplay selectedMajorArr={selectedMajorArr}/>
             </Box>
             <SimpleGrid columns={columns} spacing={'1em'}>
-
                 {orgArr.map(orgObj => <Card key={orgObj.name} orgObj={orgObj}/>)}
             </SimpleGrid>
         </Box>

@@ -1,5 +1,5 @@
 {
-  "Computer Science": "#FFC5B2",
+  "Comp Sci": "#FFC5B2",
   "Business": "#B2E2FF",
   "Medical": "#97E8B9",
   "Science": "#CDB9F1",
@@ -11,6 +11,5 @@
   "Economics": "#AAC5DD",
   "Art": "#BAE898",
   "Political Science": "#9D95FF",
-  "Community Service": "#FFB2D5",
-  "Entrepreneurship": "#FF1239"
+  "Community Service": "#FFB2D5"
 }
