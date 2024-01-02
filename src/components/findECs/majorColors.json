@@ -1,4 +1,15 @@
 {
-  "Art": "#BAE898",
-  "Computer Science": "#FFC5B2"
+  "Comp Sci": "#FFC5B2"
+  "Buisness": "#B2E2FF"
+  "Medical": "#97E8B9"
+  "Science": "#CDB9F1"
+  "Education": "#A8CCFE"
+  "Engineering": "#F69A9A"
+  "Writing": "#D2A3E8"
+  "History": "#FDE270"
+  "Math": "#FFD9B2"
+  "Economics": "#AAC5DD"
+  "Arts": "#BAE898",
+  "Political": "#9D95FF",
+  "Community Service": "#FFB2D5",
 }
