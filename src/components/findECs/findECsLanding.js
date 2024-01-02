@@ -20,11 +20,11 @@ function FindECsLanding({setShowIntro}) {
                 >
                     <Center>
                         <VStack spacing={3}>
-                            <img src={topsquigly} width={'150px'}/>
+                            <img src={topsquigly} width={'175px'}/>
 
-                            <img src={findecslogo} width={'250px'}/>
+                            <img src={findecslogo} width={'225px'}/>
                             <Box paddingTop={5} textAlign={'center'}>
-                                <Text fontSize='16px' fontWeight={500} color={'#360503ff'}
+                                <Text fontSize='18px' fontWeight={500} color={'#360503ff'}
                                       style={{WebkitTextStroke: '0px #360503ff'}}> THE #1 DATABASE FOR HS
                                     EXTRACURRICULARS!</Text>
                             </Box>
@@ -34,17 +34,17 @@ function FindECsLanding({setShowIntro}) {
                                 <Center>
                                     <Button borderRadius={'7px'}
                                             variant={'solid'}
-                                            fontWeight={'500'} bg={'black'}
-                                            color={'white'} width={'175px'}
+                                            fontWeight={'500'} bg={'#360503ff'}
+                                            color={'white'} width={'200px'}
                                             style={{WebkitTextStroke: '0px #360503ff'}}
                                             onClick={() => setShowIntro(false)}
                                     > GET STARTED </Button>
                                 </Center>
                             </Box>
 
-                            <img src={bottomsquigly} width={'150px'}/>
+                            <img src={bottomsquigly} width={'175px'}/>
 
-                            <img src={madebytrajectory} width={'125px'}/>
+                            <img src={madebytrajectory} width={'150px'}/>
                         </VStack>
                     </Center>
 

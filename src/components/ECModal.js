@@ -28,7 +28,7 @@ function ECModal({orgObj, isOpen, onClose}) {
             }}>
                 <ModalHeader fontFamily={"Poppins"}>
 
-                    <Text fontSize={'28px'} w={'95%'}>
+                    <Text color={'#360503ff'} fontSize={'28px'} w={'95%'}>
                         {orgObj.name}
                     </Text>
                     <Text fontSize={'16px'} color={'gray'}>
@@ -75,11 +75,12 @@ function ECModal({orgObj, isOpen, onClose}) {
                 <ModalBody>
 
 
-                    <Text overflowY={'auto'} h={'200px'} fontSize={'12px'}>{orgObj.description}</Text>
+                    <Text overflowY={'auto'} color={'#360503ff'} h={'200px'}
+                          fontSize={'12px'}>{orgObj.description}</Text>
 
                     <Center fontFamily={"Poppins"} padding={5}>
                         <Box display={'flex'} justifyContent={'center'} borderRadius='5px' minWidth="100%" h='40px'
-                             bg={'black'} color={'white'}
+                             bg={'#360503ff'} color={'white'}
                              mr={3} as='a'
                              href={orgObj.website}
                              target='_blank'

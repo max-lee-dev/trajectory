@@ -82,7 +82,7 @@ export function Card({orgObj}) {
                 }}>
 
                     <Flex direction={"row"} pb={'2px'}>
-                        <Text fontSize={'16px'} fontWeight={'bold'} lineHeight={'160%'} as={'h5'}>
+                        <Text fontSize={'16px'} fontWeight={'bold'} lineHeight={'160%'}>
                             {orgObj.name} {/* THIS IS THE NAME OF THE ORG */}
                         </Text>
                         <Spacer/>
@@ -97,7 +97,10 @@ export function Card({orgObj}) {
                         </Text>
                     </Box> {/* The desc of org ( 1 line) */}
                     <Spacer/>
-                    <Container w={screenWidth} h={'8px'} bg={'#badbffff'} m={'0px'} mt={'4px'} borderRadius={'12px'}/>
+                    <Box h={'8px'} bg={'rgba(110,110,110,0.18)'} mt={'8px'} borderRadius={'12px'}>
+                        <Container w={screenWidth} h={'8px'} bg={majorColors[orgObj.major]} m={'0px'}
+                                   borderRadius={'12px'}/>
+                    </Box>
                 </Flex>
 
             </LinkBox>
@@ -164,8 +167,13 @@ function BadgeDisplay({selectedMajorArr}) {
 
     selectedMajorArr.forEach(value => {
         rendered.push(
-            <Badge width={'fit-content'} key={value} bg={majorColors[value]} marginRight={1} marginBottom={1}>
-                {value}
+            <Badge borderColor={'rgba(54,5,3,0.47)'} borderRadius={10} borderWidth={2} width={'97%'} key={value}
+                   bg={majorColors[value]}
+                   marginRight={1}
+                   marginLeft={1} marginBottom={1}>
+                <Center>
+                    {value}
+                </Center>
             </Badge>
         )
     })

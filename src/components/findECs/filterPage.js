@@ -71,6 +71,9 @@ function FilterButton({selectedMajorArr, name}) {
     return (
         <Box size={'lg'} bg={bgColor} pb={'10px'}
              borderRadius={5}
+             style={{
+                 transition: 'all 0.2s ease-in-out',
+             }}
              onClick={toggle}>
             <Center textAlign={'center'}>
                 <Text padding={1} style={{WebkitTextStroke: '0px #FFFFFF'}} fontSize='18px' fontWeight={400} top={''}
