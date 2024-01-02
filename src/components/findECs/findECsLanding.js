@@ -20,9 +20,9 @@ function FindECsLanding({setShowIntro}) {
                 >
                     <Center>
                         <VStack spacing={3}>
-                            <img src={topsquigly} width={'175px'}/>
+                            <img src={topsquigly} width={'200px'}/>
 
-                            <img src={findecslogo} width={'225px'}/>
+                            <img src={findecslogo} width={'200px'}/>
                             <Box paddingTop={5} textAlign={'center'}>
                                 <Text fontSize='18px' fontWeight={500} color={'#360503ff'}
                                       style={{WebkitTextStroke: '0px #360503ff'}}> THE #1 DATABASE FOR HS
@@ -34,6 +34,7 @@ function FindECsLanding({setShowIntro}) {
                                 <Center>
                                     <Button borderRadius={'7px'}
                                             variant={'solid'}
+                                            height={'50px'}
                                             fontWeight={'500'} bg={'#360503ff'}
                                             color={'white'} width={'200px'}
                                             style={{WebkitTextStroke: '0px #360503ff'}}
@@ -42,7 +43,9 @@ function FindECsLanding({setShowIntro}) {
                                 </Center>
                             </Box>
 
-                            <img src={bottomsquigly} width={'175px'}/>
+                            <Box mt={3}>
+                                <img src={bottomsquigly} width={'200px'}/>
+                            </Box>
 
                             <img src={madebytrajectory} width={'150px'}/>
                         </VStack>
