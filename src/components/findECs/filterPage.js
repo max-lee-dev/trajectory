@@ -7,17 +7,18 @@ import selectyourinterests from '../../assets/img/selectyourinterests.png';
 import {Box, Button, Center, Flex, Heading, Image, Link, Spacer, Text, VStack, Grid, SimpleGrid} from "@chakra-ui/react"
 
 function FilterPage({selectedMajorArr, majorArr, onFilterClick}) {
-    function majorsSelectedTest(e){
+    function majorsSelectedTest(e) {
         if (selectedMajorArr.size == 0) {
             selectedMajorArr = majorArr;
-        }
-        else {
+        } else {
         }
     }
 
     return (
+
         <Center>
-            <Box bg={'transparent'} width={['80vw']} pt={['10px']} fontFamily={'coiny'} color={'white'}
+            <Box bg={'transparent'} width={['80vw', '80vw', '80vw', '50%']} pt={['10px']} fontFamily={'coiny'}
+                 color={'white'}
                 // borderWidth={'2px'} borderColor={'black'}
                  style={{WebkitTextStroke: '2px #360503ff'}} fontWeight={'900'}
             >
@@ -25,8 +26,13 @@ function FilterPage({selectedMajorArr, majorArr, onFilterClick}) {
                     <img src={selectyourinterests} width={'800vw'}/>
                 </Center>
                 <SimpleGrid columns={2} spacing={'10px'}>
-                    {majorColors.map(x => <FilterButton key={x.id} selectedMajorArr={selectedMajorArr} name={x.name} color={x.color}/>)}
+                    {majorColors.map(x => <FilterButton key={x.id} selectedMajorArr={selectedMajorArr} name={x.name}
+                                                        color={x.color}/>)}
                 </SimpleGrid>
+                <Box mt={11}>
+                    <FilterButton selectedMajorArr={selectedMajorArr} name={"COMMUNITY SERVICE"} color={'#FFB2D5'}
+                                  pass={true}/>
+                </Box>
 
                 <Center>
                     <Button size={'lg'} bg={'#360503ff'} m={'40px'} style={{WebkitTextStroke: '0px #FFFFFF'}}
@@ -41,7 +47,7 @@ function FilterPage({selectedMajorArr, majorArr, onFilterClick}) {
     )
 }
 
-function FilterButton({selectedMajorArr, name, color}) {
+function FilterButton({selectedMajorArr, name, color, pass}) {
 
     const [on, setOn] = useState(true)
     const [bgColor, setBgColor] = useState('#360503ff')
@@ -72,16 +78,16 @@ function FilterButton({selectedMajorArr, name, color}) {
         }
     }, [])
 
-
+    if (name === "COMMUNITY SERVICE" && !pass) return null;
     return (
-        <Box size={'lg'} bg={bgColor} pb={'10px'} 
+        <Box size={'lg'} bg={bgColor} pb={'10px'}
              borderRadius={'10px'}
              style={{
                  transition: 'all 0.2s ease-in-out',
              }}
              onClick={toggle}>
             <Center textAlign={'center'}>
-                <Text style={{WebkitTextStroke: '0px #FFFFFF'}} pt={'1px'} fontSize='18px' fontWeight={400} mt={'11px'} 
+                <Text style={{WebkitTextStroke: '0px #FFFFFF'}} pt={'1px'} fontSize='18px' fontWeight={400} mt={'11px'}
                       color={'white'}>
                     {name}
                 </Text>
