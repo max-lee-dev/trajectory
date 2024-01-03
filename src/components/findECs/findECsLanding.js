@@ -21,9 +21,9 @@ function FindECsLanding({setShowIntro}) {
                 >
                     <Center>
                         <VStack spacing={3}>
-                            <img src={topsquigly} width={'200px'}/>
+                            <img src={topsquigly} width={'220px'}/>
 
-                            <img src={findecslogo} width={'200px'}/>
+                            <img src={findecslogo} width={'230px'}/>
                             <Box paddingTop={5} textAlign={'center'}>
                                 <Text fontFamily={'Poppins'} fontWeight={'600'} fontSize='18px' color={'#360503ff'}
                                       style={{WebkitTextStroke: '0px #360503ff'}}> THE #1 DATABASE FOR HS
@@ -33,22 +33,27 @@ function FindECsLanding({setShowIntro}) {
 
                             <Box paddingTop={'20px'}>
                                 <Center>
-                                    <Button borderRadius={'7px'}
+                                    <Button borderRadius={'8px'}
                                             variant={'solid'}
+                                            borderWidth={'2px'} borderColor={'#360503ff'}
                                             height={'50px'}
-                                            fontWeight={'500'} bg={'#360503ff'}
-                                            color={'white'} width={'200px'}
+                                            fontWeight={'500'} bg={'white'}
+                                            color={'#360503ff'} width={'200px'}
                                             style={{WebkitTextStroke: '0px #360503ff'}}
                                             onClick={() => setShowIntro(false)}
-                                    > GET STARTED! </Button>
+                                    >
+                                        <Text fontSize={'20px'} mt={0.5}>
+                                            GET STARTED!
+                                        </Text>
+                                    </Button>
                                 </Center>
                             </Box>
 
                             <Box mt={3}>
-                                <img src={bottomsquigly} width={'200px'}/>
+                                <img src={bottomsquigly} width={'220px'}/>
                             </Box>
 
-                            <img src={madebytrajectory} width={'150px'}/>
+                            <img src={madebytrajectory} width={'170px'}/>
                         </VStack>
                     </Center>
 

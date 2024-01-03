@@ -41,19 +41,19 @@ function FilterPage({selectedMajorArr, majorArr, onFilterClick}) {
                     <img src={selectyourinterests} width={'800vw'}/>
                 </Center>
 
-                <SimpleGrid mt={3} columns={2} spacingX={6} spacingY={2}>
+                <SimpleGrid mt={3} columns={2} spacingX={4} spacingY={4}>
                     {majorColors.map(x => <FilterButton key={x.id} selectedMajorArr={selectedMajorArr} name={x.name}
                                                         color={x.color}/>)}
                 </SimpleGrid>
 
                 <Center>
-                    <Button borderWidth={'1px'} width={'100%'} size={'lg'} bg={'white'}
-                            mt={'40px'}
+                    <Button borderWidth={'2px'} borderColor={'#360503ff'} width={'100%'} size={'lg'} bg={'white'}
+                            mt={'25px'}
                             style={{WebkitTextStroke: '0px #FFFFFF'}}
                             onClick={onFilterClick}>
                         <Box display={'flex'} flexDir={'row'} mt={1}>
 
-                            <Text fontSize='24px' fontWeight={500} mt={1} color={'#360503ff'}>
+                            <Text fontSize='20px' fontWeight={500} mt={0} color={'#360503ff'}>
                                 SEARCH!
                             </Text>
 
@@ -115,7 +115,7 @@ function FilterButton({selectedMajorArr, name, color, pass}) {
              }}
              onClick={toggle}>
             <Center textAlign={'center'}>
-                <Text style={{WebkitTextStroke: '0px #FFFFFF'}} pt={'1px'} fontSize='14px' fontWeight={400} mt={'11px'}
+                <Text style={{WebkitTextStroke: '0px #FFFFFF'}} mt={'1px'} fontSize='14px' fontWeight={400} mt={'11px'}
                       color={'white'}>
                     {name}
                 </Text>

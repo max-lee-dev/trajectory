@@ -41,7 +41,7 @@ export function Card({orgObj}) {
             bg={''} borderRadius={'lg'} borderWidth={'1px'} boxShadow={'md'} h={'8.3em'} overflow={'hidden'}
             w={'7em'} minW={'6em'}
         >
-            
+
 
             {/* <Menu>
                 <MenuButton position={'absolute'}
@@ -62,6 +62,7 @@ export function Card({orgObj}) {
                        src={orgImg}
                        alt='test org image'
                 />
+
             </Box>
             <Box m={'6px'}>
                 <Flex direction={"row"}>
