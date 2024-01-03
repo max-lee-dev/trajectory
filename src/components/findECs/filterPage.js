@@ -53,7 +53,7 @@ function FilterPage({selectedMajorArr, majorArr, onFilterClick}) {
                             onClick={onFilterClick}>
                         <Box display={'flex'} flexDir={'row'} mt={1}>
 
-                            <Text fontSize='20px' fontWeight={500} mt={0} color={'#360503ff'}>
+                            <Text fontSize='22px' fontWeight={500} mt={0} color={'#360503ff'}>
                                 SEARCH!
                             </Text>
 

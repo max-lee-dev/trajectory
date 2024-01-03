@@ -14,7 +14,7 @@ function FindECsLanding({setShowIntro}) {
     return (
         <Box width='100%' bg={'transparent'} maxH={'100vh'}>
             <Center>
-                <Box bg={'transparent'} width={['70%']} paddingTop={['100px', '200px', '200px', '200px']}
+                <Box bg={'transparent'} width={['70%']} paddingTop={['60px', '200px', '200px', '200px']}
                      paddingBottom={'50px'}
                      fontFamily={'coiny'} color={'white'}
                      style={{WebkitTextStroke: '2px #360503ff'}}
@@ -37,8 +37,8 @@ function FindECsLanding({setShowIntro}) {
                                             variant={'solid'}
                                             borderWidth={'2px'} borderColor={'#360503ff'}
                                             height={'50px'}
-                                            fontWeight={'500'} bg={'white'}
-                                            color={'#360503ff'} width={'200px'}
+                                            fontWeight={'500'} bg={'#360503ff'}
+                                            color={'white'} width={'200px'}
                                             style={{WebkitTextStroke: '0px #360503ff'}}
                                             onClick={() => setShowIntro(false)}
                                     >
@@ -52,8 +52,9 @@ function FindECsLanding({setShowIntro}) {
                             <Box mt={3}>
                                 <img src={bottomsquigly} width={'220px'}/>
                             </Box>
-
-                            <img src={madebytrajectory} width={'170px'}/>
+                            <Box mt={3}>
+                                <img src={madebytrajectory} width={'150px'}/>
+                            </Box>
                         </VStack>
                     </Center>
 
