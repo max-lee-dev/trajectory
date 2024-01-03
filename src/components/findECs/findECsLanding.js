@@ -52,7 +52,7 @@ function FindECsLanding({setShowIntro}) {
                             <Box mt={3}>
                                 <img src={bottomsquigly} width={'220px'}/>
                             </Box>
-                            <Box mt={3}>
+                            <Box mt={3} as={'a'} href={'https://www.trajectory.education/'}>
                                 <img src={madebytrajectory} width={'150px'}/>
                             </Box>
                         </VStack>
