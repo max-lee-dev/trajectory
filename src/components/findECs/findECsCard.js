@@ -1,6 +1,6 @@
 import React from 'react';
 import ECModal from '../ECModal.js';
-import majorColors from './majorColors.json';
+import majorColors from '../findECs/majorColors.json';
 
 import {
     Container,
@@ -44,6 +44,8 @@ export function Card({orgObj}) {
     }
     let screenWidth = 100.0 / 5 * (parseInt(orgObj.size) + parseInt(orgObj.impact) + parseInt(orgObj.momentum) - 4) + "%";
 
+    let color = majorColors.filter(function(x){return x.name == orgObj.major;})[0].color;
+
     return (
         <Center>
             <LinkBox
@@ -86,7 +88,7 @@ export function Card({orgObj}) {
                             {orgObj.name} {/* THIS IS THE NAME OF THE ORG */}
                         </Text>
                         <Spacer/>
-                        <Badge mr={'3px'} bg={majorColors[orgObj.major]} mt={'1.2px'} h={'1.6em'} 
+                        <Badge mr={'3px'} bg={color} mt={'1.2px'} h={'1.6em'} 
                                fontSize={'9px'}
                                color={'#360503ff'}> {orgObj.major} </Badge> {/* badges will be added from db */}
                     </Flex>
@@ -98,11 +100,10 @@ export function Card({orgObj}) {
                     </Box> {/* The desc of org ( 1 line) */}
                     <Spacer/>
                     <Box h={'8px'} bg={'rgba(110,110,110,0.18)'} mt={'8px'} borderRadius={'12px'}>
-                        <Container w={screenWidth} h={'8px'} bg={majorColors[orgObj.major]} m={'0px'}
+                        <Container w={screenWidth} h={'8px'} bg={color} m={'0px'}
                                    borderRadius={'12px'}/>
                     </Box>
                 </Flex>
-
             </LinkBox>
         </Center>
     );
@@ -151,7 +152,7 @@ export function CardGrid({orgArr, columns, selectedMajorArr, sortBy, onFilterCli
 
             </Box>
             <Box padding={0}>
-                <BadgeDisplay selectedMajorArr={selectedMajorArr}/>
+                {/* <BadgeDisplay selectedMajorArr={selectedMajorArr}/> */}
             </Box>
             <SimpleGrid columns={columns} spacing={'1em'}>
                 {orgArr.map(orgObj => <Card key={orgObj.name} orgObj={orgObj}/>)}
@@ -163,11 +164,11 @@ export function CardGrid({orgArr, columns, selectedMajorArr, sortBy, onFilterCli
 function BadgeDisplay({selectedMajorArr}) {
     let rendered = []
 
-
     selectedMajorArr.forEach(value => {
+        let color = majorColors.filter(function(x){return x.name == value;})[0].color;
         rendered.push(
             <Badge borderColor={'rgba(54,5,3,0.47)'} borderRadius={10} borderWidth={2} width={'97%'} key={value}
-                   bg={majorColors[value]}
+                   bg={color}
                    marginRight={1}
                    marginLeft={1} marginBottom={1}>
                 <Center>

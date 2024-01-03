@@ -7,7 +7,6 @@ import selectyourinterests from '../../assets/img/selectyourinterests.png';
 import {Box, Button, Center, Flex, Heading, Image, Link, Spacer, Text, VStack, Grid, SimpleGrid} from "@chakra-ui/react"
 
 function FilterPage({selectedMajorArr, majorArr, onFilterClick}) {
-
     return (
         <Center>
             <Box bg={'transparent'} width={['90vw']} pt={['10px']} fontFamily={'coiny'} color={'white'}
@@ -19,7 +18,7 @@ function FilterPage({selectedMajorArr, majorArr, onFilterClick}) {
                     <img src={selectyourinterests} width={'250px'}/>
                 </Center>
                 <SimpleGrid columns={2} spacing={'10px'}>
-                    {majorArr.map(x => <FilterButton key={x} selectedMajorArr={selectedMajorArr} name={x}/>)}
+                    {majorColors.map(x => <FilterButton key={x.id} selectedMajorArr={selectedMajorArr} name={x.name} color={x.color}/>)}
                 </SimpleGrid>
 
                 <Center>
@@ -35,7 +34,7 @@ function FilterPage({selectedMajorArr, majorArr, onFilterClick}) {
     )
 }
 
-function FilterButton({selectedMajorArr, name}) {
+function FilterButton({selectedMajorArr, name, color}) {
 
     const [on, setOn] = useState(true)
     const [bgColor, setBgColor] = useState('#360503ff')
@@ -44,11 +43,10 @@ function FilterButton({selectedMajorArr, name}) {
     // console.log(name)
 
     function toggle(e) { // need to reload the bg colors so if edit interets, it stays
-        console.log("click!")
         setOn(!on);
         if (!on) {
             selectedMajorArr.add(name);
-            setBgColor(majorColors[name])
+            setBgColor(color)
         } else {
             selectedMajorArr.delete(name);
             setBgColor('#360503ff')
@@ -60,7 +58,7 @@ function FilterButton({selectedMajorArr, name}) {
     useEffect(() => {
         if (selectedMajorArr.has(name)) {
             setOn(true);
-            setBgColor(majorColors[name])
+            setBgColor(color)
         } else {
             setOn(false);
             setBgColor('#360503ff')
