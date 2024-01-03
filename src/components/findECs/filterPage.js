@@ -9,7 +9,7 @@ import {Box, Button, Center, Flex, Heading, Image, Link, Spacer, Text, VStack, G
 function FilterPage({selectedMajorArr, majorArr, onFilterClick}) {
     return (
         <Center>
-            <Box bg={'transparent'} width={['90vw']} pt={['10px']} fontFamily={'coiny'} color={'white'}
+            <Box bg={'transparent'} width={['80vw']} pt={['10px']} fontFamily={'coiny'} color={'white'}
                 // borderWidth={'2px'} borderColor={'black'}
                  style={{WebkitTextStroke: '2px #360503ff'}} fontWeight={'900'}
             >
@@ -73,7 +73,7 @@ function FilterButton({selectedMajorArr, name, color}) {
              }}
              onClick={toggle}>
             <Center textAlign={'center'}>
-                <Text style={{WebkitTextStroke: '0px #FFFFFF'}} fontSize='18px' fontWeight={400} mt={'12px'} 
+                <Text style={{WebkitTextStroke: '0px #FFFFFF'}}  fontSize='18px' fontWeight={400} mt={'8px'} 
                       color={'white'}>
                     {name}
                 </Text>
