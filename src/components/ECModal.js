@@ -48,7 +48,7 @@ function ECModal({orgObj, isOpen, onClose}) {
                              color={orgObj.size === "3" ? "white" : "#360503ff"}
                              width={'100%'}>
                             <Center>
-                                <Text>  {orgObj.size === '1' ? 'Low ' : orgObj.size === '2' ? 'Medium ' : 'Large '} Size</Text>
+                                <Text>  {orgObj.size === '1' ? 'Small!' : orgObj.size === '2' ? 'Large!' : 'Super Large!'} Size</Text>
                             </Center>
                         </Box>
                         <Box display={'flex'} justifyContent={'center'}
@@ -78,12 +78,10 @@ function ECModal({orgObj, isOpen, onClose}) {
                 <ModalCloseButton/>
                 <ModalBody>
 
-
-                    <Text overflowY={'auto'} color={'#360503ff'} h={'200px'}
+                    <Text overflowY={'auto'} color={'#360503ff'} h={'200px'} mt={'-10px'}
                           fontSize={'12px'}>{orgObj.description}</Text>
-
                     <Center fontFamily={"Poppins"} padding={''}>
-                        <Box display={'flex'} justifyContent={'center'} borderRadius='5px' width="100%" h='50px' mb={'20px'}
+                        <Box display={'flex'} justifyContent={'center'} borderRadius='5px' width="100%" h='50px' mb={'20px'} mt={'10px'}
                              bg={'#360503ff'} color={'white'}
                              mr={3} as='a'
                              href={orgObj.website}
