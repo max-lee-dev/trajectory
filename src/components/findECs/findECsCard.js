@@ -58,7 +58,7 @@ export function Card({orgObj}) {
                 maxW={'8em'} p={'0px'}
                 onClick={onOpen}
                 mt={'2px'}
-                mb={'-14px'}
+                mb={'-30px'}
             >
 
                 <ECModal orgObj={orgObj} isOpen={isOpen} onClose={onClose}/>
@@ -91,7 +91,7 @@ export function Card({orgObj}) {
                         <Spacer/>
                         <Badge mr={'3px'} bg={color} mt={'1.2px'} h={'1.6em'} 
                                fontSize={'9px'}
-                               color={'#360503ff'}> {orgObj.major} </Badge> {/* badges will be added from db */}
+                               color={'black'}> {orgObj.major} </Badge> {/* badges will be added from db */}
                     </Flex>
 
                     <Box>
@@ -136,7 +136,7 @@ export function CardGrid({orgArr, columns, selectedMajorArr, sortBy, onFilterCli
     return (
         <Box>
             <Center paddingBottom={6}>
-                    <img src={selectyourinterests} width={'300px'}/>
+                    <img src={selectyourinterests} width={'800vw'}/>
             </Center>
             <Box zIndex={1} top={'0px'} sx={{position: '-webkit-sticky', /* Safari */ position: 'sticky'}}>
 

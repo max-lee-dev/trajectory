@@ -1,12 +1,16 @@
 [{
   "id": 1,
   "name": "COMP SCI",
-  "color": "#FFC5B2"
+  "color": "#FFC5B2",
+  "color2": "#ffe6deff",
+  "color3": "#ff8861ff"
 },
 {
   "id": 2,
   "name": "BUSINESS",
-  "color": "#B2E2FF"
+  "color": "#B2E2FF",
+  "color2": "#ffe6deff",
+  "color3": "#ff8861ff"
 },
 {
   "id": 3,

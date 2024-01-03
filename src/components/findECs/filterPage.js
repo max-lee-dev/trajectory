@@ -66,14 +66,14 @@ function FilterButton({selectedMajorArr, name, color}) {
 
 
     return (
-        <Box size={'lg'} bg={bgColor} pb={'10px'}
-             borderRadius={5}
+        <Box size={'lg'} bg={bgColor} pb={'10px'} 
+             borderRadius={'10px'}
              style={{
                  transition: 'all 0.2s ease-in-out',
              }}
              onClick={toggle}>
             <Center textAlign={'center'}>
-                <Text padding={1} style={{WebkitTextStroke: '0px #FFFFFF'}} fontSize='18px' fontWeight={400} top={''}
+                <Text style={{WebkitTextStroke: '0px #FFFFFF'}} fontSize='18px' fontWeight={400} mt={'12px'} 
                       color={'white'}>
                     {name}
                 </Text>
