@@ -46,6 +46,8 @@ export function Card({orgObj}) {
     let screenWidth = 100.0 / 5 * (parseInt(orgObj.size) + parseInt(orgObj.impact) + parseInt(orgObj.momentum) - 4) + "%";
 
     let color = majorColors.filter(function(x){return x.name == orgObj.major;})[0].color;
+    let color2 = majorColors.filter(function(x){return x.name == orgObj.major;})[0].color2;
+    let color3 = majorColors.filter(function(x){return x.name == orgObj.major;})[0].color3;
 
     return (
         <Center>
@@ -89,9 +91,9 @@ export function Card({orgObj}) {
                             {orgObj.name} {/* THIS IS THE NAME OF THE ORG */}
                         </Text>
                         <Spacer/>
-                        <Badge mr={'3px'} bg={color} mt={'1.2px'} h={'1.6em'} 
+                        <Badge mr={'3px'} bg={color2} mt={'1.5px'} pt={'1.2px'} h={'1.6em'} 
                                fontSize={'9px'}
-                               color={'black'}> {orgObj.major} </Badge> {/* badges will be added from db */}
+                               color={color3}> {orgObj.major} </Badge> {/* badges will be added from db */}
                     </Flex>
 
                     <Box>

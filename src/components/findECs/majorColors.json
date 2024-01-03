@@ -8,62 +8,84 @@
 {
   "id": 2,
   "name": "BUSINESS",
-  "color": "#B2E2FF",
-  "color2": "#ffe6deff",
-  "color3": "#ff8861ff"
+  "color": "#b2e2ffff",
+  "color2": "#ddf2ffff",
+  "color3": "#87d1ffff"
 },
 {
   "id": 3,
   "name": "MEDICAL",
-  "color": "#97E8B9"
+  "color": "#97E8B9",
+  "color2": "#deffecff",
+  "color3": "#71dea0ff"
 },
 {
   "id": 4,
   "name": "SCIENCE",
-  "color": "#CDB9F1"
+  "color": "#CDB9F1",
+  "color2": "#e9deffff",
+  "color3": "#b387ffff"
 },
 {
   "id": 5,
   "name": "EDUCATION",
-  "color": "#A8CCFE"
+  "color": "#A8CCFE",
+  "color2": "#deecffff",
+  "color3": "#87b9ffff"
 },
 {
   "id": 6,
   "name": "ENGINEERING",
-  "color": "#F69A9A"
+  "color": "#F69A9A",
+  "color2": "#ffdedeff",
+  "color3": "#ff8787ff"
 },
 {
   "id": 7,
   "name": "WRITING",
-  "color": "#D2A3E8"
+  "color": "#D2A3E8",
+  "color2": "#f5deffff",
+  "color3": "#da8affff"
 },
 {
   "id": 8,
   "name": "HISTORY",
-  "color": "#FDE270"
+  "color": "#FDE270",
+  "color2": "#ffe4d4ff",
+  "color3": "#edb179ff"
 },
 {
   "id": 9,
   "name": "MATH",
-  "color": "#FFD9B2"
+  "color": "#FFD9B2",
+  "color2": "#fff1e3ff",
+  "color3": "#ffc285ff"
 },
 {
   "id": 10,
   "name": "ECONOMICS",
-  "color": "#AAC5DD"
+  "color": "#AAC5DD",
+  "color2": "#dae7f2ff",
+  "color3": "#76abdeff"
 },
 {
   "id": 11,
   "name": "ARTS",
-  "color": "#BAE898"
+  "color": "#BAE898",
+  "color2": "#dae8cfff",
+  "color3": "#90cd63ff"
 },
 {
   "id": 12,
   "name": "POLITICAL",
-  "color": "#9D95FF"
+  "color": "#9D95FF",
+  "color2": "#e4e2ffff",
+  "color3": "#8c83ffff"
 },
 {
   "id": 13,
   "name": "COMMUNITY SERVICE",
-  "color": "#FFB2D5"
+  "color": "#FFB2D5",
+  "color2": "#fde3efff",
+  "color3": "#f17cb1ff"
 }]
