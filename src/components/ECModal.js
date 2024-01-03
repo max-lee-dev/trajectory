@@ -16,6 +16,10 @@ import {
     useDisclosure
 } from "@chakra-ui/react"
 
+import "@fontsource/poppins/800.css";
+import "@fontsource/poppins/600.css";
+
+
 function ECModal({orgObj, isOpen, onClose}) {
     return (
         <Modal isCentered size={["xs", "md", "md"]} isOpen={isOpen} onClose={onClose}>
@@ -28,17 +32,17 @@ function ECModal({orgObj, isOpen, onClose}) {
             }}>
                 <ModalHeader fontFamily={"Poppins"}>
 
-                    <Text color={'#360503ff'} fontSize={'28px'} w={'95%'}>
+                    <Text color={'#360503ff'} fontSize={'28px'} w={'95%'} fontWeight={'800'}>
                         {orgObj.name}
                     </Text>
-                    <Text fontSize={'16px'} color={'gray'}>
-                        {orgObj.major}
-                    </Text>
-                    <HStack paddingTop={3} fontFamily={"Poppins"} fontWeight={600} fontSize={'10px'} color='white'
+                    <Text fontSize={'16px'} color={'#360503ff'} fontWeight={'600'}>
+                        {orgObj.major.toLowerCase().replace(/\b\w/g, (char) => char.toUpperCase())}
+                     </Text>
+                    <HStack paddingTop={3} fontFamily={"Poppins"} fontWeight={600} fontSize={'8px'} color='white'
                             display={'flex'}
                             justifyContent={'space-between'}>
                         <Box display={'flex'} justifyContent={'center'}
-                             bg={orgObj.size === "3" ? "#360503ff" : "#D9D9D9"}
+                             bg={orgObj.size === "3" ? "#360503ff" : "#f5f4f0ff"}
                              borderRadius={4}
                              h={'30px'}
                              color={orgObj.size === "3" ? "white" : "#360503ff"}
@@ -48,7 +52,7 @@ function ECModal({orgObj, isOpen, onClose}) {
                             </Center>
                         </Box>
                         <Box display={'flex'} justifyContent={'center'}
-                             bg={orgObj.impact === "3" ? "#360503ff" : "#D9D9D9"}
+                             bg={orgObj.impact === "3" ? "#360503ff" : "#f5f4f0ff"}
                              borderRadius={4}
                              h={'30px'}
                              color={orgObj.impact === "3" ? "white" : "#360503ff"}
@@ -62,7 +66,7 @@ function ECModal({orgObj, isOpen, onClose}) {
                         </Box>
                         <Box display={'flex'} justifyContent={'center'}
                              color={orgObj.momentum === "3" ? "white" : "#360503ff"}
-                             bg={orgObj.momentum === "3" ? "#360503ff" : "#D9D9D9"} borderRadius={4}
+                             bg={orgObj.momentum === "3" ? "#360503ff" : "#f5f4f0ff"} borderRadius={4}
                              h={'30px'}
                              width={'100%'}>
                             <Center>
@@ -78,8 +82,8 @@ function ECModal({orgObj, isOpen, onClose}) {
                     <Text overflowY={'auto'} color={'#360503ff'} h={'200px'}
                           fontSize={'12px'}>{orgObj.description}</Text>
 
-                    <Center fontFamily={"Poppins"} padding={5}>
-                        <Box display={'flex'} justifyContent={'center'} borderRadius='5px' minWidth="100%" h='40px'
+                    <Center fontFamily={"Poppins"} padding={''}>
+                        <Box display={'flex'} justifyContent={'center'} borderRadius='5px' width="100%" h='50px' mb={'20px'}
                              bg={'#360503ff'} color={'white'}
                              mr={3} as='a'
                              href={orgObj.website}
