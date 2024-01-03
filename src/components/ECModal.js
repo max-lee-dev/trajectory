@@ -23,6 +23,8 @@ import majorColors from './findECs/majorColors.json';
 
 function ECModal({orgObj, isOpen, onClose}) {
     let color = majorColors.filter(function(x){return x.name == orgObj.major;})[0].color;
+   let color2 = majorColors.filter(function(x){return x.name == orgObj.major;})[0].color2;
+    let color3 = majorColors.filter(function(x){return x.name == orgObj.major;})[0].color3;
     return (
         <Modal isCentered size={["xs", "md", "md"]} isOpen={isOpen} onClose={onClose}>
             <ModalOverlay/>
@@ -37,27 +39,27 @@ function ECModal({orgObj, isOpen, onClose}) {
                     <Text color={'#360503ff'} fontSize={'28px'} w={'95%'} fontWeight={'800'}>
                         {orgObj.name}
                     </Text>
-                    <Text fontSize={'16px'} color={'#360503ff'} fontWeight={'600'}>
+                    <Text fontSize={'16px'} color={color3} fontWeight={'600'}>
                         {orgObj.major.toLowerCase().replace(/\b\w/g, (char) => char.toUpperCase())}
                      </Text>
                     <HStack paddingTop={3} fontFamily={"Poppins"} fontWeight={600} fontSize={'8px'} color='white'
                             display={'flex'}
                             justifyContent={'space-between'}>
                         <Box display={'flex'} justifyContent={'center'}
-                             bg={"#f5f4f0ff"}
+                             bg={color2}
                              borderRadius={4}
                              h={'30px'}
-                             color={ "#360503ff"}
+                             color={ color3}
                              width={'100%'}>
                             <Center>
                                 <Text>  {orgObj.size === '1' ? 'Small!' : orgObj.size === '2' ? 'Large!' : 'Super Large!'} </Text>
                             </Center>
                         </Box>
                         <Box display={'flex'} justifyContent={'center'}
-                             bg={ "#f5f4f0ff"}
+                             bg={color2}
                              borderRadius={4}
                              h={'30px'}
-                             color={"#360503ff"}
+                             color={color3}
                              width={'100%'}>
                             <Center>
                                 <Text>
@@ -67,8 +69,8 @@ function ECModal({orgObj, isOpen, onClose}) {
                             </Center>
                         </Box>
                         <Box display={'flex'} justifyContent={'center'}
-                             color={"#360503ff"}
-                             bg={ "#f5f4f0ff"} borderRadius={4}
+                             color={color3}
+                             bg={color2} borderRadius={4}
                              h={'30px'}
                              width={'100%'}>
                             <Center>
@@ -84,7 +86,7 @@ function ECModal({orgObj, isOpen, onClose}) {
                           fontSize={'12px'}>{orgObj.description}</Text>
                     <Center fontFamily={"Poppins"} padding={''}>
                         <Box display={'flex'} justifyContent={'center'} borderRadius='5px' width="100%" h='50px' mb={'20px'} mt={'10px'}
-                             bg={color} color={'white'}
+                             bg={color3} color={'white'}
                              mr={3} as='a'
                              href={orgObj.website}
                              target='_blank'
