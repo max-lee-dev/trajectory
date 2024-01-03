@@ -30,7 +30,7 @@ function FilterPage({selectedMajorArr, majorArr, onFilterClick}) {
 
                 <Center>
                     <Button size={'lg'} bg={'#360503ff'} m={'40px'} style={{WebkitTextStroke: '0px #FFFFFF'}}
-                            onClick={majorsSelectedTest}>
+                            onClick={onFilterClick}>
                         <Text fontSize='1em' fontWeight={500} top={''} color={'white'}>
                             FIND ECS
                         </Text>
