@@ -48,7 +48,7 @@ function ECModal({orgObj, isOpen, onClose}) {
                              color={orgObj.size === "3" ? "white" : "#360503ff"}
                              width={'100%'}>
                             <Center>
-                                <Text>  {orgObj.size === '1' ? 'Small!' : orgObj.size === '2' ? 'Large!' : 'Super Large!'} Size</Text>
+                                <Text>  {orgObj.size === '1' ? 'Small!' : orgObj.size === '2' ? 'Large!' : 'Super Large!'} </Text>
                             </Center>
                         </Box>
                         <Box display={'flex'} justifyContent={'center'}
@@ -59,7 +59,7 @@ function ECModal({orgObj, isOpen, onClose}) {
                              width={'100%'}>
                             <Center>
                                 <Text>
-                                    {orgObj.impact === '1' ? 'Low ' : orgObj.impact === '2' ? 'Medium ' : 'High '} Impact
+                                    {orgObj.impact === '1' ? 'Neutral!' : orgObj.impact === '2' ? 'Impactful!' : 'Super Impactful!'} 
                                 </Text>
 
                             </Center>
@@ -70,7 +70,7 @@ function ECModal({orgObj, isOpen, onClose}) {
                              h={'30px'}
                              width={'100%'}>
                             <Center>
-                                <Text>{orgObj.momentum === "1" ? 'Low ' : orgObj.momentum === "2" ? 'Medium ' : 'High '}Growth</Text>
+                                <Text>{orgObj.momentum === "1" ? 'Stable!' : orgObj.momentum === "2" ? 'Growing!' : 'Growing Fast!'}</Text>
                             </Center>
                         </Box>
                     </HStack>
