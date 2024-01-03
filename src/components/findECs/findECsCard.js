@@ -1,6 +1,7 @@
 import React from 'react';
 import ECModal from '../ECModal.js';
 import majorColors from '../findECs/majorColors.json';
+import selectyourinterests from '../../assets/img/selectyourinterests.png';
 
 import {
     Container,
@@ -52,7 +53,7 @@ export function Card({orgObj}) {
 
                 cursor={'pointer'}
                 _active={{borderWidth: '7px'}}
-                bg={'white'} color={'black'} borderRadius={'lg'} borderWidth={'1px'} boxShadow={'md'}
+                bg={'white'} color={'#360503ff'} borderRadius={'lg'} borderWidth={'1px'} boxShadow={'md'}
                 overflow={'hidden'}
                 maxW={'8em'} p={'0px'}
                 onClick={onOpen}
@@ -134,6 +135,9 @@ export function CardGrid({orgArr, columns, selectedMajorArr, sortBy, onFilterCli
 
     return (
         <Box>
+            <Center paddingBottom={6}>
+                    <img src={selectyourinterests} width={'300px'}/>
+            </Center>
             <Box zIndex={1} top={'0px'} sx={{position: '-webkit-sticky', /* Safari */ position: 'sticky'}}>
 
                 <Center>

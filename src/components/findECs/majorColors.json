@@ -1,65 +1,65 @@
 [{
   "id": 1,
-  "name": "Comp Sci",
+  "name": "COMP SCI",
   "color": "#FFC5B2"
 },
 {
   "id": 2,
-  "name": "Business",
+  "name": "BUSINESS",
   "color": "#B2E2FF"
 },
 {
   "id": 3,
-  "name": "Medical",
+  "name": "MEDICAL",
   "color": "#97E8B9"
 },
 {
   "id": 4,
-  "name": "Science",
+  "name": "SCIENCE",
   "color": "#CDB9F1"
 },
 {
   "id": 5,
-  "name": "Education",
+  "name": "EDUCATION",
   "color": "#A8CCFE"
 },
 {
   "id": 6,
-  "name": "Engineering",
+  "name": "ENGINEERING",
   "color": "#F69A9A"
 },
 {
   "id": 7,
-  "name": "Writing",
+  "name": "WRITING",
   "color": "#D2A3E8"
 },
 {
   "id": 8,
-  "name": "History",
+  "name": "HISTORY",
   "color": "#FDE270"
 },
 {
   "id": 9,
-  "name": "Mathematics",
+  "name": "MATH",
   "color": "#FFD9B2"
 },
 {
   "id": 10,
-  "name": "Economics",
+  "name": "ECONOMICS",
   "color": "#AAC5DD"
 },
 {
   "id": 11,
-  "name": "Art",
+  "name": "ARTS",
   "color": "#BAE898"
 },
 {
   "id": 12,
-  "name": "Political Science",
+  "name": "POLITICAL",
   "color": "#9D95FF"
 },
 {
   "id": 13,
-  "name": "Community Service",
+  "name": "COMMUNITY SERVICE",
   "color": "#FFB2D5"
 }]

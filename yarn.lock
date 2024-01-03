@@ -2658,6 +2658,11 @@
   resolved "https://registry.npmjs.org/@fontsource/coiny/-/coiny-5.0.8.tgz"
   integrity sha512-S5NbiGb2ZNg/kMjyrk8VDSzIPp+8HHtN4yRHpkzjPJP0+aozKYtjdNVyZdhGcnLNq3FOM7cdfGBHgszr/9+d9g==
 
+"@fontsource/poppins@^5.0.8":
+  version "5.0.8"
+  resolved "https://registry.npmjs.org/@fontsource/poppins/-/poppins-5.0.8.tgz"
+  integrity sha512-P8owfYWluoUY5Nyzk4gT/L6LmLmseP6ezFWhj6VBUa5pRIdnCvNJpoQ6i/vhekjtJOfqX6nKlB+LCttoUl2GQQ==
+
 "@grpc/grpc-js@~1.9.0":
   version "1.9.12"
   resolved "https://registry.npmjs.org/@grpc/grpc-js/-/grpc-js-1.9.12.tgz"

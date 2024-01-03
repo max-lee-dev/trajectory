@@ -14,8 +14,7 @@ function FilterPage({selectedMajorArr, majorArr, onFilterClick}) {
                  style={{WebkitTextStroke: '2px #360503ff'}} fontWeight={'900'}
             >
                 <Center paddingBottom={6}>
-
-                    <img src={selectyourinterests} width={'250px'}/>
+                    <img src={selectyourinterests} width={'800vw'}/>
                 </Center>
                 <SimpleGrid columns={2} spacing={'10px'}>
                     {majorColors.map(x => <FilterButton key={x.id} selectedMajorArr={selectedMajorArr} name={x.name} color={x.color}/>)}
