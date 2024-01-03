@@ -2,6 +2,7 @@ import React from 'react';
 import ECModal from '../ECModal.js';
 import majorColors from '../findECs/majorColors.json';
 import selectyourinterests from '../../assets/img/selectyourinterests.png';
+import gridFindECsLogo from '../../assets/img/gridFindECsLogo.png';
 
 import {
     Container,
@@ -57,7 +58,7 @@ export function Card({orgObj}) {
                 _active={{borderWidth: '7px'}}
                 bg={'white'} color={'#360503ff'} borderRadius={'lg'} borderWidth={'1px'} boxShadow={'md'}
                 overflow={'hidden'}
-                maxW={'8em'} p={'0px'}
+                w={'8em'} p={'0px'}
                 onClick={onOpen}
                 mt={'2px'}
                 mb={'-30px'}
@@ -138,7 +139,7 @@ export function CardGrid({orgArr, columns, selectedMajorArr, sortBy, onFilterCli
     return (
         <Box>
             <Center paddingBottom={6}>
-                    <img src={selectyourinterests} width={'800vw'}/>
+                    <img src={gridFindECsLogo} width={'800vw'}/>
             </Center>
             <Box zIndex={1} top={'0px'} sx={{position: '-webkit-sticky', /* Safari */ position: 'sticky'}}>
 

@@ -39,7 +39,7 @@ export function Card({orgObj}) {
     return (
         <LinkBox
             bg={''} borderRadius={'lg'} borderWidth={'1px'} boxShadow={'md'} h={'8.3em'} overflow={'hidden'}
-            maxW={'7em'} minW={'6em'}
+            w={'7em'} minW={'6em'}
         >
             
 
