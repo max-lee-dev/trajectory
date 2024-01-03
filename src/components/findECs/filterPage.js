@@ -7,6 +7,14 @@ import selectyourinterests from '../../assets/img/selectyourinterests.png';
 import {Box, Button, Center, Flex, Heading, Image, Link, Spacer, Text, VStack, Grid, SimpleGrid} from "@chakra-ui/react"
 
 function FilterPage({selectedMajorArr, majorArr, onFilterClick}) {
+    function majorsSelectedTest(e){
+        if (selectedMajorArr.size == 0) {
+            selectedMajorArr = majorArr;
+        }
+        else {
+        }
+    }
+
     return (
         <Center>
             <Box bg={'transparent'} width={['80vw']} pt={['10px']} fontFamily={'coiny'} color={'white'}
@@ -22,7 +30,7 @@ function FilterPage({selectedMajorArr, majorArr, onFilterClick}) {
 
                 <Center>
                     <Button size={'lg'} bg={'#360503ff'} m={'40px'} style={{WebkitTextStroke: '0px #FFFFFF'}}
-                            onClick={onFilterClick}>
+                            onClick={majorsSelectedTest}>
                         <Text fontSize='1em' fontWeight={500} top={''} color={'white'}>
                             FIND ECS
                         </Text>

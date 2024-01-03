@@ -44,7 +44,7 @@ export function Card({orgObj}) {
     if (!/^https?:\/\//i.test(orgObj.website)) {
         orgObj.website = 'https://' + orgObj.website;
     }
-    let screenWidth = 100.0 / 3.1 * (parseInt(orgObj.size) + parseInt(orgObj.impact) + parseInt(orgObj.momentum) - 4) + "%";
+    let screenWidth = 100.0 / 5 * (parseInt(orgObj.size) + parseInt(orgObj.impact) + parseInt(orgObj.momentum) - 4) + 35 + "%";
 
     let color = majorColors.filter(function(x){return x.name == orgObj.major;})[0].color;
     let color2 = majorColors.filter(function(x){return x.name == orgObj.major;})[0].color2;
