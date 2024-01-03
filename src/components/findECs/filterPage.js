@@ -81,7 +81,7 @@ function FilterButton({selectedMajorArr, name, color}) {
              }}
              onClick={toggle}>
             <Center textAlign={'center'}>
-                <Text style={{WebkitTextStroke: '0px #FFFFFF'}}  fontSize='18px' fontWeight={400} mt={'8px'} 
+                <Text style={{WebkitTextStroke: '0px #FFFFFF'}} pt={'1px'} fontSize='18px' fontWeight={400} mt={'11px'} 
                       color={'white'}>
                     {name}
                 </Text>
