@@ -14,7 +14,7 @@ function FindECsLanding({setShowIntro}) {
     return (
         <Box width='100%' bg={'transparent'} maxH={'100vh'}>
             <Center>
-                <Box bg={'transparent'} width={['70%']} paddingTop={['60px', '200px', '200px', '200px']}
+                <Box bg={'transparent'} width={['70%']} paddingTop={['60px', '200px', '200px', '150px']}
                      paddingBottom={'50px'}
                      fontFamily={'coiny'} color={'white'}
                      style={{WebkitTextStroke: '2px #360503ff'}}

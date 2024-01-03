@@ -46,9 +46,15 @@ export function Card({orgObj}) {
     }
     let screenWidth = 100.0 / 5 * (parseInt(orgObj.size) + parseInt(orgObj.impact) + parseInt(orgObj.momentum) - 4) + 35 + "%";
 
-    let color = majorColors.filter(function(x){return x.name == orgObj.major;})[0].color;
-    let color2 = majorColors.filter(function(x){return x.name == orgObj.major;})[0].color2;
-    let color3 = majorColors.filter(function(x){return x.name == orgObj.major;})[0].color3;
+    let color = majorColors.filter(function (x) {
+        return x.name == orgObj.major;
+    })[0].color;
+    let color2 = majorColors.filter(function (x) {
+        return x.name == orgObj.major;
+    })[0].color2;
+    let color3 = majorColors.filter(function (x) {
+        return x.name == orgObj.major;
+    })[0].color3;
 
     return (
         <Center>
@@ -92,7 +98,7 @@ export function Card({orgObj}) {
                             {orgObj.name} {/* THIS IS THE NAME OF THE ORG */}
                         </Text>
                         <Spacer/>
-                        <Badge mr={'3px'} bg={color2} mt={'1.5px'} pt={'1.2px'} h={'1.6em'} 
+                        <Badge mr={'3px'} bg={color2} mt={'1.5px'} pt={'1.2px'} h={'1.6em'}
                                fontSize={'9px'}
                                color={color3}> {orgObj.major} </Badge> {/* badges will be added from db */}
                     </Flex>
@@ -139,7 +145,7 @@ export function CardGrid({orgArr, columns, selectedMajorArr, sortBy, onFilterCli
     return (
         <Box>
             <Center paddingBottom={6}>
-                    <img src={gridFindECsLogo} width={'800vw'}/>
+                <img src={gridFindECsLogo} width={['400px']}/>
             </Center>
             <Box zIndex={1} top={'12px'} sx={{position: '-webkit-sticky', /* Safari */ position: 'sticky'}}>
 
@@ -173,7 +179,9 @@ function BadgeDisplay({selectedMajorArr}) {
     let rendered = []
 
     selectedMajorArr.forEach(value => {
-        let color = majorColors.filter(function(x){return x.name == value;})[0].color;
+        let color = majorColors.filter(function (x) {
+            return x.name == value;
+        })[0].color;
         rendered.push(
             <Badge borderColor={'rgba(54,5,3,0.47)'} borderRadius={10} borderWidth={2} width={'97%'} key={value}
                    bg={color}
