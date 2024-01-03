@@ -2,9 +2,24 @@ import React, {useEffect, useState} from 'react';
 import '@fontsource/coiny';
 import majorColors from '../findECs/majorColors.json';
 import selectyourinterests from '../../assets/img/selectyourinterests.png';
+import findecsstar from '../../assets/img/findecsstar.png';
 
 
-import {Box, Button, Center, Flex, Heading, Image, Link, Spacer, Text, VStack, Grid, SimpleGrid} from "@chakra-ui/react"
+import {
+    Box,
+    Button,
+    HStack,
+    Center,
+    Flex,
+    Heading,
+    Image,
+    Link,
+    Spacer,
+    Text,
+    VStack,
+    Grid,
+    SimpleGrid
+} from "@chakra-ui/react"
 
 function FilterPage({selectedMajorArr, majorArr, onFilterClick}) {
     function majorsSelectedTest(e) {
@@ -17,31 +32,38 @@ function FilterPage({selectedMajorArr, majorArr, onFilterClick}) {
     return (
 
         <Center>
-            <Box bg={'transparent'} width={['80vw', '80vw', '80vw', '50%']} pt={['10px']} fontFamily={'coiny'}
+            <Box bg={'transparent'} width={['80vw', '80vw', '80vw', '50%']} pt={['0px']} fontFamily={'coiny'}
                  color={'white'}
                 // borderWidth={'2px'} borderColor={'black'}
                  style={{WebkitTextStroke: '2px #360503ff'}} fontWeight={'900'}
             >
-                <Center paddingBottom={6}>
+                <Center paddingBottom={4}>
                     <img src={selectyourinterests} width={'800vw'}/>
                 </Center>
-                <SimpleGrid columns={2} spacing={'10px'}>
+
+                <SimpleGrid mt={3} columns={2} spacingX={6} spacingY={2}>
                     {majorColors.map(x => <FilterButton key={x.id} selectedMajorArr={selectedMajorArr} name={x.name}
                                                         color={x.color}/>)}
                 </SimpleGrid>
-                <Box mt={11}>
-                    <FilterButton selectedMajorArr={selectedMajorArr} name={"COMMUNITY SERVICE"} color={'#FFB2D5'}
-                                  pass={true}/>
-                </Box>
 
                 <Center>
-                    <Button size={'lg'} bg={'#360503ff'} m={'40px'} style={{WebkitTextStroke: '0px #FFFFFF'}}
+                    <Button borderWidth={'1px'} width={'100%'} size={'lg'} bg={'white'}
+                            mt={'40px'}
+                            style={{WebkitTextStroke: '0px #FFFFFF'}}
                             onClick={onFilterClick}>
-                        <Text fontSize='1em' fontWeight={500} top={''} color={'white'}>
-                            FIND ECS
-                        </Text>
+                        <Box display={'flex'} flexDir={'row'} mt={1}>
+
+                            <Text fontSize='24px' fontWeight={500} mt={1} color={'#360503ff'}>
+                                SEARCH!
+                            </Text>
+
+
+                        </Box>
                     </Button>
+
                 </Center>
+
+
             </Box>
         </Center>
     )
@@ -51,6 +73,7 @@ function FilterButton({selectedMajorArr, name, color, pass}) {
 
     const [on, setOn] = useState(true)
     const [bgColor, setBgColor] = useState('#360503ff')
+    const defaultColor = '#360503ff'
 
 
     // console.log(name)
@@ -62,32 +85,37 @@ function FilterButton({selectedMajorArr, name, color, pass}) {
             setBgColor(color)
         } else {
             selectedMajorArr.delete(name);
-            setBgColor('#360503ff')
+            setBgColor(defaultColor)
         }
         console.log(selectedMajorArr);
 
     }
 
     useEffect(() => {
+
+        if (selectedMajorArr.size == 13) {
+            selectedMajorArr.clear();
+        }
+
         if (selectedMajorArr.has(name)) {
             setOn(true);
             setBgColor(color)
         } else {
             setOn(false);
-            setBgColor('#360503ff')
+            setBgColor(defaultColor)
         }
     }, [])
 
     if (name === "COMMUNITY SERVICE" && !pass) return null;
     return (
         <Box size={'lg'} bg={bgColor} pb={'10px'}
-             borderRadius={'10px'}
+             borderRadius={'8px'}
              style={{
                  transition: 'all 0.2s ease-in-out',
              }}
              onClick={toggle}>
             <Center textAlign={'center'}>
-                <Text style={{WebkitTextStroke: '0px #FFFFFF'}} pt={'1px'} fontSize='18px' fontWeight={400} mt={'11px'}
+                <Text style={{WebkitTextStroke: '0px #FFFFFF'}} pt={'1px'} fontSize='14px' fontWeight={400} mt={'11px'}
                       color={'white'}>
                     {name}
                 </Text>

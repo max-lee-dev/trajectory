@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {auth, db} from './Firebase.js';
 import {collection, getDocs} from "firebase/firestore";
 import {MdArrowDropDown} from "react-icons/md";
+import majorColors from './findECs/majorColors.json';
 
 import {
     Divider,
@@ -36,7 +37,7 @@ import {
 import {TriangleUpIcon, HamburgerIcon} from '@chakra-ui/icons'
 
 import {CardGrid, Card} from './findECs/findECsCard.js';
-import FilterPage from './findECs/filterPage.js'; 
+import FilterPage from './findECs/filterPage.js';
 
 import CSV from '../assets/data/orgList.csv'
 
@@ -79,7 +80,7 @@ function RenderGridStep({columns}) {
     const [selectedMajor, setSelectedMajor] = useState("")
     const [selectedMajorArr, setSelectedMajorArr] = useState(new Set([]))
     const [sortBy, setSortBy] = useState("")
-    
+
 
     // firestore db
     // useEffect(() => {
@@ -159,6 +160,14 @@ function RenderGridStep({columns}) {
 
     const onFilterClick = (e) => {
         console.log("clicked filter")
+
+        if (selectedMajorArr.size === 0) {
+            console.log("filtering by " + Array.from(selectedMajorArr))
+            majorColors.forEach(x => {
+                selectedMajorArr.add(x.name)
+            })
+        }
+        console.log(selectedMajorArr)
         e.preventDefault();
         setShowFilterPage(!showFilterPage)
     }
@@ -169,12 +178,13 @@ function RenderGridStep({columns}) {
             <Button bg={'white'} color={'blue'} m={'5px'} size={'sm'} onClick={handleSortChange} value='size'> Size </Button>
             <Button  bg={'white'} color={'orange'} m={'5px'} size={'sm'} onClick={handleSortChange} value='impact'> Impact </Button>
             <Button  bg={'white'} color={'green'} m={'5px'} size={'sm'} onClick={handleSortChange} value='momentum'> Momentum </Button> */}
-                {showFilterPage ? 
+            {showFilterPage ?
                 <FilterPage selectedMajorArr={selectedMajorArr} majorArr={majorArr} onFilterClick={onFilterClick}/>
-                : 
-                <CardGrid orgArr={myOrganizations} columns={1} selectedMajorArr={selectedMajorArr} sortBy={sortBy} mt={'1px'} onFilterClick={onFilterClick} />
-                }
-            </Box>
+                :
+                <CardGrid orgArr={myOrganizations} columns={1} selectedMajorArr={selectedMajorArr} sortBy={sortBy}
+                          mt={'1px'} onFilterClick={onFilterClick}/>
+            }
+        </Box>
     );
 
 }
