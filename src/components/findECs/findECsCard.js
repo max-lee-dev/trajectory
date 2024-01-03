@@ -144,13 +144,14 @@ export function CardGrid({orgArr, columns, selectedMajorArr, sortBy, onFilterCli
             <Box zIndex={1} top={'0px'} sx={{position: '-webkit-sticky', /* Safari */ position: 'sticky'}}>
 
                 <Center>
-                    <Button size={'lg'} zIndex={1} bg={'#360503ff'}
+                    <Button zIndex={1} bg={'#360503ff'}
                             align={'center'}
-                            onClick={onFilterClick} mb={'30px'}
-                            width={'16em'}
+                            onClick={onFilterClick} mb={'15px'}
+                            width={'20em'}
+                            h={'35px'}
                         // borderWidth={'3px'} borderColor={'badbffff'} borderRadius={'4px'}
                     >
-                        <Text fontSize='1em' fontWeight={600} top={''} color={'white'}>
+                        <Text fontSize='14px' fontWeight={600} top={''} color={'white'}>
                             Edit your interests!
                         </Text>
                     </Button>
