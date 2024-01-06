@@ -11,12 +11,12 @@ import {
 
 } from "@chakra-ui/react"
 
-import {CardGrid, Card} from './findECs/findECsCard.js';
+import MainApp from './findECs/MainApp.js';
 import FilterPage from './findECs/filterPage.js';
 
 import CSV from '../assets/data/orgList.csv'
 
-export function Renderer({columns}) {
+export function Renderer() {
 
 
     const [myOrganizations, setMyOrganizations] = useState([])
@@ -115,8 +115,8 @@ export function Renderer({columns}) {
             {showFilterPage ?
                 <FilterPage selectedMajorArr={selectedMajorArr} majorArr={majorArr} onFilterClick={onFilterClick}/>
                 :
-                <CardGrid orgArr={myOrganizations} columns={1} selectedMajorArr={selectedMajorArr} sortBy={sortBy}
-                          mt={'1px'} onFilterClick={onFilterClick}/>
+                <MainApp orgArr={myOrganizations} columns={1} selectedMajorArr={selectedMajorArr} sortBy={sortBy}
+                         mt={'1px'} onFilterClick={onFilterClick}/>
             }
         </Box>
 

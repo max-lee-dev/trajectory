@@ -68,6 +68,11 @@ export function Card({orgObj}) {
                 onClick={onOpen}
                 mt={'2px'}
                 mb={'-30px'}
+                _hover={{
+                    transform: 'scale(1.05)',
+                    transition: 'all 0.2s ease-in-out',
+                    boxShadow: '0px 0px 10px #360503ff'
+                }}
             >
 
                 <ECModal orgObj={orgObj} isOpen={isOpen} onClose={onClose}/>
@@ -120,90 +125,10 @@ export function Card({orgObj}) {
 }
 
 
-export function CardGrid({orgArr, columns, selectedMajorArr, sortBy, onFilterClick}) {
-    if (selectedMajorArr.size != 0) {
-        orgArr = orgArr.filter(org => selectedMajorArr.has(org.major));
-    }
-
-    const currMajorsArr = Array.from(selectedMajorArr)
-    console.log(currMajorsArr);
-    // console.log(orgArr);
-    switch (sortBy) {
-        case 'size':
-            orgArr.sort((a, b) => b.size - a.size);
-            break;
-        case 'impact':
-            orgArr.sort((a, b) => b.impact - a.impact);
-            break;
-        case 'momentum':
-            orgArr.sort((a, b) => b.momentum - a.momentum);
-            break;
-        default:
-            orgArr.sort((a, b) => (parseInt(b.size) + parseInt(b.impact) + parseInt(b.momentum)) - (parseInt(a.size) + parseInt(a.impact) + parseInt(a.momentum)))
-    }
-
-    return (
-        <Box>
-            <Center paddingBottom={6} ml={2}>
-                <img src={gridFindECsLogo} width={['335px']}/>
-            </Center>
-            <Box zIndex={1} top={'12px'} sx={{position: '-webkit-sticky', /* Safari */ position: 'sticky'}}>
-
-                <Center>
-                    <Button zIndex={1} bg={'#360503ff'}
-                            align={'center'}
-                            onClick={onFilterClick} mb={'15px'}
-                            width={'20em'}
-                            h={'35px'}
-                        // borderWidth={'3px'} borderColor={'badbffff'} borderRadius={'4px'}
-                    >
-                        <Text fontSize='14px' fontWeight={600} top={''} color={'white'}>
-                            Edit your interests!
-                        </Text>
-                    </Button>
-                </Center>
 
 
-            </Box>
-            <Box padding={0}>
-                {/* <BadgeDisplay selectedMajorArr={selectedMajorArr}/> */}
-            </Box>
-            <SimpleGrid columns={columns} spacing={'1em'}>
-                {orgArr.map(orgObj => <Card key={orgObj.name} orgObj={orgObj}/>)}
-            </SimpleGrid>
-            <Box p={'8px'}>
-                <Center>
-                    <Button zIndex={1} bg={'#360503ff'} position={'absolute'} top={'0px'} right={'0px'}/>
-                </Center>
-            </Box>
-        </Box>
-    );
-}
 
-function BadgeDisplay({selectedMajorArr}) {
-    let rendered = []
 
-    selectedMajorArr.forEach(value => {
-        let color = majorColors.filter(function (x) {
-            return x.name == value;
-        })[0].color;
-        rendered.push(
-            <Badge borderColor={'rgba(54,5,3,0.47)'} borderRadius={10} borderWidth={2} width={'97%'} key={value}
-                   bg={color}
-                   marginRight={1}
-                   marginLeft={1} marginBottom={1}>
-                <Center>
-                    {value}
-                </Center>
-            </Badge>
-        )
-    })
 
-    return (
-        <SimpleGrid columns={2}>
-            {rendered}
-        </SimpleGrid>
-    )
-}
 
 

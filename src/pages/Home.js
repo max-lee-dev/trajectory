@@ -4,24 +4,7 @@ import FindECsLanding from '../components/findECs/findECsLanding.js';
 import Footer from '../components/footer.js';
 
 import {
-    useDisclosure,
     Box,
-    Button,
-    Center,
-    Flex,
-    HStack,
-    Heading,
-    Image,
-    Link,
-    Spacer,
-    Text,
-    VStack,
-    SimpleGrid,
-    Tab,
-    TabList,
-    TabPanel,
-    TabPanels,
-    Tabs
 } from "@chakra-ui/react";
 
 import {Renderer, RenderGridStep} from '../components/Renderer.js';

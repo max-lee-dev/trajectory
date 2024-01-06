@@ -121,7 +121,7 @@ function FilterButton({selectedMajorArr, name, color, pass}) {
 
     if (name === "COMMUNITY SERVICE" && !pass) return null;
     return (
-        <Box bg={bgColor} h={55} pb={'10px'}
+        <Box bg={bgColor} h={50} pb={'10px'}
              borderRadius={'8px'}
              style={{
                  transition: 'all 0.2s ease-in-out',
