@@ -24,7 +24,6 @@ import {
     Tabs
 } from "@chakra-ui/react";
 
-import {Card, CardGrid} from '../components/Card.js';
 import {Renderer, RenderGridStep} from '../components/Renderer.js';
 import banner from '../assets/img/trajectoryBanner.png'
 
