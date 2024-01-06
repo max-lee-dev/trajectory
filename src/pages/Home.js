@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 
 import FindECsLanding from '../components/findECs/findECsLanding.js';
 import Footer from '../components/footer.js';
-import AppWrapper from '../components/AppWrapper.js';
 
 import {
     useDisclosure,

@@ -5,7 +5,6 @@ import topsquigly from '../../assets/img/topsquigly.png';
 import bottomsquigly from '../../assets/img/bottomsquigly.png';
 import madebytrajectory from '../../assets/img/madebytrajectory.png';
 
-import AppWrapper from '../AppWrapper.js';
 
 import {Box, Button, Center, Flex, Heading, Image, Link, Spacer, Text, VStack} from "@chakra-ui/react"
 

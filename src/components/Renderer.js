@@ -105,17 +105,9 @@ export function Renderer({columns}) {
         setShowFilterPage(!showFilterPage)
     }
 
-    <Box>
-        <Box mt={5}>
-
-        </Box>
-        <Box mt={2}>
-
-        </Box>
-    </Box>
 
     return (
-        <Box mt={'-0.6em'}>
+        <Box mt={'-0.6em'} paddingTop={'5%'}>
             {/* <Button colorScheme='gray' color={'black'} m={'5px'} size={'sm'} onClick={handleSortChange} value='overall'> Overall </Button>
             <Button bg={'white'} color={'blue'} m={'5px'} size={'sm'} onClick={handleSortChange} value='size'> Size </Button>
             <Button  bg={'white'} color={'orange'} m={'5px'} size={'sm'} onClick={handleSortChange} value='impact'> Impact </Button>
