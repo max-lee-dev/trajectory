@@ -171,6 +171,11 @@ export function CardGrid({orgArr, columns, selectedMajorArr, sortBy, onFilterCli
             <SimpleGrid columns={columns} spacing={'1em'}>
                 {orgArr.map(orgObj => <Card key={orgObj.name} orgObj={orgObj}/>)}
             </SimpleGrid>
+            <Box p={'8px'}>
+                <Center>
+                    <Button zIndex={1} bg={'#360503ff'} position={'absolute'} top={'0px'} right={'0px'}/>
+                </Center>
+            </Box>
         </Box>
     );
 }
