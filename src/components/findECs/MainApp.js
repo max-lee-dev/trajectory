@@ -70,17 +70,15 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
 
 
                 </Box>
-                <Box padding={0}>
-                    {/* <BadgeDisplay selectedMajorArr={selectedMajorArr}/> */}
-                </Box>
+
                 <SimpleGrid columns={columns} spacing={'1em'}>
                     {orgArr.map(orgObj => <Card key={orgObj.name} orgObj={orgObj}/>)}
                 </SimpleGrid>
-                <Box p={'8px'}>
-                    <Center>
-                        <Button zIndex={1} bg={'#360503ff'} position={'absolute'} top={'0px'} right={'0px'}/>
-                    </Center>
-                </Box>
+                {/*<Box p={'8px'}>*/}
+                {/*    <Center>*/}
+                {/*        <Button zIndex={1} bg={'#360503ff'} position={'absolute'} top={'0px'} right={'0px'}/>*/}
+                {/*    </Center>*/}
+                {/*</Box>*/}
             </Box>
         </motion.div>
     );
