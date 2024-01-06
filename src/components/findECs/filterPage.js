@@ -34,7 +34,7 @@ function FilterPage({selectedMajorArr, majorArr, onFilterClick}) {
         <Center>
 
 
-            <Box bg={'transparent'} width={['80vw', '80vw', '50%', '50%']} pt={['0px', '0px', '0px', '20px']}
+            <Box bg={'transparent'} width={['80vw', '80vw', '50%', '50%']} pt={['10px', '10px', '20px', '20px']}
                  fontFamily={'coiny'}
                  color={'white'}
                 // borderWidth={'2px'} borderColor={'black'}
@@ -42,7 +42,7 @@ function FilterPage({selectedMajorArr, majorArr, onFilterClick}) {
             >
                 <Center>
 
-                    <Box paddingBottom={4} maxW={['100%', '100%', '100%', '55%']}>
+                    <Box paddingBottom={1} maxW={['100%', '100%', '100%', '55%']}>
                         <img src={selectyourinterests} width={"800vw"}/>
                     </Box>
                 </Center>
@@ -50,7 +50,7 @@ function FilterPage({selectedMajorArr, majorArr, onFilterClick}) {
 
                 <Center>
                     <Box width={['100%', '100%', '100%', '70%']}>
-                        <SimpleGrid mt={3} columns={2} spacingX={4} spacingY={4}>
+                        <SimpleGrid mt={3} columns={2} spacingX={4} spacingY={1}>
                             {majorColors.map(x => <FilterButton key={x.id} selectedMajorArr={selectedMajorArr}
                                                                 name={x.name}
                                                                 color={x.color}/>)}
@@ -61,7 +61,7 @@ function FilterPage({selectedMajorArr, majorArr, onFilterClick}) {
                 <Center>
                     <Button borderWidth={3} borderColor={'#360503ff'} width={['100%', '100%', '100%', '70%']}
                             size={'lg'} bg={'white'}
-                            mt={'25px'}
+                            mt={'20px'}
                             style={{WebkitTextStroke: '0px #FFFFFF'}}
                             onClick={onFilterClick}>
                         <Box display={'flex'} flexDir={'row'} mt={1}>
@@ -122,10 +122,10 @@ function FilterButton({selectedMajorArr, name, color, pass}) {
     if (name === "COMMUNITY SERVICE" && !pass) return null;
     return (
         <Box>
-            <Box width={'100%'} display={['none', 'none', 'none', 'inline-block']}>
+            <Box width={'100%'} display={['none', 'none', 'inline-block', 'inline-block']}>
                 <DesktopFilterButton bgColor={bgColor} name={name} toggle={toggle}/>
             </Box>
-            <Box width={'100%'} display={['inline-block', 'inline-block', 'inline-block', 'none']}>
+            <Box width={'100%'} display={['inline-block', 'inline-block', 'none', 'none']}>
                 <MobileFilterButton bgColor={bgColor} name={name} toggle={toggle}/>
             </Box>
         </Box>
@@ -146,7 +146,6 @@ function DesktopFilterButton({bgColor, name, toggle}) {
              cursor={'pointer'}
              _hover={{
                  transform: 'scale(1.05)',
-                 transition: 'all 0.2s ease-in-out',
                  boxShadow: '0px 0px 10px #360503ff'
              }}
              onDragEnd={() => console.log('hi')}
@@ -172,7 +171,7 @@ function MobileFilterButton({bgColor, name, toggle}) {
     const [touching, setTouching] = useState(false)
 
     return (
-        <Box display={['inline-block']} bg={bgColor} h={50} pb={'10px'}
+        <Box bg={bgColor} h={50} pb={'10px'}
              borderRadius={'8px'}
              width={'100%'}
              style={{

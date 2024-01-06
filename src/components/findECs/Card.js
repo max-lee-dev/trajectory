@@ -89,8 +89,10 @@ function DesktopCard({orgObj, screenWidth, color, color2, color3}) {
                     mb={'-30px'}
                     _hover={{
                         transform: 'scale(1.05)',
-                        transition: 'all 0.2s ease-in-out',
                         boxShadow: '0px 0px 10px #360503ff'
+                    }}
+                    style={{ // makes card not only grow but shrink w/ transition
+                        transition: 'all 0.2s ease-in-out',
                     }}
 
 

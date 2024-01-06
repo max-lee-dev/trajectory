@@ -71,7 +71,7 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
 
                 </Box>
 
-                <SimpleGrid columns={columns} spacing={'1em'}>
+                <SimpleGrid columns={columns} spacing={8}>
                     {orgArr.map(orgObj => <Card key={orgObj.name} orgObj={orgObj}/>)}
                 </SimpleGrid>
                 {/*<Box p={'8px'}>*/}
