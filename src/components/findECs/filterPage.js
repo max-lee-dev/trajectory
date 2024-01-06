@@ -34,7 +34,7 @@ function FilterPage({selectedMajorArr, majorArr, onFilterClick}) {
         <Center>
 
 
-            <Box bg={'transparent'} width={['80vw', '80vw', '50%', '50%']} pt={['0px', '0px', '0px', '60px']}
+            <Box bg={'transparent'} width={['80vw', '80vw', '50%', '50%']} pt={['0px', '0px', '0px', '20px']}
                  fontFamily={'coiny'}
                  color={'white'}
                 // borderWidth={'2px'} borderColor={'black'}
