@@ -4,16 +4,9 @@ import {Analytics} from '@vercel/analytics/react';
 import React, {useEffect, useState} from 'react';
 
 import Home from './pages/Home';
-import About from './pages/About';
-import Onboard from './pages/Onboard';
-import LoginPage from './pages/LoginPage';
-import DashboardHub from './pages/DashboardHub';
 import {Routes, Route, BrowserRouter as Router} from 'react-router-dom';
 import {ChakraProvider} from "@chakra-ui/react"
 import {extendTheme} from "@chakra-ui/react";
-import {auth} from "./components/Firebase";
-import {db} from "./components/Firebase";
-import {collection, getDocs} from "firebase/firestore";
 
 function App() {
 
@@ -37,18 +30,7 @@ function App() {
 
     });
 
-    const getCollection = async () => {
-        const querySnapshot = await getDocs(collection(db, "users"));
-        querySnapshot.forEach((doc) => {
-
-            if (doc.data().uid === auth?.currentUser?.uid) setUser(doc.data())
-        });
-    }
-    useEffect(() => {
-
-        getCollection();
-
-    }, [auth]);
+   
     return (
 
         <ChakraProvider theme={theme}>
@@ -56,10 +38,7 @@ function App() {
             <Router>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
-                    <Route path="/about" element={<About/>}/>
-                    <Route path={"/dashboard"} element={<DashboardHub user={user}/>}/>
-                    <Route path="/login" element={<LoginPage/>}/>
-                    <Route path="/onboard" element={<Onboard/>}/>
+
                 </Routes>
             </Router>
             <Analytics/>

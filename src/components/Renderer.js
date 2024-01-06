@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import {auth, db} from './Firebase.js';
 import {collection, getDocs} from "firebase/firestore";
 import {MdArrowDropDown} from "react-icons/md";
 import majorColors from './findECs/majorColors.json';
@@ -9,32 +8,8 @@ import {
     Box,
     Button,
     Center,
-    Flex,
-    Heading,
-    Image,
-    Link,
-    Spacer,
-    Text,
-    SimpleGrid,
-    Stack,
-    HStack,
-    VStack,
-    Badge,
-    LinkBox,
-    LinkOverlay,
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-    MenuItemOption,
-    MenuGroup,
-    MenuOptionGroup,
-    MenuDivider,
-    IconButton,
-    Spinner,
-    Select
+
 } from "@chakra-ui/react"
-import {TriangleUpIcon, HamburgerIcon} from '@chakra-ui/icons'
 
 import {CardGrid, Card} from './findECs/findECsCard.js';
 import FilterPage from './findECs/filterPage.js';
@@ -43,37 +18,6 @@ import CSV from '../assets/data/orgList.csv'
 
 export function Renderer({columns}) {
 
-    const hiring = [
-        "Developer",
-        "Media",
-        "Designer"
-    ];
-
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-                console.log("User has scrolled to the bottom of the page");
-            }
-        };
-        // window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
-
-    return (
-        <>
-            <RenderGridStep columns={columns}/>
-            <Center>
-            </Center>
-        </>
-    )
-}
-
-
-function RenderGridStep({columns}) {
 
     const [myOrganizations, setMyOrganizations] = useState([])
     const [majorArr, setMajorArr] = useState([])
@@ -106,7 +50,7 @@ function RenderGridStep({columns}) {
 
         const grabOrgsFromCSV = async () => {
             try {
-                const response = await fetch(CSV); // update with csv 
+                const response = await fetch(CSV); // update with csv
                 const csvData = await response.text();
                 let arr = CSVToArray(csvData, "|");
                 // console.log(arr);
@@ -145,17 +89,6 @@ function RenderGridStep({columns}) {
         grabOrgsFromCSV();
     }, []);
 
-    function handleMajorChange(e) {
-        // console.log("major is now " + e.target.value);
-        window.scrollTo(0, 0);
-        setSelectedMajor(e.target.value);
-    }
-
-    function handleSortChange(e) {
-        // setSortBy(e.target.value);
-        console.log("sorting by " + sortBy);
-    }
-
     const [showFilterPage, setShowFilterPage] = useState(true)
 
     const onFilterClick = (e) => {
@@ -172,6 +105,15 @@ function RenderGridStep({columns}) {
         setShowFilterPage(!showFilterPage)
     }
 
+    <Box>
+        <Box mt={5}>
+
+        </Box>
+        <Box mt={2}>
+
+        </Box>
+    </Box>
+
     return (
         <Box mt={'-0.6em'}>
             {/* <Button colorScheme='gray' color={'black'} m={'5px'} size={'sm'} onClick={handleSortChange} value='overall'> Overall </Button>
@@ -185,9 +127,13 @@ function RenderGridStep({columns}) {
                           mt={'1px'} onFilterClick={onFilterClick}/>
             }
         </Box>
-    );
 
+
+    )
 }
+
+
+
 
 
 

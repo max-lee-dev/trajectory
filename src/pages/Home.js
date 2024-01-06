@@ -1,9 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {auth, db} from '../components/Firebase';
-import {collection, getDocs} from "firebase/firestore";
-import MailchimpSubscribe from "react-mailchimp-subscribe";
-import Onboard from '../pages/Onboard.js';
-import NewOnboard from '../pages/NewOnboard.js';
+
 import FindECsLanding from '../components/findECs/findECsLanding.js';
 import Footer from '../components/footer.js';
 import AppWrapper from '../components/AppWrapper.js';
@@ -28,39 +24,13 @@ import {
     TabPanels,
     Tabs
 } from "@chakra-ui/react";
-import NewAccountForm from "./NewAccountForm.js";
 
 import {Card, CardGrid} from '../components/Card.js';
 import {Renderer, RenderGridStep} from '../components/Renderer.js';
 import banner from '../assets/img/trajectoryBanner.png'
 
 function Home() {
-    const [user, setUser,] = useState(null);
-    const [showGrid] = useState(false);
-    // useEffect(() => {
-    //     auth.onAuthStateChanged(userAuth => {
-    //         setUser(userAuth);
-    //     })
-    // }, [auth])
-    //
-    // auth.onAuthStateChanged(userAuth => {
-    //     setUser(userAuth);
-    // })
-    //
-    // const [myOrganizations, setMyOrganizations] = useState([])
-    // useEffect(() => {
-    //     const temp = [];
-    //
-    //     const getMyOrganizations = async () => {
-    //         const querySnapshot = await getDocs(collection(db, "organizations"));
-    //         querySnapshot.forEach((doc) => {
-    //             temp.push(doc.data())
-    //         });
-    //         setMyOrganizations(temp)
-    //     }
-    //     getMyOrganizations();
-    // })
-    //
+
 
     const [showIntro, setShowIntro] = useState(true);
 
@@ -72,69 +42,8 @@ function Home() {
                  zIndex={'-1'}></Box>
 
 
-            {showIntro ? <FindECsLanding setShowIntro={setShowIntro}/> : <AppWrapper/>}
+            {showIntro ? <FindECsLanding setShowIntro={setShowIntro}/> : <Renderer columns={1}/>}
 
-            {auth?.currentUser && !auth.currentUser.displayName && (
-                <Box paddingTop={'100px'} display={'flex'} justifyContent={'space-evenly'}>
-                    <NewAccountForm/>
-                </Box>
-            )}
-
-            {/* <NewOnboard/> */}
-
-            {false && (
-                <Box>
-                    <Center>
-                        {/* <Button onClick={() => console.log(showGrid)}>
-                            testing home page
-                        </Button> */}
-                        <VStack>
-                            <Box width={'100%'} display={'flex'}>
-                                <Box paddingTop={10} width={'100%'} display={'flex'} justifyContent={'space-between'}>
-                                    <Center>
-                                        <Heading> Trajectory </Heading>
-                                    </Center>
-                                    {!auth?.currentUser?.displayName ? (
-                                            <Box>
-                                                <Button onClick={() => window.location.href = '/login'}>
-                                                    Sign In
-                                                </Button>
-                                                <Button onClick={() => window.location.href = '/onboard'}>
-                                                    Sign Up
-                                                </Button>
-                                            </Box>
-                                        )
-                                        : (
-                                            <Box>
-                                                <Center>
-                                                    <Heading
-                                                        fontSize={'24px'}>{auth?.currentUser?.displayName} {user?.lastName}</Heading>
-                                                    <Button onClick={() => window.location.href = '/dashboard'}>
-                                                        Dashboard
-                                                    </Button>
-                                                    <Button onClick={() => auth.signOut()}>
-                                                        Sign Out
-                                                    </Button>
-                                                </Center>
-                                            </Box>
-                                        )
-                                    }
-                                </Box>
-                            </Box>
-
-
-                            <Box height={'30vh'} w={'30vw'}> {/*header*/}
-                                <Image src={banner} boxSize={'auto'}/>
-                            </Box>
-
-                            <Renderer/>
-                        </VStack>
-
-                    </Center>
-
-
-                </Box>
-            )}
 
             {/* <Footer/> */}
         </Box>

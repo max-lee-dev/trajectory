@@ -1,6 +1,5 @@
 import React from 'react';
 import '@fontsource/coiny';
-import "@fontsource/poppins/600.css";
 import findecslogo from '../../assets/img/findecslogo2.png';
 import topsquigly from '../../assets/img/topsquigly.png';
 import bottomsquigly from '../../assets/img/bottomsquigly.png';
@@ -27,7 +26,8 @@ function FindECsLanding({setShowIntro}) {
                             <Box paddingTop={5} textAlign={'center'}>
                                 <Text fontFamily={'Poppins'} fontWeight={'600'} fontSize='18px' color={'#360503ff'}
                                       style={{WebkitTextStroke: '0px #360503ff'}}> THE #1 DATABASE FOR HS
-                                    EXTRACURRICULARS</Text>
+                                    EXTRACURRICULARS</Text
+                                >
                             </Box>
 
 
@@ -42,9 +42,11 @@ function FindECsLanding({setShowIntro}) {
                                             style={{WebkitTextStroke: '0px #360503ff'}}
                                             onClick={() => setShowIntro(false)}
                                     >
+
                                         <Text fontSize={'20px'} mt={0.5}>
                                             GET STARTED!
                                         </Text>
+
                                     </Button>
                                 </Center>
                             </Box>
