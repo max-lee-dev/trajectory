@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {collection, getDocs} from "firebase/firestore";
 import {MdArrowDropDown} from "react-icons/md";
 import majorColors from './findECs/majorColors.json';
+import {motion, AnimatePresence} from 'framer-motion';
+
 
 import {
     Divider,
@@ -113,13 +115,37 @@ export function Renderer() {
             <Button  bg={'white'} color={'orange'} m={'5px'} size={'sm'} onClick={handleSortChange} value='impact'> Impact </Button>
             <Button  bg={'white'} color={'green'} m={'5px'} size={'sm'} onClick={handleSortChange} value='momentum'> Momentum </Button> */}
             {showFilterPage ?
-                <FilterPage selectedMajorArr={selectedMajorArr} majorArr={majorArr} onFilterClick={onFilterClick}/>
+                <motion.div
+                    initial={{
+                        opacity: 0,
+                        y: -600
+
+                    }}
+                    animate={{
+                        opacity: 1,
+                        y: 0
+                    }}
+                    transition={{
+                        duration: 0.75,
+                        ease: "easeInOut"
+                    }}
+
+                    exit={{
+                        transition: {duration: 0.5},
+
+
+                    }}
+                >
+
+                    <FilterPage selectedMajorArr={selectedMajorArr} majorArr={majorArr}
+                                onFilterClick={onFilterClick}/>
+                </motion.div>
                 :
+
                 <MainApp orgArr={myOrganizations} columns={1} selectedMajorArr={selectedMajorArr} sortBy={sortBy}
                          mt={'1px'} onFilterClick={onFilterClick}/>
             }
         </Box>
-
 
     )
 }

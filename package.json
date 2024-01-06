@@ -15,7 +15,7 @@
     "@testing-library/user-event": "^13.2.1",
     "@vercel/analytics": "^1.1.1",
     "firebase": "^10.7.0",
-    "framer-motion": "^10.17.0",
+    "framer-motion": "^10.17.9",
     "papaparse": "^5.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

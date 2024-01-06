@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 import FindECsLanding from '../components/findECs/findECsLanding.js';
 import Footer from '../components/footer.js';
-
+import {AnimatePresence} from 'framer-motion';
 import {
     Box,
 } from "@chakra-ui/react";
@@ -17,6 +17,7 @@ function Home() {
 
 
     return (
+
         <Box fontSize={'40px'}>
 
             <Box w={'120vw'} h={'120vh'} bgGradient={'linear(to-b, #94c8ffff, #FFFFFFFF ,#fabaa5ff)'} pos={'fixed'}

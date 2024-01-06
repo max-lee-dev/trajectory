@@ -1,6 +1,7 @@
 import {Box, Button, Center, SimpleGrid, Text} from "@chakra-ui/react";
 import gridFindECsLogo from "../../assets/img/gridFindECsLogo.png";
 import React from "react";
+import {motion} from "framer-motion";
 import {Card} from "./Card";
 
 export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFilterClick}) {
@@ -26,45 +27,61 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
     }
 
     return (
-        <Box>
-            <Center paddingBottom={6} ml={2}>
-                <img src={gridFindECsLogo} width={['335px']}/>
-            </Center>
-            <Box zIndex={1} top={'12px'} sx={{position: '-webkit-sticky', /* Safari */ position: 'sticky'}}>
+        <motion.div
+            initial={{
+                opacity: 0,
 
-                <Center>
-                    <Button zIndex={1} bg={'#360503ff'}
-                            align={'center'}
-                            onClick={onFilterClick} mb={'15px'}
-                            width={'20em'}
-                            color={'white'}
-                            _hover={{
-                                bg: '#f5f5f5',
+            }}
+            animate={{
+                opacity: 1,
+                y: 0
+            }}
+            transition={{
+                duration: 0.75,
+                ease: "easeInOut"
+            }}
 
-                                color: "#360503ff",
-                            }}
-                            h={'35px'}
-                        // borderWidth={'3px'} borderColor={'badbffff'} borderRadius={'4px'}
-                    >
-                        <Text fontSize='14px' fontWeight={600} top={''}>
-                            Edit your interests!
-                        </Text>
-                    </Button>
+        >
+            <Box>
+                <Center paddingBottom={6} ml={2}>
+                    <img src={gridFindECsLogo} width={['335px']}/>
                 </Center>
+                <Box zIndex={1} top={'12px'} sx={{position: '-webkit-sticky', /* Safari */ position: 'sticky'}}>
+
+                    <Center>
+                        <Button zIndex={1} bg={'#360503ff'}
+                                align={'center'}
+                                onClick={onFilterClick} mb={'15px'}
+                                width={'20em'}
+                                color={'white'}
+                                _hover={{
+                                    bg: '#f5f5f5',
+
+                                    color: "#360503ff",
+                                }}
+                                h={'35px'}
+                            // borderWidth={'3px'} borderColor={'badbffff'} borderRadius={'4px'}
+                        >
+                            <Text fontSize='14px' fontWeight={600} top={''}>
+                                Edit your interests!
+                            </Text>
+                        </Button>
+                    </Center>
 
 
+                </Box>
+                <Box padding={0}>
+                    {/* <BadgeDisplay selectedMajorArr={selectedMajorArr}/> */}
+                </Box>
+                <SimpleGrid columns={columns} spacing={'1em'}>
+                    {orgArr.map(orgObj => <Card key={orgObj.name} orgObj={orgObj}/>)}
+                </SimpleGrid>
+                <Box p={'8px'}>
+                    <Center>
+                        <Button zIndex={1} bg={'#360503ff'} position={'absolute'} top={'0px'} right={'0px'}/>
+                    </Center>
+                </Box>
             </Box>
-            <Box padding={0}>
-                {/* <BadgeDisplay selectedMajorArr={selectedMajorArr}/> */}
-            </Box>
-            <SimpleGrid columns={columns} spacing={'1em'}>
-                {orgArr.map(orgObj => <Card key={orgObj.name} orgObj={orgObj}/>)}
-            </SimpleGrid>
-            <Box p={'8px'}>
-                <Center>
-                    <Button zIndex={1} bg={'#360503ff'} position={'absolute'} top={'0px'} right={'0px'}/>
-                </Center>
-            </Box>
-        </Box>
+        </motion.div>
     );
 }
