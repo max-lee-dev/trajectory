@@ -34,22 +34,33 @@ function FilterPage({selectedMajorArr, majorArr, onFilterClick}) {
         <Center>
 
 
-            <Box bg={'transparent'} width={['80vw', '80vw', '80vw', '50%']} pt={['0px']} fontFamily={'coiny'}
+            <Box bg={'transparent'} width={['80vw', '80vw', '50%', '50%']} pt={['0px', '0px', '0px', '60px']}
+                 fontFamily={'coiny'}
                  color={'white'}
                 // borderWidth={'2px'} borderColor={'black'}
                  style={{WebkitTextStroke: '2px #360503ff'}} fontWeight={'900'}
             >
-                <Center paddingBottom={4}>
-                    <img src={selectyourinterests} width={'800vw'}/>
+                <Center>
+
+                    <Box paddingBottom={4} maxW={['100%', '100%', '100%', '55%']}>
+                        <img src={selectyourinterests} width={"800vw"}/>
+                    </Box>
                 </Center>
 
-                <SimpleGrid mt={3} columns={2} spacingX={4} spacingY={4}>
-                    {majorColors.map(x => <FilterButton key={x.id} selectedMajorArr={selectedMajorArr} name={x.name}
-                                                        color={x.color}/>)}
-                </SimpleGrid>
 
                 <Center>
-                    <Button borderWidth={'2px'} borderColor={'#360503ff'} width={'100%'} size={'lg'} bg={'white'}
+                    <Box width={['100%', '100%', '100%', '70%']}>
+                        <SimpleGrid mt={3} columns={2} spacingX={4} spacingY={4}>
+                            {majorColors.map(x => <FilterButton key={x.id} selectedMajorArr={selectedMajorArr}
+                                                                name={x.name}
+                                                                color={x.color}/>)}
+                        </SimpleGrid>
+                    </Box>
+                </Center>
+
+                <Center>
+                    <Button borderWidth={3} borderColor={'#360503ff'} width={['100%', '100%', '100%', '70%']}
+                            size={'lg'} bg={'white'}
                             mt={'25px'}
                             style={{WebkitTextStroke: '0px #FFFFFF'}}
                             onClick={onFilterClick}>
@@ -110,14 +121,25 @@ function FilterButton({selectedMajorArr, name, color, pass}) {
 
     if (name === "COMMUNITY SERVICE" && !pass) return null;
     return (
-        <Box size={'lg'} bg={bgColor} pb={'10px'}
+        <Box bg={bgColor} h={55} pb={'10px'}
              borderRadius={'8px'}
              style={{
                  transition: 'all 0.2s ease-in-out',
              }}
+             cursor={'pointer'}
+             _hover={{
+                 transform: 'scale(1.05)',
+                 transition: 'all 0.2s ease-in-out',
+                 boxShadow: '0px 0px 10px #360503ff'
+             }}
+
+
+             borderColor={defaultColor}
+             borderWidth={3}
              onClick={toggle}>
             <Center textAlign={'center'}>
-                <Text style={{WebkitTextStroke: '0px #FFFFFF'}} mt={'1px'} fontSize='14px' fontWeight={400} mt={'11px'}
+                <Text style={{WebkitTextStroke: '0px'}} fontSize='18px'
+                      fontWeight={400} mt={'11px'}
                       color={'white'}>
                     {name}
                 </Text>

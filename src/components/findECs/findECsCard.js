@@ -144,8 +144,8 @@ export function CardGrid({orgArr, columns, selectedMajorArr, sortBy, onFilterCli
 
     return (
         <Box>
-            <Center paddingBottom={6}>
-                <img src={gridFindECsLogo} width={['400px']}/>
+            <Center paddingBottom={6} ml={2}>
+                <img src={gridFindECsLogo} width={['335px']}/>
             </Center>
             <Box zIndex={1} top={'12px'} sx={{position: '-webkit-sticky', /* Safari */ position: 'sticky'}}>
 
