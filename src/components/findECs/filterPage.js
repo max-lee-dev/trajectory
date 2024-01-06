@@ -121,8 +121,25 @@ function FilterButton({selectedMajorArr, name, color, pass}) {
 
     if (name === "COMMUNITY SERVICE" && !pass) return null;
     return (
-        <Box bg={bgColor} h={50} pb={'10px'}
+        <Box>
+            <Box width={'100%'} display={['none', 'none', 'none', 'inline-block']}>
+                <DesktopFilterButton bgColor={bgColor} name={name} toggle={toggle}/>
+            </Box>
+            <Box width={'100%'} display={['inline-block', 'inline-block', 'inline-block', 'none']}>
+                <MobileFilterButton bgColor={bgColor} name={name} toggle={toggle}/>
+            </Box>
+        </Box>
+    )
+}
+
+function DesktopFilterButton({bgColor, name, toggle}) {
+
+    const defaultColor = '#360503ff'
+
+    return (
+        <Box display={['inline-block']} bg={bgColor} h={50} pb={'10px'}
              borderRadius={'8px'}
+             width={'100%'}
              style={{
                  transition: 'all 0.2s ease-in-out',
              }}
@@ -132,6 +149,39 @@ function FilterButton({selectedMajorArr, name, color, pass}) {
                  transition: 'all 0.2s ease-in-out',
                  boxShadow: '0px 0px 10px #360503ff'
              }}
+             onDragEnd={() => console.log('hi')}
+             borderColor={defaultColor}
+             borderWidth={3}
+             onClick={toggle}>
+            <Center textAlign={'center'}>
+                <Text style={{WebkitTextStroke: '0px'}} fontSize='18px'
+                      fontWeight={400} mt={'11px'}
+                      color={'white'}>
+                    {name}
+                </Text>
+            </Center>
+        </Box>
+    )
+
+
+}
+
+function MobileFilterButton({bgColor, name, toggle}) {
+
+    const defaultColor = '#360503ff'
+    const [touching, setTouching] = useState(false)
+
+    return (
+        <Box display={['inline-block']} bg={bgColor} h={50} pb={'10px'}
+             borderRadius={'8px'}
+             width={'100%'}
+             style={{
+                 transition: 'all 0.2s ease-in-out',
+             }}
+             onTouchStart={() => setTouching(true)}
+             onTouchEnd={() => setTouching(false)}
+             transform={touching ? 'scale(1.05)' : ""}
+             boxShadow={touching ? '0px 0px 10px #360503ff' : ""}
 
 
              borderColor={defaultColor}
@@ -146,6 +196,8 @@ function FilterButton({selectedMajorArr, name, color, pass}) {
             </Center>
         </Box>
     )
+
+
 }
 
 export default FilterPage;

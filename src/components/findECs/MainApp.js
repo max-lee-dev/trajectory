@@ -43,7 +43,7 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
 
         >
             <Box>
-                <Center paddingBottom={6} ml={2}>
+                <Center paddingBottom={6} ml={2} pt={3}>
                     <img src={gridFindECsLogo} width={['335px']}/>
                 </Center>
                 <Box zIndex={1} top={'12px'} sx={{position: '-webkit-sticky', /* Safari */ position: 'sticky'}}>
