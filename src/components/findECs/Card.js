@@ -48,7 +48,7 @@ export function Card({orgObj}) {
     let color = 0;
     let color2 = 0;
     let color3 = 0;
-    if (orgObj.type ===  "org") {
+    if (orgObj.type === "org") {
         if (!/^https?:\/\//i.test(orgObj.website)) {
             orgObj.website = 'https://' + orgObj.website;
         }
@@ -63,25 +63,24 @@ export function Card({orgObj}) {
         color3 = majorColors.filter(function (x) {
             return x.name == orgObj.major;
         })[0].color3;
-    } 
-
+    }
     return (
         <Box>
             {orgObj.type === "feedback" ?
-            <>
-             <Box width={'100%'} display={"inline-block"}>
-                <FeedbackCard orgObj={orgObj}/>
-            </Box>
-            </>
-            :
-            <>
-            <Box width={'100%'} display={["none", "none", "inline-block", "inline-block"]}>
-                <DesktopCard orgObj={orgObj} screenWidth={screenWidth} color={color} color2={color2}/>
-            </Box>
-            <Box width={'100%'} display={["inline-block", "inline-block", "none", "none"]}>
-                <MobileCard orgObj={orgObj} screenWidth={screenWidth} color={color} color2={color2}/>
-            </Box>
-            </>
+                <>
+                    <Box width={'100%'} display={"inline-block"}>
+                        <FeedbackCard orgObj={orgObj}/>
+                    </Box>
+                </>
+                :
+                <>
+                    <Box width={'100%'} display={["none", "none", "inline-block", "inline-block"]}>
+                        <DesktopCard orgObj={orgObj} screenWidth={screenWidth} color={color} color2={color2}/>
+                    </Box>
+                    <Box width={'100%'} display={["inline-block", "inline-block", "none", "none"]}>
+                        <MobileCard orgObj={orgObj} screenWidth={screenWidth} color={color} color2={color2}/>
+                    </Box>
+                </>
             }
         </Box>
     );
@@ -160,7 +159,7 @@ function MobileCard({orgObj, screenWidth, color, color2, color3}) {
 
                     cursor={'pointer'}
                     // _active={{borderWidth: '7px'}}
-                    bg={'white'} color={'#360503ff'} borderRadius={'lg'} borderWidth={'1px'} 
+                    bg={'white'} color={'#360503ff'} borderRadius={'lg'} borderWidth={'1px'}
                     overflow={'hidden'}
                     w={'8em'} p={'0px'}
                     onClick={onOpen}
@@ -213,7 +212,7 @@ function MobileCard({orgObj, screenWidth, color, color2, color3}) {
     );
 }
 
-function FeedbackCard({orgObj, screenWidth}){
+function FeedbackCard({orgObj, screenWidth}) {
     const {isOpen, onOpen, onClose} = useDisclosure()
 
     return (
@@ -253,12 +252,15 @@ function FeedbackCard({orgObj, screenWidth}){
                             <Spacer/>
                             <img src={megaphone} width={'20px'}/>
                         </Flex>
-                        
+
                         <Box>
                             <Text fontSize={'10px'} fontStyle={'italic'}>
-                                Enjoying Trajectory so far? Got a bug to report? FindECs is still in it's early stages, and we'd love to hear your opinion!
+                                Enjoying Trajectory so far? Got a bug to report? FindECs is still in it's early stages,
+                                and we'd love to hear your opinion!
                             </Text>
-                            <LinkOverlay href='https://docs.google.com/forms/d/e/1FAIpQLSeOt16-fpwrz3BQPHqEzP0sgxNzwSuH2n9AMZOdmYHhLu6xwg/viewform' target='_blank'></LinkOverlay>
+                            <LinkOverlay
+                                href='https://docs.google.com/forms/d/e/1FAIpQLSeOt16-fpwrz3BQPHqEzP0sgxNzwSuH2n9AMZOdmYHhLu6xwg/viewform'
+                                target='_blank'></LinkOverlay>
                         </Box>
                     </Flex>
                 </LinkBox>

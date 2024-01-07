@@ -27,23 +27,34 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
     }
 
 
-       const feedbackCardObj = {
-            blurb: "",
-            description: "",
-            impact: "",
-            major: "",
-            momentum: "",
-            name: "",
-            size: "",
-            type: "",
-            website: "",
-            type: "feedback"
-        }
-        if (orgArr.size < 10){
-            orgArr.push(feedbackCardObj);
-        } else {
-            orgArr.splice(10,0,feedbackCardObj)
-        }
+    const feedbackCardObj = {
+        blurb: "",
+        description: "",
+        impact: "",
+        major: "",
+        momentum: "",
+        name: "",
+        size: "",
+        type: "",
+        website: "",
+        type: "feedback"
+    }
+    // this is change hi
+    // test
+    // imma fuck up the other branch lol
+
+    if (orgArr.size < 7) {
+        orgArr.push(feedbackCardObj);
+    } else {
+        orgArr.splice(7, 0, feedbackCardObj)
+    }
+
+
+    if (orgArr.size === 1) {
+        console.log('lol')
+    }
+
+    // changed the same file that was changed in main
 
         //this is the only comment i (max) can see surely nothing can go wrong
 
