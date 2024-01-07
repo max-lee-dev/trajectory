@@ -66,6 +66,7 @@ export function Card({orgObj}) {
             return x.name == orgObj.major;
         })[0].color3;
     }
+
     return (
         <Box>
             {orgObj.type === "feedback" ?
@@ -251,6 +252,7 @@ function FeedbackCard({orgObj, screenWidth}) {
                             <Spacer/>
                             <img src={megaphone} width={'20px'}/>
                         </Flex>
+
 
                         <Box>
                             <Text fontSize={'10px'} fontStyle={'italic'}>
