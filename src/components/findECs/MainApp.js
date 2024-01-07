@@ -41,12 +41,12 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
     }
     // this is change hi
     // test
-    
+
     // imma fuck up the other branch lol
-    if (orgArr.size < 5) {
+    if (orgArr.size < 7) {
         orgArr.push(feedbackCardObj);
     } else {
-        orgArr.splice(5, 0, feedbackCardObj)
+        orgArr.splice(7, 0, feedbackCardObj)
     }
 
     return (
