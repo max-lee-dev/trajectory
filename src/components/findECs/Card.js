@@ -7,6 +7,18 @@ import selectyourinterests from '../../assets/img/selectyourinterests.png';
 import gridFindECsLogo from '../../assets/img/gridFindECsLogo.png';
 import megaphone from '../../assets/img/iconmonstr-megaphone-4.svg';
 
+//bunnies!
+import bunny1 from '../../assets/img/bunnies/cropped_19.png';
+import bunny2 from '../../assets/img/bunnies/cropped_20.png';
+import bunny3 from '../../assets/img/bunnies/cropped_21.png';
+import bunny4 from '../../assets/img/bunnies/cropped_22.png';
+import bunny5 from '../../assets/img/bunnies/cropped_23.png';
+import bunny6 from '../../assets/img/bunnies/cropped_24.png';
+import bunny7 from '../../assets/img/bunnies/cropped_25.png';
+import bunny8 from '../../assets/img/bunnies/cropped_26.png';
+import bunny9 from '../../assets/img/bunnies/cropped_27.png';
+
+
 import {
     Container,
     Grid,
