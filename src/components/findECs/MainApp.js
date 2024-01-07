@@ -26,6 +26,25 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
             orgArr.sort((a, b) => (parseInt(b.size) + parseInt(b.impact) + parseInt(b.momentum)) - (parseInt(a.size) + parseInt(a.impact) + parseInt(a.momentum)))
     }
 
+
+       const feedbackCardObj = {
+            blurb: "",
+            description: "",
+            impact: "",
+            major: "",
+            momentum: "",
+            name: "",
+            size: "",
+            type: "",
+            website: "",
+            type: "feedback"
+        }
+        if (orgArr.size < 10){
+            orgArr.push(feedbackCardObj);
+        } else {
+            orgArr.splice(10,0,feedbackCardObj)
+        }
+
     return (
         <motion.div
             initial={{
@@ -56,7 +75,6 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
                                 color={'white'}
                                 _hover={{
                                     bg: '#f5f5f5',
-
                                     color: "#360503ff",
                                 }}
                                 h={'35px'}

@@ -77,6 +77,8 @@ export function Renderer() {
                             retMajorArr.push(arr[i][j]);
                         }
                     }
+                    obj["type"] = "org";
+                    console.log(obj);
                     retArr.push(obj);
                 }
                 setMyOrganizations(retArr);

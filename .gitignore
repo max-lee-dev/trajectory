@@ -29,3 +29,4 @@ yarn-error.log*
 /src/assets/data/v1.2.csv
 /src/assets/data/v1.3.csv
 /src/assets/data/v1.4.csv
+.vscode/settings.json
