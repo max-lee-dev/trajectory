@@ -41,13 +41,15 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
     }
     // this is change hi
     // test
-    
+
     // imma fuck up the other branch lol
     if (orgArr.size < 5) {
         orgArr.push(feedbackCardObj);
     } else {
         orgArr.splice(5, 0, feedbackCardObj)
     }
+
+    // changed the same file that was changed in main
 
     return (
         <motion.div
