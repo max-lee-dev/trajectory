@@ -39,7 +39,7 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
         website: "",
         type: "feedback"
     }
-
+    // this is change hi
     // test
     if (orgArr.size < 5) {
         orgArr.push(feedbackCardObj);
