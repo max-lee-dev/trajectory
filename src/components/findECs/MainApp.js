@@ -27,23 +27,23 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
     }
 
 
-       const feedbackCardObj = {
-            blurb: "",
-            description: "",
-            impact: "",
-            major: "",
-            momentum: "",
-            name: "",
-            size: "",
-            type: "",
-            website: "",
-            type: "feedback"
-        }
-        if (orgArr.size < 10){
-            orgArr.push(feedbackCardObj);
-        } else {
-            orgArr.splice(10,0,feedbackCardObj)
-        }
+    const feedbackCardObj = {
+        blurb: "",
+        description: "",
+        impact: "",
+        major: "",
+        momentum: "",
+        name: "",
+        size: "",
+        type: "",
+        website: "",
+        type: "feedback"
+    }
+    if (orgArr.size < 5) {
+        orgArr.push(feedbackCardObj);
+    } else {
+        orgArr.splice(5, 0, feedbackCardObj)
+    }
 
     return (
         <motion.div
