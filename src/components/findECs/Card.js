@@ -118,7 +118,7 @@ function DesktopCard({orgObj, screenWidth, color, color2, color3}) {
                         </Flex>
 
                         <Box>
-                            <Text fontSize={'10px'} fontStyle={'italic'}>
+                            <Text fontSize={'12px'} fontStyle={'italic'}>
                                 {orgObj.blurb}
                             </Text>
                         </Box> {/* The desc of org ( 1 line) */}
@@ -183,7 +183,7 @@ function MobileCard({orgObj, screenWidth, color, color2, color3}) {
                         </Flex>
 
                         <Box>
-                            <Text fontSize={'10px'} fontStyle={'italic'}>
+                            <Text fontSize={'14px'} fontStyle={'italic'}>
                                 {orgObj.blurb}
                             </Text>
                         </Box> {/* The desc of org ( 1 line) */}
