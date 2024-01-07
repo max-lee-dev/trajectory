@@ -1,6 +1,4 @@
 import React, {useState} from 'react';
-import { glob, globSync, globStream, globStreamSync, Glob } from 'glob'
-
 import ECModal from '../ECModal.js';
 import majorColors from '../findECs/majorColors.json';
 import selectyourinterests from '../../assets/img/selectyourinterests.png';
@@ -109,6 +107,7 @@ function DesktopCard({orgObj, screenWidth, color, color2, color3}) {
         <Center>
             <Box>
                 <LinkBox
+
                     cursor={'pointer'}
                     // _active={{borderWidth: '7px'}}
                     bg={'white'} color={'#360503ff'} borderRadius={'lg'} borderWidth={'1px'} boxShadow={'md'}
@@ -186,6 +185,8 @@ function MobileCard({orgObj, screenWidth, color, color2, color3}) {
                     style={{
                         transition: 'all 0.2s ease-in-out',
                     }}
+
+
                 >
 
                     <ECModal orgObj={orgObj} isOpen={isOpen} onClose={onClose}/>
