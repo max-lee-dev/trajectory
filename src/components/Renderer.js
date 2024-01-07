@@ -19,8 +19,6 @@ import FilterPage from './findECs/filterPage.js';
 import CSV from '../assets/data/orgList.csv'
 
 export function Renderer() {
-
-
     const [myOrganizations, setMyOrganizations] = useState([])
     const [majorArr, setMajorArr] = useState([])
     const [selectedMajor, setSelectedMajor] = useState("")

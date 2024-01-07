@@ -45,6 +45,8 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
             orgArr.splice(10,0,feedbackCardObj)
         }
 
+        //this is the only comment i (max) can see surely nothing can go wrong
+
     return (
         <motion.div
             initial={{
