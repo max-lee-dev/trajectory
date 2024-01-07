@@ -39,12 +39,14 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
         website: "",
         type: "feedback"
     }
-    if (orgArr.size < 10) {
+
+    // test
+    if (orgArr.size < 5) {
         orgArr.push(feedbackCardObj);
     } else {
-        orgArr.splice(10, 0, feedbackCardObj)
+        orgArr.splice(5, 0, feedbackCardObj)
     }
-    // test
+
     return (
         <motion.div
             initial={{
