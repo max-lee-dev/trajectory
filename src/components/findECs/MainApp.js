@@ -41,6 +41,8 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
     }
 
     // test
+    
+    // imma fuck up the other branch lol
     if (orgArr.size < 5) {
         orgArr.push(feedbackCardObj);
     } else {
