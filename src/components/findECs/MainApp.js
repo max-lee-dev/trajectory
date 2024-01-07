@@ -49,6 +49,8 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
         orgArr.splice(7, 0, feedbackCardObj)
     }
 
+    // changed the same file that was changed in main
+
     return (
         <motion.div
             initial={{
