@@ -6,16 +6,15 @@ import gridFindECsLogo from '../../assets/img/gridFindECsLogo.png';
 import megaphone from '../../assets/img/iconmonstr-megaphone-4.svg';
 
 //bunnies!
-import bunny1 from '../../assets/img/bunnies/cropped_19.png';
-import bunny2 from '../../assets/img/bunnies/cropped_20.png';
-import bunny3 from '../../assets/img/bunnies/cropped_21.png';
-import bunny4 from '../../assets/img/bunnies/cropped_22.png';
-import bunny5 from '../../assets/img/bunnies/cropped_23.png';
-import bunny6 from '../../assets/img/bunnies/cropped_24.png';
-import bunny7 from '../../assets/img/bunnies/cropped_25.png';
-import bunny8 from '../../assets/img/bunnies/cropped_26.png';
-import bunny9 from '../../assets/img/bunnies/cropped_27.png';
-
+import arrowBunny from '../../assets/img/bunnies/arrowBunny.png';
+import balloonBunny from '../../assets/img/bunnies/balloonBunny.png';
+import bobaBunny from '../../assets/img/bunnies/bobaBunny.png';
+import crushedToDeathByAComicallyLargeClipartHeartBunny from '../../assets/img/bunnies/crushedToDeathByAComicallyLargeClipartHeartBunny.png';
+import flowerBunny from '../../assets/img/bunnies/flowerBunny.png';
+import heartBunny from '../../assets/img/bunnies/heartBunny.png';
+import heartHandsBunny from '../../assets/img/bunnies/heartHandsBunny.png';
+import sleepyBunny from '../../assets/img/bunnies/sleepyBunny.png';
+import sparkleBunny from '../../assets/img/bunnies/sparkleBunny.png';
 
 import {
     Container,
@@ -101,6 +100,10 @@ export function Card({orgObj}) {
 
 function DesktopCard({orgObj, screenWidth, color, color2, color3}) {
 
+    const bunnyArr = [arrowBunny, balloonBunny, bobaBunny, crushedToDeathByAComicallyLargeClipartHeartBunny, flowerBunny, heartBunny, heartHandsBunny, sleepyBunny, sparkleBunny];
+    const seed = orgObj.blurb.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    let bunny = bunnyArr[Math.floor(Math.random(seed) * bunnyArr.length)];
+    
     const {isOpen, onOpen, onClose} = useDisclosure()
 
     return (
@@ -144,14 +147,19 @@ function DesktopCard({orgObj, screenWidth, color, color2, color3}) {
                                    color={color3}> {orgObj.major} </Badge> {/* badges will be added from db */}
                         </Flex>
 
-                        <Box>
-                            <Text fontSize={'12px'} fontStyle={'italic'}>
-                                {orgObj.blurb}
-                            </Text>
-                        </Box> {/* The desc of org ( 1 line) */}
-                        <Spacer/>
-                        <Box h={'8px'} bg={'rgba(110,110,110,0.18)'} mt={'8px'} borderRadius={'12px'}>
-                            <Container w={screenWidth} h={'8px'} bg={color} m={'0px'} borderRadius={'12px'}/>
+                        <Box w={'6.2em'} position={'relative'}>
+                            <Box>
+                                <Text fontSize={'11px'} fontStyle={'italic'}>
+                                    {orgObj.blurb}
+                                </Text>
+                            </Box> {/* The desc of org ( 1 line) */}
+                            <Spacer/>
+                            <Box h={'8px'} bg={'rgba(110,110,110,0.18)'} mt={'8px'} borderRadius={'12px'}>
+                                <Container w={screenWidth} h={'8px'} bg={color} m={'0px'} borderRadius={'12px'}/>
+                            </Box> 
+                        </Box>
+                        <Box position={'absolute'} right={'15px'} bottom={'0px'}>
+                            <img src={bunny} width={'40px'}/>
                         </Box>
                     </Flex>
                 </LinkBox>
@@ -185,8 +193,6 @@ function MobileCard({orgObj, screenWidth, color, color2, color3}) {
                     style={{
                         transition: 'all 0.2s ease-in-out',
                     }}
-
-
                 >
 
                     <ECModal orgObj={orgObj} isOpen={isOpen} onClose={onClose}/>
@@ -215,8 +221,7 @@ function MobileCard({orgObj, screenWidth, color, color2, color3}) {
                         </Box> {/* The desc of org ( 1 line) */}
                         <Spacer/>
                         <Box h={'8px'} bg={'rgba(110,110,110,0.18)'} mt={'8px'} borderRadius={'12px'}>
-                            <Container w={screenWidth} h={'8px'} bg={color} m={'0px'}
-                                       borderRadius={'12px'}/>
+                            <Container w={screenWidth} h={'8px'} bg={color} m={'0px'} borderRadius={'12px'}/>
                         </Box>
                     </Flex>
                 </LinkBox>
