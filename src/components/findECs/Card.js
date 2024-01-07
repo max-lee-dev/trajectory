@@ -233,7 +233,7 @@ function FeedbackCard({orgObj, screenWidth}) {
                 <LinkBox
 
                     cursor={'pointer'}
-                    // _active={{borderWidth: '7px'}}
+                    _active={{borderWidth: '7px'}}
                     bg={'white'} color={'#360503ff'} borderRadius={'lg'} borderWidth={'1px'} boxShadow={'md'}
                     overflow={'hidden'}
                     w={'8em'} p={'0px'}
