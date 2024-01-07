@@ -223,12 +223,13 @@ function FeedbackCard({orgObj, screenWidth}){
 
                     cursor={'pointer'}
                     // _active={{borderWidth: '7px'}}
-                    bg={'#badbffff'} color={'#360503ff'} borderRadius={'lg'} borderWidth={'1px'} boxShadow={'md'}
+                    bg={'white'} color={'#360503ff'} borderRadius={'lg'} borderWidth={'1px'} boxShadow={'md'}
                     overflow={'hidden'}
                     w={'8em'} p={'0px'}
                     onClick={onOpen}
                     mt={'2px'}
                     mb={'-30px'}
+                    boxShadow={'0px 0px 5px #ffffffff'}
                     _hover={{
                         transform: 'scale(1.05)',
                         boxShadow: '0px 0px 10px #360503ff'
@@ -252,7 +253,6 @@ function FeedbackCard({orgObj, screenWidth}){
                             <Spacer/>
                             <img src={megaphone} width={'20px'}/>
                         </Flex>
-
                         
                         <Box>
                             <Text fontSize={'10px'} fontStyle={'italic'}>
