@@ -39,7 +39,7 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
         website: "",
         type: "feedback"
     }
-
+    // this is change hi
     // test
     
     // imma fuck up the other branch lol
