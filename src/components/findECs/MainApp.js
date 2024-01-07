@@ -53,6 +53,8 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
     if (orgArr.size === 1) {
         console.log('lol')
     }
+    // max lee
+
 
     // changed the same file that was changed in main
 
