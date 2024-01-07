@@ -46,10 +46,9 @@ function Home() {
     // this is new branch only
     return (
         <Box fontSize={'40px'}>
-            
+           {/* https://www.chess.com/article/view/chesscom-update-january-2024  */}
         </Box>
     );
 }
-
 
 export default Home;
