@@ -39,9 +39,6 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
         website: "",
         type: "feedback"
     }
-    // this is change hi
-    // test
-    // imma fuck up the other branch lol
 
     if (orgArr.size < 7) {
         orgArr.push(feedbackCardObj);
@@ -53,10 +50,6 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
     if (orgArr.size === 1) {
         console.log('lol')
     }
-
-    // changed the same file that was changed in main
-
-        //this is the only comment i (max) can see surely nothing can go wrong
 
     return (
         <motion.div
