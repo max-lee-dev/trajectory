@@ -49,6 +49,9 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
         orgArr.splice(7, 0, feedbackCardObj)
     }
 
+    if (orgArr.size === 2) {
+        console.log('lol2')
+    }
     // changed the same file that was changed in main
 
     return (
