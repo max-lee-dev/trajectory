@@ -280,7 +280,7 @@ function FeedbackCard({orgObj, screenWidth}) {
 
                         <Box>
                             <Text fontSize={'10px'} fontStyle={'italic'}>
-                                Enjoying Trajectory so far? Got a bug to report? FindECs is still in it's early stages,
+                                Enjoying FindECs so far? Got a bug to report? FindECs is still in it's early stages,
                                 and we'd love to hear your opinion!
                             </Text>
                             <LinkOverlay
