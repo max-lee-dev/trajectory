@@ -4,7 +4,6 @@ import {MdArrowDropDown} from "react-icons/md";
 import majorColors from './findECs/majorColors.json';
 import {motion, AnimatePresence} from 'framer-motion';
 
-
 import {
     Divider,
     Box,
@@ -76,7 +75,6 @@ export function Renderer() {
                         }
                     }
                     obj["type"] = "org";
-                    console.log(obj);
                     retArr.push(obj);
                 }
                 setMyOrganizations(retArr);
@@ -94,15 +92,11 @@ export function Renderer() {
     const [showFilterPage, setShowFilterPage] = useState(true)
 
     const onFilterClick = (e) => {
-        console.log("clicked filter")
-
         if (selectedMajorArr.size === 0) {
-            console.log("filtering by " + Array.from(selectedMajorArr))
             majorColors.forEach(x => {
                 selectedMajorArr.add(x.name)
             })
         }
-        console.log(selectedMajorArr)
         e.preventDefault();
         setShowFilterPage(!showFilterPage)
     }
@@ -142,8 +136,7 @@ export function Renderer() {
                 </motion.div>
                 :
 
-                <MainApp orgArr={myOrganizations} columns={1} selectedMajorArr={selectedMajorArr} sortBy={sortBy}
-                         mt={'1px'} onFilterClick={onFilterClick}/>
+                <MainApp orgArr={myOrganizations} columns={1} selectedMajorArr={selectedMajorArr} sortBy={sortBy} mt={'1px'} onFilterClick={onFilterClick}/>
             }
         </Box>
 

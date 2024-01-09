@@ -252,7 +252,7 @@ function FeedbackCard({orgObj, screenWidth}) {
                     onClick={onOpen}
                     mt={'2px'}
                     mb={'-30px'}
-                    boxShadow={'0px 0px 5px #ffffffff'}
+                    boxShadow={'0px 0px 8px #ffffffff'}
                     _hover={{
                         transform: 'scale(1.05)',
                         boxShadow: '0px 0px 10px #360503ff'

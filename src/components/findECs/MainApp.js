@@ -3,6 +3,7 @@ import gridFindECsLogo from "../../assets/img/gridFindECsLogo.png";
 import React from "react";
 import {motion} from "framer-motion";
 import {Card} from "./Card";
+import Footer  from '../Footer.js';
 
 export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFilterClick}) {
     if (selectedMajorArr.size != 0) {
@@ -10,8 +11,6 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
     }
 
     const currMajorsArr = Array.from(selectedMajorArr)
-    console.log(currMajorsArr);
-    // console.log(orgArr);
     switch (sortBy) {
         case 'size':
             orgArr.sort((a, b) => b.size - a.size);
@@ -47,17 +46,6 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
     }
 
 
-    if (orgArr.size === 1) {
-        console.log('lol')
-    }
-
-    // max lee
-
-
-    // changed the same file that was changed in main
-
-    //this is the only comment i (max) can see surely nothing can go wrong
-
     return (
         <motion.div
             initial={{
@@ -72,7 +60,6 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
                 duration: 0.75,
                 ease: "easeInOut"
             }}
-
         >
             <Box>
                 <Center paddingBottom={6} ml={2} pt={3}>
@@ -102,9 +89,10 @@ export default function MainApp({orgArr, columns, selectedMajorArr, sortBy, onFi
 
                 </Box>
 
-                <SimpleGrid columns={columns} spacing={8}>
+                <SimpleGrid columns={columns} spacing={8} >
                     {orgArr.map(orgObj => <Card key={orgObj.name} orgObj={orgObj} bunnyIndex={Math.floor(Math.random() * 9)}/>)}
                 </SimpleGrid>
+                <Footer/>
                 {/*<Box p={'8px'}>*/}
                 {/*    <Center>*/}
                 {/*        <Button zIndex={1} bg={'#360503ff'} position={'absolute'} top={'0px'} right={'0px'}/>*/}

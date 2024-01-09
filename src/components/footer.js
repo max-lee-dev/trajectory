@@ -25,17 +25,20 @@ import {
 export function Footer(){
     return(
         <Container as='footer' >
-            <Center m={'40px'} fontSize={'16px'}>
+            <Center m={'40px'} fontSize={'10px'}>
                 <VStack>
                 <Box> 
-                    <Button as='a' href='https://discord.gg/trajectory' isExternal target='_blank' bg='#778cd9ff' mr={'8px'}>
+                    {/* <Button as='a' href='https://discord.gg/trajectory' isExternal target='_blank' bg='#778cd9ff' mr={'8px'}>
                         more resources
                     </Button>                        
                     <Button as='a' href='https://docs.google.com/forms/d/e/1FAIpQLSeOt16-fpwrz3BQPHqEzP0sgxNzwSuH2n9AMZOdmYHhLu6xwg/viewform?usp=sf_link' isExternal target='_blank' bg='#7249baff'>
                         feedback
-                    </Button>
+                    </Button> */}
                 </Box> 
-                <Box> Made with ❤️ by Trajectory</Box>
+                <Link
+                href='https://discord.gg/cPBcXQWMGD'
+                target='_blank'> 
+                Made with ❤️ by Trajectory</Link>
             </VStack>
             </Center>
         </Container>

@@ -89,8 +89,6 @@ function FilterButton({selectedMajorArr, name, color, pass}) {
     const defaultColor = '#360503ff'
 
 
-    // console.log(name)
-
     function toggle(e) { // need to reload the bg colors so if edit interets, it stays
         setOn(!on);
         if (!on) {
@@ -100,8 +98,6 @@ function FilterButton({selectedMajorArr, name, color, pass}) {
             selectedMajorArr.delete(name);
             setBgColor(defaultColor)
         }
-        console.log(selectedMajorArr);
-
     }
 
     useEffect(() => {
